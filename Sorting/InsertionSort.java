@@ -2,7 +2,7 @@ package Sorting;
 
 import java.util.Arrays;
 
-// insted of swapping we do shifting(copy)
+// instead of swapping we do shifting(copy)
 // i.e make a copy of j val in next right side index i.e we have two same values here until we shift the original copy with much more smaller value from left
 // FIRST FOR i LOOP MOVES FROM LEFT TO RIGHT
 // AND SECOND WHILE j LOOP MOVES FROM RIGHT TO LEFT i.e j always < i and max val of j+1 is i.
