@@ -27,7 +27,7 @@ public class QuickSort{
     // low and high are default params
     public static void sort(int[] items, int low, int high){
 
-        System.out.println("--------- sort(" + "low:" + low + ", high:" + high + ") ---------");
+        System.out.println(String.format("--------- sort(low:%s, high: %s) ---------", low, high));
 
         if (low >= high ) return;
 
