@@ -359,12 +359,6 @@ public class Patterns {
          */
         System.out.println("22) The Number Pattern");
         theNumberPattern(n);                      System.out.println();
-
-        
-
-
-
-
     }   
 
 
