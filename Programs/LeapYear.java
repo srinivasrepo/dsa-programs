@@ -9,7 +9,7 @@ public class LeapYear {
         // Scanner sc=new Scanner(System.in);
         // System.out.println("Enter a Year");
         // int year = sc.nextInt();
-
+        // or
         int year =  2012;
 
         // if year divisible by % 400 then it leap year => NO NEED TO CHECK ANYTHING
