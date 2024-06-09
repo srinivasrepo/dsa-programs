@@ -674,6 +674,8 @@ public class Patterns {
     }
 
     static void theNumberPattern(int n) {
+
+        // here i saw diamond pattern
         int rows = 2*n-1;
         int cols = 2*n-1;
         int midNum = n;
@@ -698,12 +700,51 @@ public class Patterns {
         }
 
         // //or
+        /* 
+        for example take n = 4
+
+        4 4 4 4 4 4 4
+        4 3 3 3 3 3 4
+        4 3 2 2 2 3 4
+        4 3 2 1 2 3 4
+        4 3 2 2 2 3 4
+        4 3 3 3 3 3 4
+        4 4 4 4 4 4 4
+
+        if we substract n from above matrix it'll become
+
+        we know that i is for rows and j is for cols but distance is different
+
+
+          j distance
+        ◄-----------► 
+        left    right
+
+        0 0 0 0 0 0 0   ▲   top distance
+        0 1 1 1 1 1 0   |
+        0 1 2 2 2 1 0   |
+        0 1 2 3 2 1 0   |   i distance
+        0 1 2 2 2 1 0   |
+        0 1 1 1 1 1 0   |
+        0 0 0 0 0 0 0   ▼   bottom distance
+
+        let's take "3" in second matrix
+        then it's left-distance is j and top-distance is i
+        and calulate right-distance: 2n-1-1 is last element index of this matrix then 2n-1-1-j is right-distance
+        similarly bottom-distance is 2n-1-1-i index
+        and calculate the min distance of any element here, then that is the value of that element
+        and finally substract this 0 1 2 3... matrix with n
+        then we'll get the original matrix
+        
+
+ */
         // for(int i=0;i<2*n-1;i++){
          
         //     // inner loop for no. of columns.
         //     for(int j=0;j<2*n-1;j++){
                 
         //         // Initialising the top, down, left and right indices of a cell.
+
         //         int top = i;
         //         int bottom = j;
         //         int right = (2*n - 2) - j;
@@ -714,10 +755,6 @@ public class Patterns {
         //         // has 0's, but we want with border N's and then decrease inside.
         //         System.out.print(n- Math.min(Math.min(top,bottom), Math.min(left,right)) + " ");
         //     }
-            
-        //     // As soon as the numbers for each iteration are printed, we move to the
-        //     // next row and give a line break otherwise all numbers
-        //     // would get printed in 1 line.
         //     System.out.println();
         // }
     }
