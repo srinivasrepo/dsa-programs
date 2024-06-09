@@ -7,6 +7,7 @@ public class ReverseNumber {
         System.out.print("Reversed Number is " + reverse(n)); 
     }
 
+    // reversing using %10 and /10 concept
     static int reverse(int n) { 
         // reversed number 
         int rev = 0; 
