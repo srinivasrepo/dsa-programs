@@ -57,8 +57,6 @@ interface SampleInterface {
 	public String display();
 }
 
-
-
 /*
  * A functional interface can contain implementations in default methods
  * but should have only one un-implemented method
@@ -71,36 +69,9 @@ interface MyFunctionalInterface {
 	}
 }
 
-/*
- 
-Built-in Functional Interfaces in Java
---------------------------------------
-Since Java SE 1.8 onwards, there are many interfaces that are converted into functional interfaces. All these interfaces are annotated with @FunctionalInterface. These interfaces are as follows – 
-1) Runnable –> This interface only contains the run() method.
-2) Comparable –> This interface only contains the compareTo() method.
-3) ActionListener –> This interface only contains the actionPerformed() method.
-4) Callable –> This interface only contains the call() method.
-
-Java SE 8 included four main kinds of functional interfaces which can be applied in multiple situations as mentioned bel
-1) Function (java.util.function.Function)
-2) Predicate (java.util.function.Predicate)
-3) UnaryOperator
-4) BinaryOperator
-5) Supplier
-6) Consumer
-6) BiConsumer<T,U>
-7) BiFunction<T,U,R>
-8) DoubleFunction<R>
-9) ToLongFunction<T> ..........
- 
- */
-
-
 
 /*
-
 A functional interface can extends another interface only when it does not have any abstract method.
-
 */
 
 interface Sayable{  
@@ -125,10 +96,30 @@ interface Doable2 extends Sayable2{
 
 
 
+/*
+Built-in Functional Interfaces in Java
+--------------------------------------
+Since Java SE 1.8 onwards, there are many interfaces that are converted into functional interfaces. All these interfaces are annotated with @FunctionalInterface. These interfaces are as follows – 
+1) Runnable –> This interface only contains the run() method.
+2) Comparable –> This interface only contains the compareTo() method.
+3) ActionListener –> This interface only contains the actionPerformed() method.
+4) Callable –> This interface only contains the call() method.
+
+Java SE 8 included four main kinds of functional interfaces which can be applied in multiple situations as mentioned bel
+1) Function (java.util.function.Function)
+2) Predicate (java.util.function.Predicate)
+3) UnaryOperator
+4) BinaryOperator
+5) Supplier
+6) Consumer
+6) BiConsumer<T,U>
+7) BiFunction<T,U,R>
+8) DoubleFunction<R>
+9) ToLongFunction<T> ..........
+ */
 
 
 /*
- 
 Java Functional Composition
 ---------------------------
 Functional composition is a technique to combine multiple functions into a
@@ -138,7 +129,6 @@ but Java also comes with built-in support for functional composition to make the
 For example we can see "how to compose functions from smaller functions via Java's built-in features"
 
 https://jenkov.com/tutorials/java-functional-programming/functional-composition.html
-
 */
 
 class FunctionalCompositionExample {
