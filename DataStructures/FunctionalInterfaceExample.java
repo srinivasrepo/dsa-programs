@@ -1,4 +1,4 @@
-package Programs;
+package DataStructures;
 
 import java.util.function.Function;
 import java.util.function.Predicate;

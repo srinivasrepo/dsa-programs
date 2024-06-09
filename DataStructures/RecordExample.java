@@ -1,4 +1,4 @@
-package Programs;
+package DataStructures;
 /* 
 Records in java are introduced in 14
 Record extends from class and record must be in it's own file 
