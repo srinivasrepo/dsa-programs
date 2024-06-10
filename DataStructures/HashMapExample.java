@@ -1,7 +1,9 @@
 package DataStructures;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -97,9 +99,33 @@ public class HashMapExample {
         map.entrySet().stream().filter(entry -> Objects.equals(entry.getValue(), 99)).map(Map.Entry::getKey).collect(Collectors.toList()).get(0); // set or list or get
 
 
-        // LIST TO MAP using GROUPING BY
-        // Map<Department, List<Employee>> mapByDept = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+        // LIST TO MAP -------------
+        List<Employee> employees = new ArrayList<>();
+
+        // Group employees by department
+        Map<Department, List<Employee>> byDept = employees.stream()
+                                                    .collect(Collectors.groupingBy(Employee::getDepartment));
+
+        // Compute sum of salaries by department
+        Map<Department, Integer> totalByDept = employees.stream()
+                                                    .collect(Collectors.groupingBy(Employee::getDepartment,
+                                                    Collectors.summingInt(Employee::getSalary)));
+
+        // Partition employees into passing and failing the A band for annual appraisal
+        Map<Boolean, List<Employee>> passingFailing = employees.stream()
+                                                        .collect(Collectors.partitioningBy(s -> 
+                                                        s.getGrade() >= 4.0));
            
+    }
+
+    public class Department {}
+    public class Employee {
+        Department department;
+        int salary;
+        double grade;
+        Department getDepartment(){return department;}
+        int getSalary() {return salary;}
+        double getGrade(){return grade;}
     }
     
 }
