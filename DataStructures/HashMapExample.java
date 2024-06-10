@@ -1,20 +1,30 @@
 package DataStructures;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
-// NOTE: In loops (Eg: for counting num of chars in a string) use MERGE or COMPUTE instead of get and put combined
+// NOTE: In loops (Eg: for counting num of chars in a string) use stream or MERGE or COMPUTE instead of get and put combined
 
 @SuppressWarnings("unused")
 public class HashMapExample {
 
     public static void main(String[] args) {
+
+
+        // to get the all characters occurances in a string
+        String str = "srinivasrepo";
+        Map<String, Long> charMap = Arrays.stream(str.split(""))
+                                        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(charMap);
+
 
         HashMap<Character, Integer> map = new HashMap<>();
         HashMap<Character, Integer> map2 = new HashMap<>();
@@ -23,7 +33,7 @@ public class HashMapExample {
         // instead of
         map.put('A', map.get('A')!=null? map.get('A')+1 : 1); 
         // or 
-        map.put('A', map.getOrDefault('A', 0));
+        map.put('A', map.getOrDefault('A', 0) + 1 );
         //use
         map.merge('A', 1, Integer::sum);
 
@@ -85,7 +95,7 @@ public class HashMapExample {
         Collection<Integer> collecOfVals = map.values(); // => Collection<ValDataType>
 
         // MAP FOREACH
-        map.forEach( (k,v) -> System.out.printf("%s %s", k, v));
+        map.forEach( (k,v) -> System.out.printf("%s%s, ", k, v));
 
 
 
@@ -96,7 +106,7 @@ public class HashMapExample {
             }
         }
         // or
-        map.entrySet().stream().filter(entry -> Objects.equals(entry.getValue(), 99)).map(Map.Entry::getKey).collect(Collectors.toList()).get(0); // set or list or get
+        map.entrySet().stream().filter(entry -> Objects.equals(entry.getValue(), 1)).map(Map.Entry::getKey).collect(Collectors.toList()).get(0); // set or list or get
 
 
         // LIST TO MAP -------------
