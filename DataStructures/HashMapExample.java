@@ -23,6 +23,12 @@ public class HashMapExample {
         String str = "srinivasrepo";
         Map<String, Long> charMap = Arrays.stream(str.split(""))
                                         .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        // Function.identity() or i->i ---- both works
+/* 
+        Here we cannot use identity (Function::identity) and counting as method references and get error 
+        Because this identity and counting methods don't have expected number of arguments 
+        (here expected number of args is 1 to use a method as method reference) 
+*/
         System.out.println(charMap);
 
 
