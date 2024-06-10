@@ -95,6 +95,10 @@ public class HashMapExample {
         }
         // or
         map.entrySet().stream().filter(entry -> Objects.equals(entry.getValue(), 99)).map(Map.Entry::getKey).collect(Collectors.toList()).get(0); // set or list or get
+
+
+        // LIST TO MAP using GROUPING BY
+        // Map<Department, List<Employee>> mapByDept = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment));
            
     }
     
