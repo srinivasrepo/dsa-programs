@@ -1,7 +1,8 @@
-package Sorting;
+package Algorithms.Sorting;
 
-public class ShellSort {
+public class HeapSort {
     public static void main(String[] args) {
         
     }
+
 }

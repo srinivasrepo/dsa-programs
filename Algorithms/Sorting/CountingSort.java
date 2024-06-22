@@ -1,6 +1,6 @@
-package Sorting;
+package Algorithms.Sorting;
 
-public class TimSort {
+public class CountingSort {
 
     public static void main(String[] args) {
         

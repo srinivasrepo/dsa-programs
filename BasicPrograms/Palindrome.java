@@ -1,4 +1,4 @@
-package Programs;
+package BasicPrograms;
 
 public class Palindrome { // means reserve of this number is same as original number
 

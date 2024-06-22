@@ -1,4 +1,4 @@
-package Programs;
+package BasicPrograms;
 
 public class CountDigits {
 

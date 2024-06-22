@@ -1,9 +1,8 @@
-package Sorting;
+package Algorithms.Sorting;
 
-public class CountingSort {
-
+public class BucketSort {
+    
     public static void main(String[] args) {
         
     }
-
 }

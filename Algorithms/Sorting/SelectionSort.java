@@ -1,4 +1,4 @@
-package Sorting;
+package Algorithms.Sorting;
 import java.util.Arrays;
 
 public class SelectionSort { // Select from left to right; j=i+1

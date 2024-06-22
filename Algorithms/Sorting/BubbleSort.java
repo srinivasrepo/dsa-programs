@@ -1,4 +1,4 @@
-package Sorting;
+package Algorithms.Sorting;
 import java.util.Arrays;
 
 public class BubbleSort { // compares "adjacent pairs"; j=0 and compare j & j+1 and sort <- from right to left
