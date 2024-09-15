@@ -122,6 +122,8 @@ public class HashMapExample {
         }
         // or
         map.entrySet().stream().filter(entry -> Objects.equals(entry.getValue(), 1)).map(Map.Entry::getKey).collect(Collectors.toList()).get(0); // set or list or get
+        map.entrySet().stream().filter(entry -> entry.getValue().equals(1)).toList().get(0).getKey();
+        // as we don't need this list just convert to .toList() immutable list
 
 
         // LIST TO MAP -------------
