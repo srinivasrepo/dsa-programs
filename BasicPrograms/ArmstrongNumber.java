@@ -14,8 +14,8 @@ public class ArmstrongNumber {
         int orgNum = n;
         int noOfDigits = (int) Math.log10(n) + 1; // or String.valueOf(num).length();
         while (n>0) {
-            int lastDigit = n%10; // remainder
-            n = n/10; // quotient
+            int lastDigit = n%10; // modulus retuns remainder
+            n = n/10; // divison returns quotient
             sum += (int) Math.pow(lastDigit, noOfDigits); // in java ^ is bitwise XOR operator and ** don't work as power like js
         }
         return sum == orgNum;
