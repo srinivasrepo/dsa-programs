@@ -10,6 +10,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 // NOTE: In loops (Eg: for counting num of chars in a string) use stream or MERGE or COMPUTE instead of get and put combined
 
@@ -23,18 +24,25 @@ public class HashMapExample {
         String str = "srinivasrepo";
         Map<String, Long> charMap = Arrays.stream(str.split(""))
                                         .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        Map<Character, Integer> charMap2 = Arrays.stream(str.split(""))
+                                        .collect(Collectors.groupingBy(i-> i.charAt(0), Collectors.summingInt(e -> 1)));
+        Map<Character, Integer> charMap3 = str.chars().mapToObj(e->(char)e)
+                                        .collect(Collectors.groupingBy(i-> i, Collectors.summingInt(e -> 1)));
         // Function.identity() or i->i ---- both works
+        // Collectors.summingInt(e -> 1) will count but Collectors.summingInt(Integer::valueOf) will sum all the items / values but here the item is char.
 /* 
         Here we cannot use identity (Function::identity) and counting as method references and get error 
         Because this identity and counting methods don't have expected number of arguments 
         (here expected number of args is 1 to use a method as method reference) 
 */
+        // str.chars().mapToObj(e->(char)e) --- Stream<Character> and in console it's type of IntPipeline$1
         System.out.println(charMap);
+        System.out.println(charMap2);
+        System.out.println(charMap3);
 
 
         HashMap<Character, Integer> map = new HashMap<>();
         HashMap<Character, Integer> map2 = new HashMap<>();
-
         // IMP NOTE
         // instead of
         map.put('A', map.get('A')!=null? map.get('A')+1 : 1); 
