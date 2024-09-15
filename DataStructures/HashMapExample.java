@@ -33,7 +33,8 @@ public class HashMapExample {
 /* 
         Here we cannot use identity (Function::identity) and counting as method references and get error 
         Because this identity and counting methods don't have expected number of arguments 
-        (here expected number of args is 1 to use a method as method reference) 
+        (here expected number of args in classifier.apply(t) is 1 but Function.identity() method has 0 args) 
+        (and downstream.supplier() return type is Supplier<A> but Collectors.counting() return type is Collector)
 */
         // str.chars().mapToObj(e->(char)e) --- Stream<Character> and in console it's type of IntPipeline$1
         System.out.println(charMap);
