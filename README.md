@@ -3,7 +3,36 @@ Data Structures And Algorithms Programs
 
 
 
-<br><br><br>
+<br><br>
+<style>a{text-decoration: none;}</style>
+## CONTENTS
+- Java Data Structures & important classes 
+<pre><code>
+1. <a href="./DataStructures/HashMapExample.java">HashMap</a>
+2. List
+3. Stream API
+4. AnnotationType, 
+5. FunctionalInterface, 
+6. Record
+</code></pre>pre>
+
+- Basic small programs 
+- LeetCode Programs
+- Algorithms
+
+        1. BinaryTrees    
+        2. BitManipulation
+        3. DynamicProgramming
+        4. Graphs
+        5. GreedyAlgorithms
+        6. Heaps
+        7. ListAndLinkedList
+        8. Recursion
+        9. Searching
+        10. Sorting
+        11. StackAndQueues
+        12. Strings
+        13. Tries
 
 CONTENTS
 --------
