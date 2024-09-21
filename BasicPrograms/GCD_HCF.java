@@ -83,6 +83,9 @@ public class GCD_HCF {
     but here in our code, we just assign the Remainder to largeNum so, this will become new small num
     then the other number will automatically become the new largeNum without doing anything
 
+    REMAINDERS
+    a=30; b=25 => a=5; b=25; a=5; b=0... therefore GCF is 5
+    a=20; b=30 => a=20; b=10; a=0; b=10... therefore GCF is 10
   */   
     static int euclideanAlgorithmWhileLoop(int a, int b) {
         while (a>0 && b>0) {
