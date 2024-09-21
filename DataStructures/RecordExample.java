@@ -6,7 +6,7 @@ Record extends from class and record must be in it's own file
 
 public record RecordExample(int foo, String bar) {
 
-    RecordExample setFoo(int newFoo){ // optional
+    public RecordExample setFoo(int newFoo){ // optional but it has to be public for setting as it record IMMUTABLE
         return new RecordExample(newFoo,  bar); 
     }
     RecordExample setbar(String newBar){ // optional
