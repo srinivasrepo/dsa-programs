@@ -16,7 +16,7 @@ public class LeapYear {
         // and if year % 100 then it is not a leap year (LEAP YEAR SHOULD NOT BE DIVISIBLE BY 100)
         // i.e the year should not be a century year except it is divisible by 400
         // and if year is not % 4 then it is not a leap year (LEAP YEAR MUST DIVISIBLE BY 4)
-        // therefore CHECK %4 AND %100 and %400 is optional
+        // therefore CHECK %4 AND %100 or %400 . Here %400 is not optional. Eg: 2000
         if( (year%4 == 0 && year%100 != 0) || year%400 == 0 )
          System.out.println("Leap year");
         else System.out.println("Not a leap year");
