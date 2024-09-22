@@ -9,6 +9,11 @@ public class Patterns {
         System.out.println("PATTERNS");
         System.out.println();
 
+
+
+/* 
+    METHOD INVOCATIONS --------------------------------------------------
+*/
         int n = 5;
         /*
         1) Rectangular Star Pattern
@@ -373,6 +378,10 @@ public class Patterns {
 
 
 
+/* 
+    METHOD DECLARATIONS --------------------------------------------------
+*/
+
     static void rectangularStarPattern(int n) {
         for(int i=0; i<n; i++){
             for(int j=0; j<n; j++){
@@ -427,19 +436,29 @@ public class Patterns {
             System.out.println();
         }
     }
-
+    
+    /**
+     * i == rows and j == columns
+     * @param n
+    */
     static void starPyramid(int n) {
         int cols= 2*n-1;  // if n = 5 => ----*---- and n is number of rows
         for (int i = 1; i <= n; i++) {
-            for (int j = 1, noOfStars = 0; j <= cols; j++) {
-            	// pyramid starting column in this row
-                int startCol = n-i+1; // or (int)Math.ceil(cols*1.0/2) - i+1;
-                int noOfStarsInThisRow = 2*i-1;
-                if(startCol== j-noOfStars && noOfStars < noOfStarsInThisRow){
-                    noOfStars++;
+            int noOfStarsInThisRow = 2*i-1; // or +2 in each i loop
+            int fillStart = n-i+1; // or (int)Math.ceil(cols/2) - i+1; i.e i1 sc5, i2 sc4, i3,sc3, i4 sc2, i5 sc1
+            int fillEnd = fillStart + noOfStarsInThisRow - 1;
+            for (int j = 1; j <= cols; j++) {
+                if( j>=fillStart && j<=fillEnd){
                     System.out.print("*");
                 } else System.out.print(".");
             }
+            // // or
+            // for (int j=1, noOfStars=0; j <= cols; j++) {
+            //     if(areaStartCol== j-areaStartCol && noOfStars < noOfStarsInThisRow){
+            //         noOfStars++;
+            //         System.out.print("*");
+            //     } else System.out.print(".");
+            // }
             System.out.println();
         }
 
@@ -453,12 +472,12 @@ public class Patterns {
         //   for (int k = 0; k < 2 * i + 1; k++) { 
         //     System.out.print("*");
         //   }
+        //   // pritn spaces again
         //   System.out.println();
         // }
 
 
-        // // or  ----------  IMPORTANT ---------
-        // int cols = 2*n-1; // if n = 5 => ----*---- and n is number of rows
+        // or  ----------  IMPORTANT ---------
 		// int mid = cols/2; // or n-1 => mid will be always the same, only the pyramid width increases in each row by 1 on each side
 		// for(int i=0; i<n; i++){
 		//     int fillStart = mid - i;
@@ -525,7 +544,7 @@ public class Patterns {
         // int spaces = 2*(rows-1);
         // for(int i=1;i<=rows;i++){
         //     for(int j=1;j<=i;j++) System.out.print(j);
-        //     for(int j = 1;j<=spaces;j++) System.out.print(" ");
+        //     for(int j=1;j<=spaces;j++) System.out.print(" ");
         //     for(int j=i;j>=1;j--) System.out.print(j);
         //     spaces-=2; // After each iteration nos. increase by 2, thus, spaces will decrement by 2
         //     System.out.println();
