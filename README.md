@@ -29,7 +29,7 @@ Data Structures And Algorithm Programs
     * [RomanToInteger](LeetCode/RomanToInteger.java)
     * [TwoSum](LeetCode/TwoSum.java)
 
-* ### [Algorithms ](Algorithms/)
+* ### [----  ALGORITHMS  ----](Algorithms/)
 1. #### [BackTracking](Algorithms/BackTracking/)
 1. #### [BinaryTrees](Algorithms/BinaryTrees/)
 2. #### [BitManipulation](Algorithms/BitManipulation/)
