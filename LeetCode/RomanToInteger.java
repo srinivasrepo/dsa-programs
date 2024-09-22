@@ -14,11 +14,11 @@ public class RomanToInteger {
         System.out.println(romanToIntApproach2(romanNum));
     }
 
-    @SuppressWarnings("unchecked")
+    // @SuppressWarnings("unchecked")
     public static int romanToIntApproach1(String s) {
 
-        @SuppressWarnings("rawtypes")
-        HashMap<Character, Integer> map = new HashMap();
+        // @SuppressWarnings("rawtypes")
+        HashMap<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
         map.put('V', 5);
         map.put('X', 10);
@@ -31,13 +31,15 @@ public class RomanToInteger {
 
         for(int i=0; i<s.length(); i++){
             int charValue = map.get(s.charAt(i));
-            int nextCharValue = i<s.length()-1? map.get(s.charAt(i+1)): 0;
+            int nextCharValue = i+1<s.length()? map.get(s.charAt(i+1)): 0;
+            result = result + (charValue<nextCharValue? -charValue: +charValue); // IV, IX, XL, XC.....
+            
+            // // or skip nextChar itertion
             // if (charValue < nextCharValue){
             //     charValue = nextCharValue - charValue;
             //     i++;
             // }
             // result += charValue;
-            result = result + (charValue<nextCharValue? -charValue: +charValue);
         }
 
         return result;
