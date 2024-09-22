@@ -111,6 +111,7 @@ LinkedIn: https://www.linkedin.com/in/srinivas-vadige/
 <br>
 
 # Other Github project
+# Other Github project
 ## List of algorithmic questions
 * [Integer Array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray)
 	* [Find the largest sub-array sum of a given integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/maxSubsequenceSum/MaxSubseqSum.java)
