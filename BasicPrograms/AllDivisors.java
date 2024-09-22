@@ -66,9 +66,9 @@ public class AllDivisors {
                 if (divs.size() != 1) divs.add(divs.size()/2, i); else divs.add(i); // corner-case for 1
                 ////PATTERM=> [] i=1 | [1,36] i=2 | [1,2,18,26] i=3 -- size is even
 
-                // COUNTERPART ---------------
+                // COUNTERPART: for Reciprocal factor ---------------
                 int iMutiplier = n/i;
-                if (i != iMutiplier) { // just to avoid square root number i.e 6 and we already know that iMultiplier is divisor as n%i == 0 because n/i is nothing but iMultiplier
+                if (i != iMutiplier) { // for "perfect squre" 6*6 = 36 scenario i.e don't add 6 two times. And we already know that iMultiplier is also a divisor because n%i == 0 means i and n/i are factors of n.
                     divs.add(divs.size()/2 +1, iMutiplier);
                     ////PATTERM=> [1] iM=36 | [1,2,36] iM=16 | [1,2,3,18,36] iM=12 -- size is odd
                 }
