@@ -4,7 +4,7 @@ package BasicPrograms;
 * @author Srinvas Vadige 
 * @since 21 Sept 2014
 */
-public class ReverseNumber {
+public class PalindromeOrReverseNumber {
 
     public static void main(String[] args) {
         int n = 4526; 

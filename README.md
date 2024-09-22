@@ -13,6 +13,16 @@ Data Structures And Algorithm Programs
     * [FunctionalInterface](DataStructures/FunctionalInterfaceExample.java)
     * [Record](DataStructures/RecordExample.java)
 
+* ### [Basic Programs](BasicPrograms/)
+    * [AllDivisors](/BasicPrograms/AllDivisors.java)
+    * [ArmstrongNumber](/BasicPrograms/ArmstrongNumber.java)
+    * [CountDigits](BasicPrograms/CountDigits.java)    
+    * [GCD_HCF](BasicPrograms/GCD_HCF.java)
+    * [LeapYear](BasicPrograms/LeapYear.java)
+    * [PalindromeOrReverseNumber](BasicPrograms/PalindromeOrReverseNumber.java)
+    * [Patterns](BasicPrograms/Patterns.java)
+    * [PrimeNumber](BasicPrograms/PrimeNumber.java)
+
 * ### [LeetCode Programs](LeetCode/)
     * [Anagram](/LeetCode/Anagram.java)
     * [PalindromeNumber](/LeetCode/PalindromeNumber.java)
