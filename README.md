@@ -27,6 +27,7 @@ Data Structures And Algorithm Programs
     * [Anagram](/LeetCode/Anagram.java)
     * [RomanToInteger](LeetCode/RomanToInteger.java)
     * [TwoSum](LeetCode/TwoSum.java)
+    * [WordPattern](LeetCode/WordPattern.java)
 
 * ### [----  ALGORITHMS  ----](Algorithms/)
 1. #### [BackTracking](Algorithms/BackTracking/)
