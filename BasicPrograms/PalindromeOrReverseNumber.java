@@ -7,10 +7,13 @@ package BasicPrograms;
 public class PalindromeOrReverseNumber {
 
     public static void main(String[] args) {
-        int n = 4526; 
-        System.out.println("USING DIV /10 AND MODULS %10 APPROACH => " + reverse(n));
-        System.out.println("USING STRING REVERSE => " + stringReverse(n)); 
-        System.out.println("USING STRING BUILDER REVERSE => " + stringBuilderReverse(n)); 
+        int n = 543212345; 
+        System.out.println("Given number is: " + n);
+        System.out.println("Reverse using DIV /10 AND MODULS %10 APPROACH => " + reverse(n));
+        System.out.println("Reverse using STRING REVERSE => " + stringReverse(n)); 
+        System.out.println("Reverse using STRING BUILDER REVERSE => " + stringBuilderReverse(n));
+        System.out.println("isPalindrome: " + isPalindrome(n));
+        System.out.println("isPalindromeStringApproach: " + isPalindromeStringApproach(n));
     }
 
     // reversing using %10 and /10 concept
@@ -48,6 +51,23 @@ public class PalindromeOrReverseNumber {
 
     static int stringBuilderReverse(int n){
         return Integer.parseInt(new StringBuffer(String.valueOf(n)).reverse().toString());
+    }
+
+    public static boolean isPalindrome(int x) {
+        if (x < 0)
+            return false;
+        int temp = x;
+        int y = 0; // reverse of x
+
+        while (temp!=0) {
+            y = y * 10 + temp % 10; // 0 + 0 // 0 + 1
+            temp = temp / 10; // 1
+        }
+        return x == y;
+    }
+
+    public static boolean isPalindromeStringApproach(int x) {       
+        return new StringBuilder(String.valueOf(x)).reverse().toString().equals(String.valueOf(x));
     }
     
 }

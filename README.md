@@ -19,13 +19,12 @@ Data Structures And Algorithm Programs
     * [CountDigits](BasicPrograms/CountDigits.java)    
     * [GCD_HCF](BasicPrograms/GCD_HCF.java)
     * [LeapYear](BasicPrograms/LeapYear.java)
-    * [PalindromeOrReverseNumber](BasicPrograms/PalindromeOrReverseNumber.java)
-    * [Patterns](BasicPrograms/Patterns.java)
+    * [Palindrome Or ReverseNumber](BasicPrograms/PalindromeOrReverseNumber.java)
+    * [Patterns and shapes](BasicPrograms/Patterns.java)
     * [PrimeNumber](BasicPrograms/PrimeNumber.java)
 
 * ### [LeetCode Programs](LeetCode/)
     * [Anagram](/LeetCode/Anagram.java)
-    * [PalindromeNumber](/LeetCode/PalindromeNumber.java)
     * [RomanToInteger](LeetCode/RomanToInteger.java)
     * [TwoSum](LeetCode/TwoSum.java)
 
