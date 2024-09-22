@@ -24,7 +24,7 @@ public class Anagram {
             }
             if(!map.equals(tempMap)){
                 System.out.println("ALL THOSE STRS ARE NOT ANAGRAMS");
-                System.exit(0); //or return; map.clear(); and at the end map.size() == 0.... as we can't use local variable in list.forEach loop
+                System.exit(0); //or map.clear(); return; and at the end map.size() == 0 || or AtomicInteger or AtomicBoolean .... as we can't use local variable in list.forEach loop
             }
         });
         System.out.println("ALL THOSE STRS ARE ANAGRAMS");
