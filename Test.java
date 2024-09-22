@@ -3,23 +3,34 @@
 
 // import javax.crypto.Cipher;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class Test {
         
         public static void main(String[] args){
-
-
-			List<Integer> divs = new ArrayList<>(List.of(1,2,3,4,5,7));
-			divs.add(divs.size()-1, 6);
-			System.out.println(divs);
-
+			int k = 0;
+			kWhile: while (k <= 5) {
+				k++;
+				System.out.println(k);
 			
+				if (k == 2) continue kWhile;
+				if (k == 3) return;
+			}
+			System.out.println(test());
+	}
 
 
-		
-			
-		
+	public static int test(){
+
+		Arrays.asList(100,200,300).forEach(n -> {
+			if (n==200) return;
+			System.out.println(n);
+		});
+
+
+
+		System.out.println("test completed");
+		return 11;
+
 	}
 }

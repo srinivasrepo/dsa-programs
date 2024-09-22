@@ -11,7 +11,7 @@ public class Anagram {
         HashMap<Character, Integer> map = new HashMap<>(); 
         // or Map<String, Long> charMap = Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         for(char c: lst.get(0).toCharArray()){
-            map.put(c, map.get(c) != null?map.get(c)+1:1); 
+            map.put(c, map.get(c)!=null? map.get(c)+1 : 1); 
             // or map.merge('A', 1, Integer::sum); 
             // or map.put('A', map.getOrDefault('A', 0) + 1 );
         }
@@ -23,8 +23,8 @@ public class Anagram {
                 tempMap.put(c, tempMap.get(c) != null?tempMap.get(c)+1:1);
             }
             if(!map.equals(tempMap)){
-                System.out.println("NOT EQUAL");
-                System.exit(0);
+                System.out.println("ALL THOSE STRS ARE NOT ANAGRAMS");
+                System.exit(0); //or return; map.clear(); and at the end map.size() == 0.... as we can't use local variable in list.forEach loop
             }
         });
         System.out.println("ALL THOSE STRS ARE ANAGRAMS");
