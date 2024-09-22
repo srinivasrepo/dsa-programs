@@ -13,7 +13,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 // NOTE: In loops (Eg: for counting num of chars in a string) use stream or MERGE or COMPUTE instead of get and put combined
-
+/**
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 @SuppressWarnings("unused")
 public class HashMapExample {
 

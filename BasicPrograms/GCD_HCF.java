@@ -3,9 +3,14 @@ package BasicPrograms;
 import java.util.ArrayList;
 import java.util.List;
 
-// GCD = Greatest Common Divisor of any two integers is the largest number that divides both integers
-// HCF = Highest Common Factor (same as GCD)
-// in our schooling we used LCM to find the GCD or HCF
+
+/**
+* GCD = Greatest Common Divisor of any two integers is the largest number that divides both integers
+* HCF = Highest Common Factor (same as GCD)
+* in our schooling we used LCM to find the GCD or HCF
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 public class GCD_HCF {
     public static void main(String[] args) {
         int a = 9, b = 12;

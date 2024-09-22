@@ -1,5 +1,9 @@
 package Algorithms.Sorting;
 
+/**
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 import java.util.Arrays;
 
 // instead of swapping we do shifting(copy)

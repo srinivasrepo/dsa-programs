@@ -1,6 +1,10 @@
 package Algorithms.Sorting;
 import java.util.Arrays;
 
+/**
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 public class BubbleSort { // compares "adjacent pairs"; j=0 and compare j & j+1 and sort <- from right to left
 
     public static void main(String[] args) {

@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.IntStream;
 
+/**
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 public class BinaryRecursionSearch { // the input has to be sorted before the binary search
         public static void main(String[] args) {
         Random random = new Random();

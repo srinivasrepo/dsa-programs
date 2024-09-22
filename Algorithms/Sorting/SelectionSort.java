@@ -1,6 +1,10 @@
 package Algorithms.Sorting;
 import java.util.Arrays;
 
+/**
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 public class SelectionSort { // Select from left to right; j=i+1
 
     public static void main(String[] args) {

@@ -1,5 +1,9 @@
 package DataStructures;
 
+/**
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 public class ListExample {
 
     public static void main(String[] args) {

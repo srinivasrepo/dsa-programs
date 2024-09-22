@@ -3,7 +3,7 @@ package DataStructures;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-/* 
+/**
 Fuctional interfaces in Java is introduced in v8
 An Interface that contains exactly one abstract method is known as functional interface. 
 It can have any number of default, static methods but can contain only one abstract method. 
@@ -17,8 +17,10 @@ Collections.sort(nums, ()->), reduce(), map(), filter()
 List.forEach()
 HashMap.merge(), HashMap.compute()
 EVERY JAVA LAMBA METHODS AND METHOD REFERENCES USES THIS FUNCTIONAL INTERFACE PRINCIPLE
-*/
 
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 public class FunctionalInterfaceExample {
 
 	// 4 ways to define and use single method interface

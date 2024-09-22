@@ -3,7 +3,11 @@ package BasicPrograms;
 import java.util.ArrayList;
 import java.util.List;
 
-// Divisors or factors are the numbers that can divide the given number i.e num%i == 0 i.e not remainder   
+/**
+* Divisors or factors are the numbers that can divide the given number i.e num%i == 0 i.e not remainder
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 public class AllDivisors {
     public static void main(String[] args) {
         int n = 36;
@@ -11,7 +15,7 @@ public class AllDivisors {
         System.out.println("sorted divisors with sqrt() approach " + getDivisorsWithSqrtLoop(n));
     }
 
-    /* 
+    /*
     Note that i <= n/2 is bad approach for divisors, can use it for prime number
     or loop untill i <= (int) Math.sqrt(n);
     Add the counterpart divisor if it's different from i
@@ -31,9 +35,15 @@ public class AllDivisors {
 
     this is repeating after 6*6 in reverse order
  */
-
+    
+    /**
+     * Time complexity: O(n)
+     * 
+     * @param n
+     * @return List<Integer>
+    */
     static List<Integer> getDivisorsBruteForce(int n) {
-        List<Integer> divs = new ArrayList<>(); // or get size[1] from main method as reference variable get the divs size after the while loop and here create and return divisors array int[n] and start appending from 0th index ike divisors[count++] = i; and size[0] = count; return divisors;
+        List<Integer> divs = new ArrayList<>(); // or get size[1] i.e 1st index ele from main method as reference variable get the divs size after the while loop and here create and return divisors array int[n] and start appending from 0th index ike divisors[count++] = i; and size[0] = count; return divisors;
         for (int i = 1; i <= n; i++) {
             if (n%i == 0) {
                 divs.add(i);
@@ -42,6 +52,12 @@ public class AllDivisors {
         return divs;
 
     }
+
+    /**
+     * TimeComplexity: O(Sqrt(n))
+     * @param n
+     * @return
+    */
     static List<Integer> getDivisorsWithSqrtLoop(int n) { // Note that for just sysout if else conditions won't print in order. So, use this method to get divs list and print it
         List<Integer> divs = new ArrayList<>();
         for (int i = 1; i <= Math.sqrt(n); i++) {

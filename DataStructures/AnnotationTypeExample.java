@@ -12,15 +12,17 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-/* 
+/**
 In annotation type interface we can only use methods with return type as primitives, String, Array of primitives. 
 We cannot use Non-primitives or classes or list.
- */
 
 /* Annotation Types basically don’t change our code in real-time but will helpful in the runtime. Annotations can be class level @Path, method level @Override or variable level @SuppressWarnings. And will defining our custom annotations we use some in-built or another custom annotations. This custom annotation’s in-built annotations are 
 1) @Target(“ClassMethodVarLevel”) - optional and leave it if you want to use this for all levels. Inside value is like ElementType.METHOD, .TYPE(class), .PACKAGE., .CONSTRUCTOR, .FIELD(variable)
 2) @Retention(RetentionPolicy.RUNTIME) to keep this annotation alive up to what extent i.e annotation life cycle. RUNTIME means alive all the way through runtime, so that other code can use this annotation. Other values like RetentionPolicy.SOURCE means make alive even before the code is complied like SuppressWarning annotation, RetentionPolicy.CLASS means only active up to compile and destroys at runtime.
 3) @Documented...... 
+
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
 */
 @Retention(RetentionPolicy.RUNTIME) // optional
 @Target({ElementType.METHOD, ElementType.FIELD}) // optional

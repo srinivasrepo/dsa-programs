@@ -1,9 +1,11 @@
 package DataStructures;
-/* 
-Records in java are introduced in 14
-Record extends from class and record must be in it's own file 
-*/
 
+/**
+ * Records in java are introduced in 14
+* Record extends from class and record must be in it's own file
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 public record RecordExample(int foo, String bar) {
 
     public RecordExample setFoo(int newFoo){ // optional but it has to be public for setting as it record IMMUTABLE

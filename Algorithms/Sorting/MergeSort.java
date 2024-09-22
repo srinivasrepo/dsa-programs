@@ -1,5 +1,9 @@
 package Algorithms.Sorting;
 
+/**
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 import java.util.Arrays;
 
 // take the middle item, divide the into 2 sublists(0 to m and m to length) and continue so on

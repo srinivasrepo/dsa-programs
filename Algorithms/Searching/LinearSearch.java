@@ -3,6 +3,10 @@ package Algorithms.Searching;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 public class LinearSearch {
     public static void main(String[] args) {
         Random random = new Random();

@@ -2,6 +2,10 @@ package Algorithms.Sorting;
 
 import java.util.Arrays;
 
+/**
+* @author Srinvas Vadige 
+* @since 21 Sept 2014
+*/
 public class RadixSort {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(sort(new int[]{3, 2, 4, -1, 1000, 100, 3, 1})));
