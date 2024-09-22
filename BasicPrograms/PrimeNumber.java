@@ -6,10 +6,10 @@ package BasicPrograms;
 */
 public class PrimeNumber {
     public static void main(String[] args) {
-        int n = 41;
-        System.out.println("Brute force => " + (isPrimeBruteForce(n) ? "yes" : "no"));
-        System.out.println("Better approach or Half loop with count => " + (isPrimeHalfLoopApproachWithCount(n) ? "yes" : "no"));
-        System.out.println("Better approach or Half loop without count => " + (isPrimeHalfLoopApproach(n) ? "yes" : "no"));
+        int n = 36;
+        System.out.println("Brute force => isPrime: " + (isPrimeBruteForce(n) ? "yes" : "no"));
+        System.out.println("Better approach or Half loop with count => isPrime: " + (isPrimeHalfLoopApproachWithCount(n) ? "yes" : "no"));
+        System.out.println("Better approach or Half loop without count => isPrime: " + (isPrimeHalfLoopApproach(n) ? "yes" : "no"));
     }
 
     static boolean isPrimeBruteForce(int num) {
@@ -17,7 +17,7 @@ public class PrimeNumber {
         if (num <= 1)
             return false;
         // Check from 2 to n-1
-        for (int i = 2; i < num; i++)
+        for (int i = 2; i < num; i++) // or i <= num/2
             if (num % i == 0)
                 return false;
         return true;
@@ -46,27 +46,20 @@ public class PrimeNumber {
 
     static boolean isPrimeHalfLoopApproachWithCount(int n) {        
         if (n <= 1) return false; // Corner case as 1 is not prime and 0 & negatives are also not prime
-
-        int cnt = 0; // Initialize a counter variable to count the number of factors.
-
-        for (int i = 2; i <= Math.sqrt(n); i++) { // or for (int i = 2; i <= n/2; i++)
-            if (n % i == 0) { // If n is divisible by i without any remainder.
-                cnt = cnt + 1; // Increment the counter.
-                
-                if (n / i != i) cnt = cnt + 1; // OPTIONAL : If n is not a perfect square, count its reciprocal factor.
+        int cnt = 0;
+        for (int i = 1; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                cnt++;                
+                if (n/i != i) cnt++; // Reciprocal factor / counterpart
             }
-        }
-        
-        if (cnt > 2) // If the number of factors is exactly 2.
-            return true;
-        return false;
+        }        
+        return cnt == 2; // i.e number of factors is exactly 2
     }
 
     static boolean isPrimeHalfLoopApproach(int n) {
-        for (int i = 1; i <= Math.sqrt(n); i++) { // or for (int i = 2; i <= n/2; i++)
-            if(n%i == 0) return true;
-        }
-        return false;
+        for (int i = 2; i <= Math.sqrt(n); i++)
+            if(n%i == 0) return false;
+        return true;
     }
 
 }
