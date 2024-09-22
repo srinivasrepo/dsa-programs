@@ -7,12 +7,12 @@ package BasicPrograms;
 public class PrimeNumber {
     public static void main(String[] args) {
         int n = 49;
-        System.out.println("Brute force => isPrime: " + (isPrimeBruteForce(n) ? "yes" : "no"));
-        System.out.println("Sqrt Approach with NumOfFactors => isPrime: " + (isPrimeUsingSqrtApproachWithNumOfFactors(n) ? "yes" : "no"));
-        System.out.println("Sqrt Approach => isPrime: " + (isPrimeUsingSqrtApproach(n) ? "yes" : "no"));
+        System.out.println("Brute force => isPrime: " + (isPrimeUsingBruteForce(n) ? "yes" : "no"));
+        System.out.println("Sqrt Approach with NumOfFactors => isPrime: " + (isPrimeUsingSqrtLoopWithNumOfFactors(n) ? "yes" : "no"));
+        System.out.println("Sqrt Approach => isPrime: " + (isPrimeUsingSqrtLoop(n) ? "yes" : "no"));
     }
 
-    static boolean isPrimeBruteForce(int num) {
+    static boolean isPrimeUsingBruteForce(int num) {
         if (num <= 1) return false; // Corner case as 1 is not prime and 0 & negatives are also not prime
         for (int i = 2; i < num; i++) // or i <= num/2
             if (num % i == 0)
@@ -41,7 +41,7 @@ public class PrimeNumber {
      * this is repeating after 6*6 in reverse order
      */
 
-    static boolean isPrimeUsingSqrtApproachWithNumOfFactors(int n) {        
+    static boolean isPrimeUsingSqrtLoopWithNumOfFactors(int n) {        
         if (n <= 1) return false; // Corner case as 1 is not prime and 0 & negatives are also not prime
         int numOfFactors = 0;
         for (int i = 1; i <= Math.sqrt(n); i++) {
@@ -53,7 +53,7 @@ public class PrimeNumber {
         return numOfFactors == 2; // i.e number of factors is exactly 2
     }
 
-    static boolean isPrimeUsingSqrtApproach(int n) {
+    static boolean isPrimeUsingSqrtLoop(int n) {
         for (int i = 2; i <= Math.sqrt(n); i++)
             if(n%i == 0) return false;
         return true;
