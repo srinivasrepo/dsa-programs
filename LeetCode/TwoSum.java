@@ -40,7 +40,7 @@ public class TwoSum {
         int [] ans = new int[2];
         int n = nums.length;
         for(int i=0; i<n; i++) {
-            int partner = target - nums[i];
+            int partner = target - nums[i]; // or complement
             if(hm.containsKey(partner)) {
                 ans[0] = hm.get(partner); // new int[]{numMap.get(complement), i};
                 ans[1] = i;
