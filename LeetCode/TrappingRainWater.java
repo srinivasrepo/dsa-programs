@@ -97,7 +97,7 @@ public class TrappingRainWater {
         int units = 0;
         
         int tempUnits = 0; // as we are not sure if we have bigger r in future
-        int tempHeight = 0; // my thoughts on this
+        //int tempHeight = 0; // my thoughts on this
         while(l < height.length){
 
             System.out.println("l:" +l + ", r:" + r);

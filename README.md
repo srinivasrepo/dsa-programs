@@ -89,6 +89,9 @@ Data Structures And Algorithm Programs
 30. #### [Tries](/Algorithms/Tries/)
 31. #### [Two Pointers](/Algorithms/TwoPointers/)
     * [ContainerWithMostWater - maxArea](LeetCode/ContainerWithMostWater.java)
+    * [3Sum](LeetCode/ThreeSum.java)
+    * [Trapping Rain Water](LeetCode/TrappingRainWater.java)
+    * [Move Zeros](LeetCode/MoveZeros.java)
 
 
 <br><br>
