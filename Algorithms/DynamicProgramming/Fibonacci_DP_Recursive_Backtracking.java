@@ -8,9 +8,9 @@ package Algorithms.DynamicProgramming;
  * i.e similar to Top Down Memoization but without using extra space fo an array for memoization
  * 
  * 
- * fib(8) = 8+7 = 15, fib(7) = 7+6 = 13, fib(6) = 6+5 = 11, fib(5) = 5+4 = 9, fib(4) = 4+3 = 7, fib(3) = 3+2 = 5, fib(2) = 2+1 = 3, fib(1) = 1+0 = 1
- * 
  * BINARY TREE REPRESENTATION OF RECURCIVE CALLS AS BELOW:
+ * 
+ *                                   -------------- for fib(8) ---------------
  *                     
 *                                                       8
 *                                                 ______|_______                         
@@ -35,11 +35,12 @@ package Algorithms.DynamicProgramming;
 *
 *                
  * NOTE:
- * ---> fib(2) is the minimum recursion call cause we return n when n = 0 or n = 1 in base case
- * ---> Node is differenent and sum is different
- * ---> for leaf node, sum is the same as node value
+ * -> fib(2) is the minimum recursion call cause we return n when n = 0 or n = 1 in base case
+ * -> Node is differenent and sum is different
+ * -> for leaf node, sum is the same as node value
 *                                               
-*                                                                   
+*                     --------- for fib(6) with sum -----------       
+*                                                        
 *                                       6 (sum = 8)
 *                              _________|________
 *                             /                  \                     
