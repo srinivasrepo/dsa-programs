@@ -72,20 +72,22 @@ package Algorithms.DynamicProgramming;
  */
 public class Fibonacci_DP_Recursive_Backtracking {
     public static void main(String[] args) {
-        int n = 8;
+        int n = 6;
         fib(n);
-        // temp var =>
+        // for n=6 then every recursive node sum and leaves will be printed as =>
+        // 1 0 1 1 2 1 0 1 3 1 0 1 1 2 5 1 0 1 1 2 1 0 1 3 8 
+        // --> where (1 0 1 1 2 1 0 1 3) 1 0 1 1 2 5 are left sub-tree of parent node i.e 6. and (1 0 1 1 2 1 0 1 3) upto n=4 node
+
+        // and for n=8 then every recursive sum (only temp not leaves) will be printed as =>
         // 1 2 1 3 1 2 5 1 2 1 3 8 1 2 1 3 1 2 5 13 1 2 1 3 1 2 5 1 2 1 3 8 21
-        // 
-        // --> where 1 2 1 3 are left sub-tree of parent node.
     }
 
     public static int fib(int n) {
         if (n == 0 || n == 1) { // base case i.e when n = 0 or n = 1
-            // System.out.println( "bc: " + n + " ");
+            System.out.print(n + " ");
             return n;
         }
-        int temp = fib(n - 1) + fib(n - 2);
+        int temp = fib(n - 1) + fib(n - 2); // or int temp = fib(n - 2) + fib(n - 1); 
         System.out.print(temp + " ");
         // System.out.println( "node: " + n + ", " + "sum: " + temp); // prints repeatative calls as well
         return temp;
