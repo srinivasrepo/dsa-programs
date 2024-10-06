@@ -20,7 +20,7 @@ package Algorithms.TwoPointers;
 
 </pre>
  * @author Srinvas Vadige
- * @since 02 Oct 2014
+ * @since 02 Oct 2024
 */
 public class TrappingRainWater {
 

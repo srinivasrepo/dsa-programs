@@ -5,7 +5,7 @@ import java.util.Random;
 
 /**
 * @author Srinvas Vadige 
-* @since 21 Sept 2014
+* @since 21 Sept 2024
 */
 public class LinearSearch {
     public static void main(String[] args) {

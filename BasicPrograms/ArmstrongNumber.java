@@ -2,7 +2,7 @@ package BasicPrograms;
 /** 
 An Amrstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
 * @author Srinvas Vadige 
-* @since 21 Sept 2014
+* @since 21 Sept 2024
  */
 public class ArmstrongNumber {
     public static void main(String[] args) {

@@ -19,7 +19,7 @@ HashMap.merge(), HashMap.compute()
 EVERY JAVA LAMBA METHODS AND METHOD REFERENCES USES THIS FUNCTIONAL INTERFACE PRINCIPLE
 
 * @author Srinvas Vadige 
-* @since 21 Sept 2014
+* @since 21 Sept 2024
 */
 public class FunctionalInterfaceExample {
 

@@ -6,7 +6,7 @@ import java.util.List;
 /**
 * Divisors or factors are the numbers that can divide the given number i.e num%i == 0 i.e not remainder
 * @author Srinvas Vadige 
-* @since 21 Sept 2014
+* @since 21 Sept 2024
 */
 public class AllDivisors {
     public static void main(String[] args) {

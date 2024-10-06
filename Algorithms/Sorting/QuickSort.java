@@ -9,7 +9,7 @@ import java.util.Random;
  * using PIVOT and take all ieft array items less than pivot and right as greater than pivot
  * same like merge sort + binary sort middleIndex, it is recursive alogorithm, divide pivot and two left and right subarrays, then again each of these sub arrays again be divided into a pivot (of sub-array) and 2 sub-arrays (of sub-array) and so on.
 * @author Srinvas Vadige 
-* @since 21 Sept 2014
+* @since 21 Sept 2024
 */
 public class QuickSort{ 
     public static void main(String[] args) {

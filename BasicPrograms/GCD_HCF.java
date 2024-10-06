@@ -9,7 +9,7 @@ import java.util.List;
 * HCF = Highest Common Factor (same as GCD)
 * in our schooling we used LCM to find the GCD or HCF
 * @author Srinvas Vadige 
-* @since 21 Sept 2014
+* @since 21 Sept 2024
 */
 public class GCD_HCF {
     public static void main(String[] args) {
