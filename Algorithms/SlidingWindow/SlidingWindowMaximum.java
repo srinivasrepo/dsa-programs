@@ -1,4 +1,4 @@
-package LeetCode;
+package Algorithms.SlidingWindow;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

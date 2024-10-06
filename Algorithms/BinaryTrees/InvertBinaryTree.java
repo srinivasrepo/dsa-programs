@@ -1,4 +1,4 @@
-package LeetCode;
+package Algorithms.BinaryTrees;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

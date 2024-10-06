@@ -1,4 +1,4 @@
-package LeetCode;
+package Algorithms.TwoPointers;
 
 import java.util.*;
 import java.util.stream.*;
