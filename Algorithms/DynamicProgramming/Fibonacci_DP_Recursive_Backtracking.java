@@ -48,12 +48,12 @@ package Algorithms.DynamicProgramming;
 *                    ________|____________ 
 *                   /                     \   
 *                  4(s=3)                  3(s=2) 
-*                 / \                     / \ 
-*           (s=2)3   2(s=1)         (s=1)2   1 --> leaf
-*               / \  /\                 / \   
-*         (s=1)2   1 1 0--> leaves     1   0  --> leaves
-*             / \  |-----> leaf  
-*            1   0 ------> leaves                
+*                 / \                     /\ 
+*           (s=2)3   2(s=1)         (s=1)2  1 --> leaf
+*               /\   /\                 /\   
+*         (s=1)2  1  1 0--> leaves     1  0 -----> leaves
+*             /\  |-------> leaf  
+*            1  0 --------> leaves                
 *                                                                                                                                   
  *                                                                                                  
  * <code>" 
