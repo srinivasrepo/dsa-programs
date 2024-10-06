@@ -84,13 +84,12 @@ public class Fibonacci_DP_Recursive_Backtracking {
     }
 
     public static int fib(int n) {
-        if (n == 0 || n == 1) { // base case i.e when n = 0 or n = 1
-            System.out.print(n + " ");
+        if (n == 0 || n == 1) { // base case for leaf nodes
+            System.out.println( "leaf node: " + n + " ");
             return n;
         }
         int temp = fib(n - 1) + fib(n - 2); // or int temp = fib(n - 2) + fib(n - 1); 
-        System.out.print(temp + " ");
-        // System.out.println( "node: " + n + ", " + "sum: " + temp); // prints repeatative calls as well
+        System.out.println( "node: " + n + ", " + "sum of " + (n-1) + " and " + (n-2) + " nodes: " + temp); // prints repeatative calls as well
         return temp;
     }
 }
