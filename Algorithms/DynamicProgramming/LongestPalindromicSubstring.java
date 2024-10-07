@@ -49,8 +49,8 @@ public class LongestPalindromicSubstring {
         String res = "";
         
         for(int i=0; i<s.length(); i++){
-            res = extendPalindrome(s, i, i, res); // non-dup chars
-            res = extendPalindrome(s, i, i+ (res.length() % 2 == 0 ? 1 : 0), res); // dup chars or just skip the dup chars like while (r < n-1 && ch[r] == ch[r+1]) {r++;} ---> check longestPalindrome2Improved() and extendPalindrome2Improved
+            res = extendPalindrome(s, i, i, res); // non-dup chars --> not even len odd len case
+            res = extendPalindrome(s, i, i+1, res); // dup chars or just skip the dup chars like while (r < n-1 && ch[r] == ch[r+1]) {r++;} ---> check longestPalindrome2Improved() and extendPalindrome2Improved
         }        
         return res;
     }
