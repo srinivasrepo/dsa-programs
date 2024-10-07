@@ -25,7 +25,7 @@ public class Fibonacci_DP_BottomUp_NoMemory {
         int curr = 1;
         System.out.print("0 1 ");
         
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i <= n; i++) { // move prev & curr values to next
             int temp = prev + curr;
             prev = curr;
             curr = temp;

@@ -4,10 +4,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
- * @Approach: Top Down DP with Memoization
- * @TimeComplexity: O(n)
- * @SpaceComplexity: O(n)
+ * Approach: Top Down DP with Memoization
+ * TimeComplexity: O(n)
+ * SpaceComplexity: O(n)
  * 
+ * @see <a href="/DataStructures/BinaryTree.java"> /DataStructures/BinaryTree.java </a>
+ * @see <a href="./Fibonacci_DP_Recursive_Backtracking.java">./Finonacci_DP_Recursive_Backtracking.java</a>
  * 
 * @author Srinvas Vadige 
 * @since 21 Sept 2024
@@ -15,36 +17,36 @@ import java.util.HashMap;
 public class Fibonacci_DP_TopDown_Memoization {
 
     public static void main(String[] args) {
-        int n = 5;
+        int n = 5; // root node
 
         // memoization with array
-        int[] dp = new int[n+1];
+        int[] dp = new int[n+1]; // tree length
         fib(n, dp);
-        dp[1] = 1;
+        dp[1] = 1; //-- just for printing. By default dp[0] = 0 i.e no need to initialize 0 leaf node value again
         System.out.println("Top Down DP with array: " + Arrays.toString(dp));
         
         // memoization with hashmap
         HashMap<Integer, Integer> dpMap = new HashMap<>();
         fib(n, dpMap);
-        dpMap.put(0, 0);
-        dpMap.put(1, 1);
+        dpMap.put(0, 0); // just for printing as we don't initialize 0, 1 leaf node values in fib()
+        dpMap.put(1, 1); // just for printing
         System.out.println("Top Down DP with hashmap: " + dpMap.values());
     }
         
 
     public static int fib(int n, int[] dp) {
-        if(n == 0 || n == 1) return n; // base case
-        if(dp[n] != 0) return dp[n];
-        dp[n] = fib(n - 1, dp) + fib(n - 2, dp);
-        return dp[n];
+        if(n == 0 || n == 1) return n; // base case for leaf nodes or dp[0] = 0, dp[1] = 1; -- here we don't initialize 0, 1 leaf node values in dp[0] & dp[1] 
+        if(dp[n] != 0) return dp[n]; // return if already calculated where n is node & dp[n] is sum i.e node value
+        dp[n] = fib(n - 1, dp) + fib(n - 2, dp); // min recursion for fib(n) is fib(2)
+        return dp[n]; // return node value not the memo array
     }
 
     public static int fib(int n, HashMap<Integer, Integer> dp) {
-        if(n == 0 || n == 1) return n; // base case
-        if(dp.containsKey(n)) return dp.get(n);
+        if(n == 0 || n == 1) return n; // base case for leaf nodes
+        if(dp.containsKey(n)) return dp.get(n); // return if already calculated where n is node & dp.get(n) is sum i.e node value
         int result = fib(n - 1, dp) + fib(n - 2, dp);
         dp.put(n, result);
-        return result;
+        return result; // return node value not the memo hashmap
     }
 
 
