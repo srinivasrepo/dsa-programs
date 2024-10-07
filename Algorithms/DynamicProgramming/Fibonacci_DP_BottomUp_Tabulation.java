@@ -4,10 +4,14 @@ import java.util.Arrays;
 
 /**
  * 
- * smaller number to bigger number
+ * <p> smaller number to bigger number
+ * <p> And it can be normal loop or recursion or recursion with loop
  * 
- * @Approach: Bottom Up Tabulation - add series in array using for loop 
+ * @Approach: Bottom Up Tabulation - add all the series/node values in an array
  * @TimeComplexity: O(n)
+ * 
+ * @see ./Fibonacci_DP_BottomUp_NoMemory.java
+ * 
  * 
  * 
 * @author Srinvas Vadige 
@@ -23,7 +27,7 @@ public class Fibonacci_DP_BottomUp_Tabulation {
 
     // loop from 2 but add 0,1 in series manually
     public static int fib(int n) {
-        int[] dp = new int[n + 1];
+        int[] dp = new int[n + 1]; // or int dp[] = new int[2]; that just stores n-1 and n-2 node values instead of storing all node values but new int[2] needs to be updated everytime using a temp var then it would become Bottom Up NoMemory Approach
         dp[0] = 0;
         dp[1] = 1;
         for(int i = 2; i <= n; i++) {

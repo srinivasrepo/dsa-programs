@@ -40,6 +40,7 @@ Data Structures And Algorithm Programs
     * [Fibonacci_DP_TopDown_Memoization](Algorithms/DynamicProgramming/Fibonacci_DP_TopDown_Memoization.java)
     * [Fibonacci_DP_BottomUp_Tabulation](Algorithms/DynamicProgramming/Fibonacci_DP_BottomUp_Tabulation.java)
     * [Fibonacci_DP_BottomUp_NoMemory](Algorithms/DynamicProgramming/Fibonacci_DP_BottomUp_NoMemory.java)
+    * [LongestPalindromicSubstring](/Algorithms/DynamicProgramming/LongestPalindromicSubstring.java)
 5. #### [Graphs](/Algorithms/Graphs/)
 6. #### [GreedyAlgorithms](Algorithms/GreedyAlgorithms/)
 7. #### [Hashing / HashMap](Algorithms/Hashing/)

@@ -1,9 +1,13 @@
 package Algorithms.DynamicProgramming;
 
 /**
- * @Approach: Bottom Up - No Memory i.e just normal for loop
+ * <p> Same like Bottom-Up Tabulation DP but no need to store all the node values. Just two vars are enough
+ * <p> And it can be normal loop or recursion or recursion with loop(Eg: LongestPalindromicSubstring)
+ * @Approach: Bottom Up - No Memory
  * @TimeComplexity: O(n)
  * 
+ * @see ./Fibonacci_DP_BottomUp_Tabulation.java
+ * @see ./LongestPalindromicSubstring.java
  * 
 * @author Srinvas Vadige 
 * @since 06 Oct 2024
@@ -22,7 +26,7 @@ public class Fibonacci_DP_BottomUp_NoMemory {
         }
         
         int prev = 0;
-        int curr = 1;
+        int curr = 1; // or int[] dp = new int[2]; --> dp[0] is prev and dp[1] is curr
         System.out.print("0 1 ");
         
         for (int i = 2; i <= n; i++) { // move prev & curr values to next
