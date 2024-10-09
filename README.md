@@ -1,71 +1,100 @@
 # dsa-programs
+
 Data Structures And Algorithm Programs
+
 * Language: Java
 
-<br>
+</br>
 
 ## CONTENTS
+
 * ### [Data Structures & important classes](DataStructures/)
-    * [AnnotationType](DataStructures/AnnotationTypeExample.java)
-    * [BinaryTree](DataStructures/BinaryTree.java)
-    * [FunctionalInterface](DataStructures/FunctionalInterfaceExample.java)
-    * [HashMap](/DataStructures/HashMapExample.java)
-    * [List](/DataStructures/ListExample.java)
-    * [Record](DataStructures/RecordExample.java)
-    * [Stream API](DataStructures/StreamApiExample.java)
+  
+  * [AnnotationType](DataStructures/AnnotationTypeExample.java)
+  * [BinaryTree](DataStructures/BinaryTree.java)
+  * [FunctionalInterface](DataStructures/FunctionalInterfaceExample.java)
+  * [HashMap](/DataStructures/HashMapExample.java)
+  * [List](/DataStructures/ListExample.java)
+  * [Record](DataStructures/RecordExample.java)
+  * [Stream API](DataStructures/StreamApiExample.java)
 
 * ### [Basic Programs](BasicPrograms/)
-    * [AllDivisors](/BasicPrograms/AllDivisors.java)
-    * [ArmstrongNumber](/BasicPrograms/ArmstrongNumber.java)
-    * [CountDigits](BasicPrograms/CountDigits.java)
-    * [GCD_HCF](BasicPrograms/GCD_HCF.java)
-    * [LeapYear](BasicPrograms/LeapYear.java)
-    * [Palindrome Or ReverseNumber](BasicPrograms/PalindromeOrReverseNumber.java)
-    * [Patterns and shapes](BasicPrograms/Patterns.java)
-    * [PrimeNumber](BasicPrograms/PrimeNumber.java)
+
+  * [AllDivisors](/BasicPrograms/AllDivisors.java)
+  * [ArmstrongNumber](/BasicPrograms/ArmstrongNumber.java)
+  * [CountDigits](BasicPrograms/CountDigits.java)
+  * [GCD_HCF](BasicPrograms/GCD_HCF.java)
+  * [LeapYear](BasicPrograms/LeapYear.java)
+  * [Palindrome Or ReverseNumber](BasicPrograms/PalindromeOrReverseNumber.java)
+  * [Patterns and shapes](BasicPrograms/Patterns.java)
+  * [PrimeNumber](BasicPrograms/PrimeNumber.java)
 
 * ### [LeetCode Programs](LeetCode/)
-    * [Anagram](/LeetCode/Anagram.java)
-    * [RomanToInteger](LeetCode/RomanToInteger.java)
-    * [WordPattern](LeetCode/WordPattern.java)
+  
+  * [Anagram](/LeetCode/Anagram.java)
+  * [RomanToInteger](LeetCode/RomanToInteger.java)
+  * [WordPattern](LeetCode/WordPattern.java)
 
 * ### [----  ALGORITHMS  ----](Algorithms/)
+  
 1. #### [BackTracking](Algorithms/BackTracking/)
+
 2. #### [BinaryTrees](Algorithms/BinaryTrees/)
+
     * [Binary Tree basic methods](/DataStructures/BinaryTree.java)
     * [InvertBinaryTree](/Algorithms/BinaryTrees/InvertBinaryTree.java)
+
 3. #### [BitManipulation](Algorithms/BitManipulation/)
+
 4. #### [DynamicProgramming](Algorithms/DynamicProgramming/)
+
     * [Fibonacci_DP_Recursive_Backtracking](Algorithms/DynamicProgramming/Fibonacci_DP_Recursive_Backtracking.java)
     * [Fibonacci_DP_TopDown_Memoization](Algorithms/DynamicProgramming/Fibonacci_DP_TopDown_Memoization.java)
     * [Fibonacci_DP_BottomUp_Tabulation](Algorithms/DynamicProgramming/Fibonacci_DP_BottomUp_Tabulation.java)
     * [Fibonacci_DP_BottomUp_NoMemory](Algorithms/DynamicProgramming/Fibonacci_DP_BottomUp_NoMemory.java)
     * [LongestPalindromicSubstring](/Algorithms/DynamicProgramming/LongestPalindromicSubstring.java)
+
 5. #### [Graphs](/Algorithms/Graphs/)
+
 6. #### [GreedyAlgorithms](Algorithms/GreedyAlgorithms/)
+
 7. #### [Hashing / HashMap](Algorithms/Hashing/)
+
     * [GroupAnagrams](Algorithms/Hashing/GroupAnagrams.java)
     * [LongestConsecutiveSequence](Algorithms/Hashing/LongestConsecutiveSequence.java)
     * [SubarraySumEqualsK](Algorithms/Hashing/SubarraySumEqualsK.java)
     * [2Summ](Algorithms/Hashing/TwoSum.java)
+
 8. #### [Heap](/Algorithms/HeapAlgos/)
+
 9. #### [IntegerArray](/Algorithms/IntegerArray/)
+
 10. #### [LinkedList](/Algorithms/LinkedList/)
+
 11. #### [PrefixSum](/Algorithms/PrefixSum/)
-    * [ContigousBinaryArray](/LeetCode/ContigousBinaryArray.java)
-    * [SubarraySumEqualsK](/LeetCode/SubarraySumEqualsK.java)
+
+    * [ContigousBinaryArray](/Algorithms/PrefixSum/ContigousBinaryArray.java)
+    * [SubarraySumEqualsK](Algorithms/Hashing/SubarraySumEqualsK.java)
+
 12. #### [Queues](/Algorithms/QueueAlgos/)
+
 13. #### [Recursion](/Algorithms/Recursion/)
+
 14. #### [Searching](Algorithms/Searching/)
+
     * [BinaryRecursionSearch](Algorithms/Searching/BinaryRecursionSearch.java)
     * [BinarySearch](Algorithms/Searching/BinarySearch.java)
     * [LinearSearch](Algorithms/Searching/LinearSearch.java)
+
 15. #### [Sliding Window](Algorithms/SlidingWindow/)
+
     * [Find all the Anagrams in a String](/Algorithms/SlidingWindow/FindAllAnagramsInString.java)
     * [LengthOfLongestSubstring](/Algorithms/SlidingWindow/LengthOfLongestSubstring.java)
     * [Minimum Window Substring](Algorithms/SlidingWindow/MinimumWindowSubstring.java)
     * [Sliding Window Maximum](Algorithms/SlidingWindow/SlidingWindowMaximum.java)
+
 16. #### [Sorting](Algorithms/Sorting/)
+
     * [SelectionSort](Algorithms/Sorting/SelectionSort.java)
     * [BubbleSort](Algorithms/Sorting/BubbleSort.java)
     * [BucketSort](Algorithms/Sorting/BucketSort.java)
@@ -78,19 +107,25 @@ Data Structures And Algorithm Programs
     * [RadixSort](Algorithms/Sorting/RadixSort.java)
     * [ShellSort](Algorithms/Sorting/ShellSort.java)
     * [TimSort](Algorithms/Sorting/TimSort.java)
+
 17. #### [Stack](/Algorithms/StackAlgos/)
+
 18. #### [Strings](/Algorithms/Strings/)
+
 19. #### [Tries](/Algorithms/Tries/)
+
 20. #### [Two Pointers](/Algorithms/TwoPointers/)
+
     * [ContainerWithMostWater - maxArea](/Algorithms/TwoPointers/ContainerWithMostWater.java)
     * [Move Zeros](/Algorithms/TwoPointers/MoveZeros.java)
     * [3Sum](/Algorithms/TwoPointers/ThreeSum.java)
     * [Trapping Rain Water](/Algorithms/TwoPointers/TrappingRainWater.java)
 
-
-<br><br>
+</br>
+</br>
 
 ## Sources
+
 1) [takeuforward.org - Strivers A2Z DSA Course/Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
 2) [COURSERA DSA ROADMAP PART 1](https://www.coursera.org/learn/algorithms-part1)
 3) [COURSERA DSA ROADMAP PART 2](https://www.coursera.org/learn/algorithms-part2)
@@ -98,88 +133,78 @@ Data Structures And Algorithm Programs
 5) [FCC DSA course with 48hrs YT video](https://www.freecodecamp.org/news/learn-data-structures-and-algorithms-2/)
 6) [GFG interview DSA FAQs](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
 7) [Columbia University DSA Research Papers](https://timroughgarden.org/)
-8) [My LeetCode Problems](https://leetcode.com/u/srinivas_vadige/)
+8) [From my LeetCode experience](https://leetcode.com/u/srinivas_vadige/)
 
-
-
-
-<br><br>
+</br>
+</br>
 
 ## Owner
+
 Author: Srinivas Vadige
 
-Email: srinivas.vadige@gmail.com
+Email: <srinivas.vadige@gmail.com>
 
-LinkedIn: https://www.linkedin.com/in/srinivas-vadige/
+LinkedIn: <https://www.linkedin.com/in/srinivas-vadige>
 
+My Leetcode profile: <https://leetcode.com/srinivas_vadige/>
 
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
+## Other Github project ([MaRuifeng/DummyLovesAlgorithms](https://github.com/MaRuifeng/DummyLovesAlgorithms))
 
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-# Other Github project ([MaRuifeng/DummyLovesAlgorithms](https://github.com/MaRuifeng/DummyLovesAlgorithms))
 ### List of algorithmic questions
+
 * [Integer Array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray)
-	* [Find the largest sub-array sum of a given integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/maxSubsequenceSum/MaxSubseqSum.java)
-	* [Find the largest absolute difference of two non-overlapping sub-arrays of a given integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/maxSubsequenceDiff/MaxSubseqDiff.java)
-	* [Find total number of reverse pairs in a given integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/numOfReversePairs/NumOfReversePairs.java)
-	* [Find the largest sum of a sub-array with size K in a given integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/maxSubarraySumOfSizeK/MaxSubArraySumOfSizeK.java)
-	* [Find the k'th smallest item from a given array of distinct integers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/kthSmallestElementInArray/kthSmallestElementInArray.java)
-	* [Find number pairs each of which sums up to a fixed value from an integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/NumberPairOfFixedSum.java)
-	* [**All hail Recursion!** Find required add and subtract operations to produce a fixed sum](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/dynamicProgramming/MathOpsForFixedSum.java)
-	* [Find the greatest common divisor of an array of integers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/GCDOfIntegerArray.java)
-	* [Print numbers along matrix diagonals](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/DiagonalNumberMatrix.java)
-	* [Print spiral numbers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/SpiralNumber.java)
-	* [Bitwise operations](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/BitOperators.java)
-	* [Merge sorted integer arrays](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/SortedArrayMerger.java)
-	* [**All hail Recursion!** Find all subsets of an integer set](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/SubsetSeeker.java)
-	* [Patch a given array to produce list of sums from 1 to N](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/IntegerArrayPatcher.java)
-	* [Binary search in a sorted array rotated at an unknown pivot](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/BinarySearchInRotatedSortedArray.java)
-	* [**All hail Recursion!** Number permutation](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/NumberPermutation.java)
-	* [**All hail Recursion!** Number combination](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/NumberCombination.java)
-	* [Random number with different entropies](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/RandNumberGenerator.java)
-	* [Binary search in matrix](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/BinarySearchInMatrix.java)
-	* [**Multiple-Condition Check** Insert intervals](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/Intervals.java)
-	* [Reverse an integer number](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/ReverseInteger.java)
-	* [Recover a rotated sorted array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/RecoverRotatedSortedArray.java)
-	* [**NP Hard** Bin packing problem](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/BinPacker.java)
-	* [**Boyer–Moore Majority Vote Algorithm** Find majority numbers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/MajorityNumber.java)
-	* [Monkey crossing river](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/MonkeyAndRiver.java)
-	* [Number of ways to sum up to a given number with consecutive positive integers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/SumOfConsecutiveInt.java)
-	* [Array based circular queue](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/CircularArrayQueue.java)
+  * [Find the largest sub-array sum of a given integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/maxSubsequenceSum/MaxSubseqSum.java)
+  * [Find the largest absolute difference of two non-overlapping sub-arrays of a given integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/maxSubsequenceDiff/MaxSubseqDiff.java)
+  * [Find total number of reverse pairs in a given integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/numOfReversePairs/NumOfReversePairs.java)
+  * [Find the largest sum of a sub-array with size K in a given integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/maxSubarraySumOfSizeK/MaxSubArraySumOfSizeK.java)
+  * [Find the k'th smallest item from a given array of distinct integers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/kthSmallestElementInArray/kthSmallestElementInArray.java)
+  * [Find number pairs each of which sums up to a fixed value from an integer array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/NumberPairOfFixedSum.java)
+  * [**All hail Recursion!** Find required add and subtract operations to produce a fixed sum](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/dynamicProgramming/MathOpsForFixedSum.java)
+  * [Find the greatest common divisor of an array of integers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/GCDOfIntegerArray.java)
+  * [Print numbers along matrix diagonals](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/DiagonalNumberMatrix.java)
+  * [Print spiral numbers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/SpiralNumber.java)
+  * [Bitwise operations](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/BitOperators.java)
+  * [Merge sorted integer arrays](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/SortedArrayMerger.java)
+  * [**All hail Recursion!** Find all subsets of an integer set](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/SubsetSeeker.java)
+  * [Patch a given array to produce list of sums from 1 to N](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/IntegerArrayPatcher.java)
+  * [Binary search in a sorted array rotated at an unknown pivot](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/BinarySearchInRotatedSortedArray.java)
+  * [**All hail Recursion!** Number permutation](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/NumberPermutation.java)
+  * [**All hail Recursion!** Number combination](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/NumberCombination.java)
+  * [Random number with different entropies](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/RandNumberGenerator.java)
+  * [Binary search in matrix](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/BinarySearchInMatrix.java)
+  * [**Multiple-Condition Check** Insert intervals](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/Intervals.java)
+  * [Reverse an integer number](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/ReverseInteger.java)
+  * [Recover a rotated sorted array](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/RecoverRotatedSortedArray.java)
+  * [**NP Hard** Bin packing problem](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/BinPacker.java)
+  * [**Boyer–Moore Majority Vote Algorithm** Find majority numbers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/MajorityNumber.java)
+  * [Monkey crossing river](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/MonkeyAndRiver.java)
+  * [Number of ways to sum up to a given number with consecutive positive integers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/SumOfConsecutiveInt.java)
+  * [Array based circular queue](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/integerArray/CircularArrayQueue.java)
 * [Linked List](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/linkedList)
-    * [Reverse a linked list](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/linkedList/ReverseLinkedList.java)
-    * [LRU cache implemented with HashMap and LinkedList](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/linkedList/LRUCache.java)
-    * [LRU cache implemented plainly](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/linkedList/LRUCachePlain.java)
+  * [Reverse a linked list](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/linkedList/ReverseLinkedList.java)
+  * [LRU cache implemented with HashMap and LinkedList](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/linkedList/LRUCache.java)
+  * [LRU cache implemented plainly](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/linkedList/LRUCachePlain.java)
 * [Dynamic Programming](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/dynamicProgramming)
   * [Fibonacci Numbers](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/dynamicProgramming/FibNumbers.java)
   * [Binomial Coefficients](https://github.com/MaRuifeng/DummyLovesAlgorithms/tree/master/src/main/java/dynamicProgramming/BinomialCoefficients.java)
