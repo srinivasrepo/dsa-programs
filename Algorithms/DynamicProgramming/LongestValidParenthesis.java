@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 /**
  * Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
  * 
- * Examples: "()())", "(())", "()(()"
+ * Examples: "()())", "(())", "()(()", "()(())"
  * 
  * @author Srinivas Vadige
  * @since 12 Oct 2024
