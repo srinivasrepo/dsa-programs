@@ -62,6 +62,7 @@ Data Structures And Algorithm Programs
     * [Fibonacci_DP_BottomUp_NoMemory](Algorithms/DynamicProgramming/Fibonacci_DP_BottomUp_NoMemory.java)
     * [LongestPalindromicSubstring](/Algorithms/DynamicProgramming/LongestPalindromicSubstring.java)
     * [LongestValidParenthesis](/Algorithms/DynamicProgramming/LongestValidParenthesis.java)
+    * [UniquePaths](/Algorithms/DynamicProgramming/UniquePaths.java)
 
 5. #### [Graphs](/Algorithms/Graphs/)
 
