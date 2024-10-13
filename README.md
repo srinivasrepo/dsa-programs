@@ -18,6 +18,7 @@ Data Structures And Algorithm Programs
 * ### [Data Structures & important classes](DataStructures/)
   
   * [AnnotationType](DataStructures/AnnotationTypeExample.java)
+  * [BinaryTreeNode](DataStructures/BinaryTreeNode.java)
   * [BinaryTree](DataStructures/BinaryTree.java)
   * [FunctionalInterface](DataStructures/FunctionalInterfaceExample.java)
   * [HashMap](/DataStructures/HashMapExample.java)
@@ -60,6 +61,7 @@ Data Structures And Algorithm Programs
     * [Fibonacci_DP_BottomUp_Tabulation](Algorithms/DynamicProgramming/Fibonacci_DP_BottomUp_Tabulation.java)
     * [Fibonacci_DP_BottomUp_NoMemory](Algorithms/DynamicProgramming/Fibonacci_DP_BottomUp_NoMemory.java)
     * [LongestPalindromicSubstring](/Algorithms/DynamicProgramming/LongestPalindromicSubstring.java)
+    * [LongestValidParenthesis](/Algorithms/DynamicProgramming/LongestValidParenthesis.java)
 
 5. #### [Graphs](/Algorithms/Graphs/)
 
@@ -75,6 +77,8 @@ Data Structures And Algorithm Programs
 8. #### [Heap](/Algorithms/HeapAlgos/)
 
 9. #### [IntegerArray](/Algorithms/IntegerArray/)
+
+    * [MaximumRepeatingNumber](Algorithms/IntegerArray/MaximumRepeatingNumber.java)
 
 10. #### [LinkedList](/Algorithms/LinkedList/)
 
