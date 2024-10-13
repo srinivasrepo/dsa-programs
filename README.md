@@ -1,3 +1,10 @@
+<!-- 
+Notes:
+1. Invoke-Expression (&starship init powershell) -- starship
+2. 
+
+-->
+
 # dsa-programs
 
 Data Structures And Algorithm Programs

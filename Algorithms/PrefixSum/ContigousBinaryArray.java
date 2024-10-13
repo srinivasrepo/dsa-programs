@@ -9,10 +9,10 @@ import java.util.Map;
 public class ContigousBinaryArray {
 
     public static void main(String[] args) {
-        System.out.println(findMaxLength(new int[]{0,1,0}));
+        System.out.println(findMaxLength(new int[]{0,1,0,0,1,1,1})); // it is little similar to Longest Valid Parentheses ")()())"
     }
 
-
+    // prefixSum Hashmap approach
     public static int findMaxLength(int[] nums) {
     
         int prefixSum = 0;
@@ -33,12 +33,14 @@ public class ContigousBinaryArray {
                 maxLength = i - sumsMap.get(prefixSum);
             }
 
-            if(!sumsMap.containsKey(prefixSum))
+            if(!sumsMap.containsKey(prefixSum)) // or map.putIfAbsent
                 sumsMap.put(prefixSum, i);
     
         }
         
         return maxLength;
     }
+
+    // we can also use zerosCount and onesCount approach and check zerosCount == onesCount but research on start index like zerosCount - onesCount == 2
     
 }
