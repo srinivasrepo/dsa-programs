@@ -63,6 +63,8 @@ Data Structures And Algorithm Programs
     * [LongestPalindromicSubstring](/Algorithms/DynamicProgramming/LongestPalindromicSubstring.java)
     * [LongestValidParenthesis](/Algorithms/DynamicProgramming/LongestValidParenthesis.java)
     * [UniquePaths](/Algorithms/DynamicProgramming/UniquePaths.java)
+    * [MinimumPathSum](/Algorithms/DynamicProgramming/MinimumPathSum.java)
+    * [ClimbingStairs](/Algorithms/DynamicProgramming/ClimbingStairs.java)
 
 5. #### [Graphs](/Algorithms/Graphs/)
 
