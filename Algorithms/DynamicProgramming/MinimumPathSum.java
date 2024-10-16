@@ -174,8 +174,13 @@ public class MinimumPathSum {
 
 
 
+    // My approach for minPathSumTopDownMemo TODO
+    public static int minPathSumTopDownMemoMyApproach(int[][] grid) {
 
-    // TODO My Top down memo approach 
+        return 0;
+    }
+
+    public static void recMyApproach(){}
 
 
 }
