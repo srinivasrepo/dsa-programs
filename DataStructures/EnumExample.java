@@ -14,13 +14,14 @@ import java.util.function.Function;
  * public enum must be in a own file, and so we can have n number of default enums in a file
  *
  * public abstract class Enum<E extends Enum<E>> implements Constable, Comparable<E>, Serializable {
- *
+ * public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements java.io.Serializable, Cloneable
+ * public abstract sealed class EnumSet<E extends Enum<E>> extends AbstractSet<E> implements Cloneable, java.io.Serializable permits JumboEnumSet, RegularEnumSet
  *
  * </pre>
  *
- * @see {@linkplain java.lang.Enum java.lang.Enum}
- * @see {@linkplain java.util.EnumMap java.util.EnumMap}
- * @see {@linkplain java.util.EnumSet java.util.EnumSet}
+ * @see {@linkplain java.lang.Enum java.lang.Enum} - since JDK 1.5 2004
+ * @see {@linkplain java.util.EnumMap java.util.EnumMap} - since JDK 1.5 2004
+ * @see {@linkplain java.util.EnumSet java.util.EnumSet} - since JDK 1.5 2004
  * @author Srinivas Vadige
  * @since 17 Oct 2024
  *
