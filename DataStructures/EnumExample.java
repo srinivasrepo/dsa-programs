@@ -43,9 +43,9 @@ public class EnumExample {
         WeekDay[] days = WeekDay.values(); // built-in final static method
         Object decClass = day1Enum.getDeclaringClass(); // returns the class of the enum
 
-        System.out.println(WeekDay.SUNDAY); // * prints Sunday --> because of @Override toString()
+        System.out.println(WeekDay.SUNDAY); // * prints Sunday --> because of custom @Override toString() in WeekDay enum
         System.out.println(WeekDay.SUNDAY.name()); // * prints SUNDAY
-        System.out.println(WeekDay.SUNDAY.toString()); // * prints Sunday --> because of @Override toString()
+        System.out.println(WeekDay.SUNDAY.toString()); // * prints Sunday --> because of custom @Override toString() in WeekDay enum
         System.out.println(WeekDay.MONDAY.equals(day1)); // false because day1 is a string but .equals(Object param)
         System.out.println(WeekDay.MONDAY.equals(day1Enum)); // true always compare enum to enum or string to string
         System.out.println(WeekDay.MONDAY.name().equals(day1)); // true as we compare string to string
