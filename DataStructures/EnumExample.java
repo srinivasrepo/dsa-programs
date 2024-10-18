@@ -51,10 +51,10 @@ public class EnumExample {
         String day2 = WeekDay.MONDAY.toString(); // built-in non-final static & can be @Override as shown inside the WeekDay enum
         int dayIndex = WeekDay.MONDAY.ordinal(); // built-in final static method for index
         WeekDay[] days = WeekDay.values(); // built-in final static method
-        Object decClass = day1Enum.getDeclaringClass(); // prints class DataStructures.WeekDay
-/**/    System.out.println(WeekDay.SUNDAY); /* prints Sunday --> because of custom @Override toString() in WeekDay enum -------------------------*/
-/**/    System.out.println(WeekDay.SUNDAY.name()); /* prints SUNDAY ------------------------ */
-/**/    System.out.println(WeekDay.SUNDAY.toString()); /* prints Sunday --> because of custom @Override toString() in WeekDay enum ------------------------*/
+        Class<? extends Enum<?>> decClass = day1Enum.getDeclaringClass(); // prints class DataStructures.WeekDay
+/**/    System.out.println(WeekDay.SUNDAY); /* prints Sunday --> @Override toString() custom method in WeekDay enum */
+/**/    System.out.println(WeekDay.SUNDAY.name()); /* prints SUNDAY i.e specific Enum constant as String */
+/**/    System.out.println(WeekDay.SUNDAY.toString()); /* prints Sunday --> @Override toString() custom method in WeekDay enum */
         System.out.println(WeekDay.MONDAY.equals(day1)); // false because day1 is a string but .equals(Object param)
         System.out.println(WeekDay.MONDAY.equals(day1Enum)); // true always compare enum to enum or string to string
         System.out.println(WeekDay.MONDAY.name().equals(day1)); // true as we compare string to string
@@ -168,7 +168,7 @@ enum WeekDay {
 enum Roman {
     I(1), V(5), X(10), L(50), C(100), D(500), M(1000);
 
-    private int value; // private param can only be accessed by getter i.e getValue()
+    private int value; // Must be non-static and private is optional & final is optional and if private then param can only be accessed by getter i.e getValue()
 
     Roman(int value) {
         this.value = value;
@@ -210,6 +210,7 @@ enum Frequency {
         this.code = code;
     }
 
+    // is item present in the enum -----
     public static boolean isFrequency(String frequency) {
         try {
             Frequency.valueOf(frequency);
@@ -219,6 +220,7 @@ enum Frequency {
         return true;
     }
 
+    // get item if present -----
     public static String toCode(String frequency) {
         try {
             return Frequency.valueOf(frequency).code; // or EnumSet.allOf(Frequency.class).stream().filter(d->d.name().equals("WEEKLY")).map(d->d.getCode()).findFirst().orElse("N/A");
@@ -229,6 +231,7 @@ enum Frequency {
         // throw new FrequencyMappingException("Unable to map requested frequency " + frequency + to field value.") ");
     }
 
+    // get item if present - alternate method ------
     // If we compare with only getDisplayName() then it will fail for "Semi-Annually" because of "-" in the display name. So, use both(getDisplayName() & name()) or replace getDisplayName() with name() or use above toCode() method instead
     public static String getValueByDisplayName(String frequency) {
         return Arrays.stream(Frequency.values())
