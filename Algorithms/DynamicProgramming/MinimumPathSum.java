@@ -1,18 +1,16 @@
 package Algorithms.DynamicProgramming;
 
-import java.util.Arrays;
-
 /**
 <pre>
  0 & +ve nums
 
  top left to bottom right
- 
-    |°            | 
-    |    ↓        | 
-    |      -→     |  
-    |            °|  
- 
+
+    |°            |
+    |    ↓        |
+    |      -→     |
+    |            °|
+
  dpad => down or right
 
                     ----- int[][] grid -----
@@ -23,7 +21,7 @@ import java.util.Arrays;
 
 
  Patterns:
- 1. weighted binary graph --> memo or rb ??? 
+ 1. weighted binary graph --> memo or rb ???
  2. [1][1] -- repeated ele => memo will work even weights / distance => because we want min. So, memo min distance
  3. top-down memo dp -> yes keep the small and break the rec of big -- or bottom-up tabulation
 
@@ -42,7 +40,7 @@ import java.util.Arrays;
 
 */
 public class MinimumPathSum {
-    
+
     public static void main(String[] args) {
         int[][] grid = {{1,3,1},{1,5,1},{4,2,1}};
         System.out.println("minPathSumBottomUpTabulation: " + minPathSumBottomUpTabulation(grid));
@@ -50,7 +48,7 @@ public class MinimumPathSum {
         System.out.println("minPathSumTopDownMemoMyApproach: " + minPathSumTopDownMemoMyApproach(grid));
         System.out.println("minPathSumTopDownMemo: " + minPathSumTopDownMemo(grid));
     }
-    
+
     /**
      * Time Complexity: O(m) + O(n) + O(mn) = O(mn)
      * Space Complexity: O(mn)
@@ -86,13 +84,13 @@ public class MinimumPathSum {
 
          int left = j>0? ( dp[i][j-1] ): 0;
          int top = i>0? ( dp[i-1][j] ) : 0;
-         
-         if(j==0)            
+
+         if(j==0)
             dp[i][j] += ( top + grid[i][j]  );
          else if(i==0)
             dp[i][j] += (  left + grid[i][j]  );
          else
-            dp[i][j] += (  Math.min(top, left) + grid[i][j]  );          
+            dp[i][j] += (  Math.min(top, left) + grid[i][j]  );
             }
         }
 
@@ -124,12 +122,12 @@ public class MinimumPathSum {
      * [1,3,1]         [1,4,5]  - - -
      * [1,5,1]         [2,7,6]      |     => is the min path
      * [4,2,1]         [6,8,7]      |
-     * 
+     *
      *                                                         rec(3,3)
      *                                             ________________|________________________________________
      *                                            /                                                         \
      *                                         rec(2,3)                                                  rec(3,2)
-     *                                ____________|___________________________                                ____________|______________                      
+     *                                ____________|___________________________                                ____________|______________
      *                               /                                        \                              /                           \
      *                            rec(1,3)                                rec(2,2)                         rec(2,2)                   rec(3,1)
      *                  ____________|_____________                        _____|_____
@@ -143,8 +141,8 @@ public class MinimumPathSum {
      *                           \                  rec(0,1)    rec(1,0)
      *                        rec(0,0)                 \         /
      *                                             rec(0,0)    rec(0,0)
-     * 
-     */ 
+     *
+     */
     public static int minPathSumTopDownMemoMyApproach(int[][] grid) {
         int[][] dp = new int[grid.length][grid[0].length];
         dp[0][0] = grid[0][0];
@@ -155,7 +153,7 @@ public class MinimumPathSum {
     public static int recMyApproach(int[][] grid, int[][] dp, int m, int n) {
         if(m == 0 && n == 0) return dp[m][n] = grid[m][n];
 
-        if(dp[m][n] != 0) 
+        if(dp[m][n] != 0)
             return dp[m][n];
 
         // row=0 means left
@@ -207,15 +205,14 @@ public class MinimumPathSum {
         return dp[i][j];
     }
 
-    
 
 
 
 
     /**
-     * 
+     *
      * It's not working --------
-     * 
+     *
      * @TimeComplexity: O(mn)
      * @SpaceComplexity: O(mn)
      */
@@ -237,7 +234,7 @@ public class MinimumPathSum {
         }
         rec3(grid,dp,(i+1));
         dp[i%2][n-1] = dp[(i+1)%2][n-1] + grid[i][n-1];
-        for (int j = n-2; j >= 0; j--) 
+        for (int j = n-2; j >= 0; j--)
         dp[i%2][j] = Math.min(dp[(i+1)%2][j],dp[i%2][j+1]) + grid[i][j];
     }
 
