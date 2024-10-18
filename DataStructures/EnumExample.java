@@ -1,6 +1,7 @@
 package DataStructures;
 
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.EnumMap;
@@ -17,6 +18,15 @@ import java.util.function.Function;
  * public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements java.io.Serializable, Cloneable
  * public abstract sealed class EnumSet<E extends Enum<E>> extends AbstractSet<E> implements Cloneable, java.io.Serializable permits JumboEnumSet, RegularEnumSet
  *
+ * * So, enum can be converted to other types like below:
+ * * to Arrays using EnumClass.values() or Arrays.asList(EnumClass.class.getEnumConstants()),
+ * * to List using Arrays.asList(EnumClass.values()) or Arrays.asList(EnumClass.class.getEnumConstants()) or new ArrayList<>(EnumClass.values()) or Stream.of(WeekDay.values()).collect(Collectors.toList()),
+ * * to EnumSet using EnumSet.allOf(EnumClass.class),
+ * * to EnumMap using new EnumMap<>(EnumClass.class),
+ * * to Stream using Arrays.stream(EnumClass.values()) or Stream.of(EnumClass.values()) or Arrays.stream(EnumClass.class.getEnumConstants())
+ * * and later on we can convert them to traditional Map, List, Set and so on
+ * *
+ * *
  * </pre>
  *
  * @see {@linkplain java.lang.Enum java.lang.Enum} - since JDK 1.5 2004
@@ -32,7 +42,7 @@ public class EnumExample {
     @SuppressWarnings("unlikely-arg-type")
     public static void main(String[] args) {
 
-        // WeekDay enum
+        // WeekDay - standard enum operations
         System.out.println("WeekDay enum ----------------");
         WeekDay dayEnum = WeekDay.MONDAY;
         String day1 = WeekDay.MONDAY.name(); // built-in final static method, same as toSting()
@@ -41,11 +51,10 @@ public class EnumExample {
         String day2 = WeekDay.MONDAY.toString(); // built-in non-final static & can be @Override as shown inside the WeekDay enum
         int dayIndex = WeekDay.MONDAY.ordinal(); // built-in final static method for index
         WeekDay[] days = WeekDay.values(); // built-in final static method
-        Object decClass = day1Enum.getDeclaringClass(); // returns the class of the enum
-
-        System.out.println(WeekDay.SUNDAY); // * prints Sunday --> because of custom @Override toString() in WeekDay enum
-        System.out.println(WeekDay.SUNDAY.name()); // * prints SUNDAY
-        System.out.println(WeekDay.SUNDAY.toString()); // * prints Sunday --> because of custom @Override toString() in WeekDay enum
+        Object decClass = day1Enum.getDeclaringClass(); // prints class DataStructures.WeekDay
+/**/    System.out.println(WeekDay.SUNDAY); /* prints Sunday --> because of custom @Override toString() in WeekDay enum -------------------------*/
+/**/    System.out.println(WeekDay.SUNDAY.name()); /* prints SUNDAY ------------------------ */
+/**/    System.out.println(WeekDay.SUNDAY.toString()); /* prints Sunday --> because of custom @Override toString() in WeekDay enum ------------------------*/
         System.out.println(WeekDay.MONDAY.equals(day1)); // false because day1 is a string but .equals(Object param)
         System.out.println(WeekDay.MONDAY.equals(day1Enum)); // true always compare enum to enum or string to string
         System.out.println(WeekDay.MONDAY.name().equals(day1)); // true as we compare string to string
@@ -57,54 +66,33 @@ public class EnumExample {
         System.out.println(days);
         System.out.println(decClass);
 
+        // to Array
+        System.out.println("Array -----------------");
+        WeekDay[] daysArr = WeekDay.values();
+        daysArr = WeekDay.class.getEnumConstants(); // same as above
+        System.out.println(Arrays.toString(daysArr));
 
-        // Roman enum
-        System.out.println("Roman enum ----------------");
-        Roman romanEnum = Roman.I;
-        romanEnum = Roman.valueOf("I");
-        System.out.println(romanEnum);
-        // System.out.println(romanEnum.value); --- if value variable is not private
-        System.out.println(romanEnum.getValue());
-        System.out.println(Roman.valueOf("L"));
-        System.out.println(Roman.valueOf("D").getValue()); // java.lang.IllegalArgumentException if we use small "d", i.e enum is case sensitive
-        System.out.println(Arrays.toString(Roman.values())); // .values() is a built-in final static method
+        // to List
+        System.out.println("List -----------------");
+        List<WeekDay> daysList = Arrays.asList(WeekDay.values());
+        daysList = new ArrayList<>(Arrays.asList(WeekDay.values())); // same as above
+        daysList = Arrays.asList(WeekDay.class.getEnumConstants()); // same as above
+        daysList = Stream.of(WeekDay.values()).collect(Collectors.toList()); // same as above
+        System.out.println(daysList);
 
-
-
-        // Frequency enum
-        System.out.println("Frequency enum ----------------");
-        String frequency = "Every Week";
-        Frequency freqEnum = Frequency.WEEKLY; // by default a constructor initializes the EVERY WEEK enum and all the static methods can be used
-        System.out.println(Frequency.isFrequency(frequency));
-        System.out.println(Frequency.toCode(frequency));
-        System.out.println(Frequency.getValueByDisplayName(frequency));
-        System.out.println(freqEnum.getDisplayName());
-        System.out.println(freqEnum.getCode());
-        System.out.println(freqEnum.name());
-        System.out.println(freqEnum.ordinal());
-
-
-        // EnumMap
+        // to EnumMap
         System.out.println("EnumMap -----------------");
         EnumMap<WeekDay, String> scheduleEnumMap = new EnumMap<>(WeekDay.class);
-        // Adding elements or custom constructor parameter to the EnumMap
-        scheduleEnumMap.put(WeekDay.MONDAY, "Work");
+        scheduleEnumMap.put(WeekDay.MONDAY, "Work"); // Adding elements or custom constructor parameter to the EnumMap
         scheduleEnumMap.put(WeekDay.TUESDAY, "Work");
         scheduleEnumMap.put(WeekDay.WEDNESDAY, "Study");
         scheduleEnumMap.put(WeekDay.THURSDAY, "Study");
         scheduleEnumMap.put(WeekDay.FRIDAY, "Relax");
-        // Getting elements from the EnumMap
         System.out.println(scheduleEnumMap); // Output: Work
         System.out.println(scheduleEnumMap.get(WeekDay.MONDAY)); // Output: Work
         System.out.println(scheduleEnumMap.get(WeekDay.FRIDAY)); // Output: Relax
-        // EnumMap with Stream
-        System.out.println("Enum to Map (not EnumMap) -----------------");
-        Map<String, WeekDay> scheduleMap = Stream.of(WeekDay.values()).collect(Collectors.toMap(WeekDay::name, Function.identity()));
-        Map<WeekDay, String> scheduleMap2 = Stream.of(WeekDay.values()).collect(Collectors.toMap(Function.identity(), WeekDay::name));
-        System.out.println(scheduleMap);
-        System.out.println(scheduleMap2);
 
-        // EnumSet
+        // to EnumSet
         System.out.println("EnumSet -----------------");
         EnumSet<WeekDay> weekDaysSet = EnumSet.allOf(WeekDay.class);
         int mondayOrdinal = EnumSet.allOf(WeekDay.class).stream().filter(d->d.name().equals("MONDAY")).map(d->d.ordinal()).findFirst().orElse(0);
@@ -124,16 +112,45 @@ public class EnumExample {
         System.out.println(weekDaysCopy);
         System.out.println(weekDaysClear);
 
-        // Enum with Stream
+        // to Stream and other types like Map, List, Set
         System.out.println("Enum with Stream -----------------");
-        Stream<WeekDay> enumStream = Stream.of(WeekDay.values()); // or Arrays.stream(WeekDay.values())
+        Stream<WeekDay> enumStream = Stream.of(WeekDay.values());
+        enumStream = Stream.of(WeekDay.class.getEnumConstants()); // same as above
+        enumStream = Arrays.stream(WeekDay.values()); // same as above
+        enumStream = Arrays.stream(WeekDay.class.getEnumConstants()); // same as above
+        enumStream = Arrays.asList(WeekDay.values()).stream(); // same as above
+        enumStream = Arrays.asList(WeekDay.class.getEnumConstants()).stream(); // same as above
+        WeekDay day = Stream.of(WeekDay.values()).filter(d->d.name().equals("MONDAY")).findFirst().get();
+        Map<String, WeekDay> scheduleMap = Stream.of(WeekDay.values()).collect(Collectors.toMap(WeekDay::name, Function.identity()));
+        Map<WeekDay, String> scheduleMap2 = Stream.of(WeekDay.values()).collect(Collectors.toMap(Function.identity(), WeekDay::name));
         enumStream.forEach(System.out::println);
-        List<WeekDay> list = Stream.of(WeekDay.values()).collect(Collectors.toList());
-        System.out.println(list);
-        WeekDay day = Stream.of(WeekDay.values()).findFirst().get();
         System.out.println(day);
+        System.out.println(scheduleMap);
+        System.out.println(scheduleMap2);
 
 
+
+        // Roman enum (Constructor with 1 parameter)
+        System.out.println("Roman enum ----------------");
+        Roman romanEnum = Roman.I;
+        romanEnum = Roman.valueOf("I");
+        System.out.println(romanEnum);
+        // System.out.println(romanEnum.value); --- if value variable is not private
+        System.out.println(romanEnum.getValue());
+        System.out.println(Roman.valueOf("L"));
+        System.out.println(Roman.valueOf("D").getValue()); // java.lang.IllegalArgumentException if we use small "d", i.e enum is case sensitive
+        System.out.println(Arrays.toString(Roman.values())); // .values() is a built-in final static method
+        // Frequency enum (Constructor with 2 parameters)
+        System.out.println("Frequency enum ----------------");
+        String frequency = "Every Week";
+        Frequency freqEnum = Frequency.WEEKLY; // by default a constructor initializes the EVERY WEEK enum and all the static methods can be used
+        System.out.println(Frequency.isFrequency(frequency));
+        System.out.println(Frequency.toCode(frequency));
+        System.out.println(Frequency.getValueByDisplayName(frequency));
+        System.out.println(freqEnum.getDisplayName());
+        System.out.println(freqEnum.getCode());
+        System.out.println(freqEnum.name());
+        System.out.println(freqEnum.ordinal());
     }
 }
 
@@ -212,11 +229,12 @@ enum Frequency {
         // throw new FrequencyMappingException("Unable to map requested frequency " + frequency + to field value.") ");
     }
 
-    // this will fail for Semi-Annually because of "-" in the display name, use toCode() instead
+    // If we compare with only getDisplayName() then it will fail for "Semi-Annually" because of "-" in the display name. So, use both(getDisplayName() & name()) or replace getDisplayName() with name() or use above toCode() method instead
     public static String getValueByDisplayName(String frequency) {
         return Arrays.stream(Frequency.values())
-                .filter(lifeFrequency -> lifeFrequency.getDisplayName().equalsIgnoreCase(frequency))
-                .findFirst().map(Frequency::getCode)
+                .filter(lifeFrequency -> lifeFrequency.getDisplayName().equalsIgnoreCase(frequency) || lifeFrequency.name().equalsIgnoreCase(frequency))
+                .findFirst()
+                .map(Frequency::getCode)
                 .orElse("N/A");
     }
 }
