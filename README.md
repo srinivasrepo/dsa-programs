@@ -16,10 +16,11 @@ Data Structures And Algorithm Programs
 ## CONTENTS
 
 * ### [Data Structures & important classes](DataStructures/)
-  
+
   * [AnnotationType](DataStructures/AnnotationTypeExample.java)
   * [BinaryTreeNode](DataStructures/BinaryTreeNode.java)
   * [BinaryTree](DataStructures/BinaryTree.java)
+  * [Enum, EnumMap, EnumSet](DataStructures/EnumExample.java)
   * [FunctionalInterface](DataStructures/FunctionalInterfaceExample.java)
   * [HashMap](/DataStructures/HashMapExample.java)
   * [List](/DataStructures/ListExample.java)
@@ -38,13 +39,13 @@ Data Structures And Algorithm Programs
   * [PrimeNumber](BasicPrograms/PrimeNumber.java)
 
 * ### [LeetCode Programs](LeetCode/)
-  
+
   * [Anagram](/LeetCode/Anagram.java)
   * [RomanToInteger](LeetCode/RomanToInteger.java)
   * [WordPattern](LeetCode/WordPattern.java)
 
 * ### [----  ALGORITHMS  ----](Algorithms/)
-  
+
 1. #### [BackTracking](Algorithms/BackTracking/)
 
 2. #### [BinaryTrees](Algorithms/BinaryTrees/)
@@ -65,6 +66,7 @@ Data Structures And Algorithm Programs
     * [UniquePaths](/Algorithms/DynamicProgramming/UniquePaths.java)
     * [MinimumPathSum](/Algorithms/DynamicProgramming/MinimumPathSum.java)
     * [ClimbingStairs](/Algorithms/DynamicProgramming/ClimbingStairs.java)
+    * [EditDistance](/Algorithms/DynamicProgramming/EditDistance.java)
 
 5. #### [Graphs](/Algorithms/Graphs/)
 
