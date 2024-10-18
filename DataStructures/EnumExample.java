@@ -18,6 +18,10 @@ import java.util.function.Function;
  * public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements java.io.Serializable, Cloneable
  * public abstract sealed class EnumSet<E extends Enum<E>> extends AbstractSet<E> implements Cloneable, java.io.Serializable permits JumboEnumSet, RegularEnumSet
  *
+ * Two types of Enums: 1. Standard Enum, 2. Constructor Enum
+ * Use standard enums when you need a simple enumeration of constants.
+ * Use constructor enums when you need to associate additional data or behavior with each constant.
+ *
  * * So, enum can be converted to other types like below:
  * * to Arrays using EnumClass.values() or Arrays.asList(EnumClass.class.getEnumConstants()),
  * * to List using Arrays.asList(EnumClass.values()) or Arrays.asList(EnumClass.class.getEnumConstants()) or new ArrayList<>(EnumClass.values()) or Stream.of(WeekDay.values()).collect(Collectors.toList()),
@@ -135,11 +139,14 @@ public class EnumExample {
         Roman romanEnum = Roman.I;
         romanEnum = Roman.valueOf("I");
         System.out.println(romanEnum);
-        // System.out.println(romanEnum.value); --- if value variable is not private
+        // System.out.println(romanEnum.value); --- if value class variable is not private
         System.out.println(romanEnum.getValue());
         System.out.println(Roman.valueOf("L"));
         System.out.println(Roman.valueOf("D").getValue()); // java.lang.IllegalArgumentException if we use small "d", i.e enum is case sensitive
         System.out.println(Arrays.toString(Roman.values())); // .values() is a built-in final static method
+
+
+
         // Frequency enum (Constructor with 2 parameters)
         System.out.println("Frequency enum ----------------");
         String frequency = "Every Week";
@@ -154,7 +161,7 @@ public class EnumExample {
     }
 }
 
-// default standard enum
+// Standard Enum
 enum WeekDay {
     SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY;
 
@@ -164,7 +171,7 @@ enum WeekDay {
     }
 }
 
-// enum with private constructor (with 1 parameter)
+// Constructor Enum with 1 non-final parameter
 enum Roman {
     I(1), V(5), X(10), L(50), C(100), D(500), M(1000);
 
@@ -179,7 +186,7 @@ enum Roman {
     }
 }
 
-// enum with private constructor (with 2 parameters) and public static methods
+// Constructor Enum with 2 final parameters and public static methods
 enum Frequency {
 
     ONCE("Once", "1"), // code can be String or int but we still have the ordinal() built-in static method
