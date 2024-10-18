@@ -14,23 +14,24 @@ import java.util.Arrays;
 
 public class EnumExample {
 
+    @SuppressWarnings("unlikely-arg-type")
     public static void main(String[] args) {
 
+        // WeekDay enum
+        System.out.println("WeekDay enum ----------------");
         WeekDay dayEnum = WeekDay.MONDAY;
-        String day1 = WeekDay.MONDAY.name(); // built-in final method, same as toSting()
+        String day1 = WeekDay.MONDAY.name(); // built-in final static method, same as toSting()
         WeekDay day1Enum = WeekDay.valueOf(day1); // throws IllegalArgumentException if the value is not in the enum
-                                                  // day1Enum WeekDay.valueOf("MONDAY");
-        day1Enum = WeekDay.valueOf("MONDAY"); // built-in final method & same as above
-        String day2 = WeekDay.MONDAY.toString(); // non-static & can be overridden like below
-        int dayIndex = WeekDay.MONDAY.ordinal(); // built-in final method for index
-        WeekDay[] days = WeekDay.values();
+        day1Enum = WeekDay.valueOf("MONDAY"); // built-in final static method & same as above
+        String day2 = WeekDay.MONDAY.toString(); // built-in non-final static & can be @Override as shown inside the WeekDay enum
+        int dayIndex = WeekDay.MONDAY.ordinal(); // built-in final static method for index
+        WeekDay[] days = WeekDay.values(); // built-in final static method
         Object decClass = day1Enum.getDeclaringClass(); // returns the class of the enum
 
+        System.out.println(WeekDay.SUNDAY);
         System.out.println(WeekDay.MONDAY.equals(day1)); // false because day1 is a string but .equals(Object param)
         System.out.println(WeekDay.MONDAY.equals(day1Enum)); // true always compare enum to enum or string to string
         System.out.println(WeekDay.MONDAY.name().equals(day1)); // true as we compare string to string
-
-        // remove unused variables warning
         System.out.println(dayEnum);
         System.out.println(day1);
         System.out.println(day1Enum);
@@ -39,7 +40,19 @@ public class EnumExample {
         System.out.println(days);
         System.out.println(decClass);
 
+        // Roman enum
+        System.out.println("Roman enum ----------------");
+        Roman romanEnum = Roman.I;
+        romanEnum = Roman.valueOf("I");
+        System.out.println(romanEnum);
+        // System.out.println(romanEnum.value); --- if value variable is not private
+        System.out.println(romanEnum.getValue());
+        System.out.println(Roman.valueOf("L"));
+        System.out.println(Roman.valueOf("D").getValue()); // java.lang.IllegalArgumentException if we use small "d", i.e enum is case sensitive
+        System.out.println(Arrays.toString(Roman.values())); // .values() is a built-in final static method
+
         // Frequency enum
+        System.out.println("Frequency enum ----------------");
         String frequency = "Every Week";
         Frequency freqEnum = Frequency.WEEKLY; // by default a constructor initializes the EVERY WEEK enum and all the static methods can be used
         System.out.println(Frequency.isFrequency(frequency));
@@ -50,7 +63,6 @@ public class EnumExample {
         System.out.println(freqEnum.name());
         System.out.println(freqEnum.ordinal());
     }
-
 }
 
 // default standard enum
@@ -63,10 +75,25 @@ enum WeekDay {
     }
 }
 
-// enum with private constructor and public static methods
+// enum with private constructor (with 1 parameter)
+enum Roman {
+    I(1), V(5), X(10), L(50), C(100), D(500), M(1000);
+
+    private int value; // private param can only be accessed by getter i.e getValue()
+
+    Roman(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+}
+
+// enum with private constructor (with 2 parameters) and public static methods
 enum Frequency {
 
-    ONCE("Once", "1"),
+    ONCE("Once", "1"), // code can be String or int but we still have the ordinal() built-in static method
     WEEKLY("Every Week", "2"),
     EVERY_TWO_WEEKS("Every Two Weeks", "3"),
     EVERY_FIRST_AND_FIFTEENTH("Every 1st and 15th of the Month", "4"),
@@ -107,18 +134,23 @@ enum Frequency {
         try {
             return Frequency.valueOf(frequency).code;
         } catch (IllegalArgumentException e) {
-            System.out.println("Unable to map requested frequency" + frequency + "to field value");
+            System.out.println("Unable to map requested frequency " + frequency + " to field value");
         }
         return "N/A";
         // throw new FrequencyMappingException("Unable to map requested frequency " + frequency + to field value.") ");
     }
 
-    // this will fail for Semi-Annually because of "-" in the display name
+    // this will fail for Semi-Annually because of "-" in the display name, use toCode() instead
     public static String getValueByDisplayName(String frequency) {
         return Arrays.stream(Frequency.values())
                 .filter(lifeFrequency -> lifeFrequency.getDisplayName().equalsIgnoreCase(frequency))
                 .findFirst().map(Frequency::getCode)
                 .orElse("N/A");
     }
+}
 
+class FrequencyMappingException extends Exception {
+    public FrequencyMappingException(String message) {
+        super(message);
+    }
 }
