@@ -4,11 +4,14 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.stream.Stream;
 import java.util.stream.Collectors;
 import java.util.function.Function;
+import java.lang.Enum.EnumDesc;
+import java.lang.constant.ClassDesc;;
 
 /**
  * <pre>
@@ -69,6 +72,15 @@ public class EnumExample {
         System.out.println(dayIndex);
         System.out.println(days);
         System.out.println(decClass);
+
+        // Enum Descriptor --- with private constructor and one .of() static method
+        System.out.println("Enum Descriptor -----------------"); // TODO
+        Optional<EnumDesc<WeekDay>> enumDesc1 = WeekDay.MONDAY.describeConstable();
+        System.out.println(enumDesc1.get().constantName());
+        EnumDesc<WeekDay> enumDesc2 = EnumDesc.of(ClassDesc.of("DataStructures", "EnumExample$WeekDay"), "MONDAY");
+        System.out.println(enumDesc2);
+        System.out.println(enumDesc2.constantName());
+
 
         // to Array
         System.out.println("Array -----------------");
@@ -226,6 +238,15 @@ enum Frequency {
         }
         return true;
     }
+
+    public static boolean isFrequency2(String frequency) {
+        return Stream.of(WeekDay.values()).anyMatch(lifeFrequency -> lifeFrequency.name().equalsIgnoreCase(frequency));
+    }
+
+    // EnumDescriptor ---- used to provide metadata about an enum class
+    // public static boolean isFrequency3(String frequency) {
+    //     return  EnumDesc
+    // }
 
     // get item if present -----
     public static String toCode(String frequency) {
