@@ -1,11 +1,22 @@
-<!-- 
+<!--
 Notes:
 1. Invoke-Expression (&starship init powershell) -- starship
-2. 
+2.
 
 -->
 
 # dsa-programs
+
+| | | s | i | t | t | i | n | g |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| k | 1 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| i | 2 | 2 | 1 | 2 | 3 | 4 | 5 | 6 |
+| t | 3 | 3 | 2 | 1 | 2 | 3 | 4 | 5 |
+| t | 4 | 4 | 3 | 2 | 1 | 2 | 3 | 4 |
+| e | 5 | 5 | 4 | 3 | 2 | 2 | 3 | 4 |
+| n | 6 | 6 | 5 | 4 | 3 | 3 | 2 | 3 |
+
 
 Data Structures And Algorithm Programs
 
@@ -66,7 +77,7 @@ Data Structures And Algorithm Programs
     * [UniquePaths](/Algorithms/DynamicProgramming/UniquePaths.java)
     * [MinimumPathSum](/Algorithms/DynamicProgramming/MinimumPathSum.java)
     * [ClimbingStairs](/Algorithms/DynamicProgramming/ClimbingStairs.java)
-    * [EditDistance](/Algorithms/DynamicProgramming/EditDistance.java)
+    * [Levenshtein Distance Algorithm - EditDistance](/Algorithms/DynamicProgramming/LevenshteinDistanceAlgorithmEditDistance.java)
 
 5. #### [Graphs](/Algorithms/Graphs/)
 
