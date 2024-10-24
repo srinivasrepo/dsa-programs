@@ -8,7 +8,7 @@ package Algorithms.TwoPointers;
 
  Notice that you may not slant the container.
 
- * @author Srinivas Vadige
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 30 Sept 2024
  */
 public class ContainerWithMostWater {

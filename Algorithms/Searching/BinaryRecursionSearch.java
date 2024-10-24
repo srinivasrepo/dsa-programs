@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class BinaryRecursionSearch { // the input has to be sorted before the binary search

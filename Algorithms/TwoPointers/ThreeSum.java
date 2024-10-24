@@ -10,30 +10,29 @@ import java.util.Map;
 /**
  * The sum of three integers a + b + c = 0
  * Find all unique triplets in the array which gives the sum of zero.
- * 
+ *
  * <p>Note:
- * 
+ *
  * 1. The solution set must not contain duplicate triplets.
- * 
+ *
  * <p> we achieve O(n) time complexity. It's ok to solve it with O(n^2) sorting or hashmap and
- * 
+ *
  * OBSERVATIONS:
  * 1. In [-3, 3, 1, 2, 3, 4]. We already calculated all possible sums for -3 in 0th index then skip the -3 in 1st index
  * 2. And if we sorted the array then we can increment and decrement the pointers based on the sum i.e sum > 0 move the right-- and sum < 0 move the left++
- * 
- * @author : Srinivas Vadige
+ *
+ * @author : Srinivas Vadige, srinivas.vadige@gmail.com
  * @since : 01 Oct 2024
  */
 public class ThreeSum {
-    
-    
+
     public static void main(String[] args) {
         int[] nums = new int[]{-1, 0, 1, 2, -1, -4};
         System.out.println(threeSumWithSort(nums));
         System.out.println(threeSumWithSortAndHashMap(nums));
     }
 
-    
+
     /**
      * Time Complexity = O(n^2) + O(n log n) = O(n^2)
      * use sorting
@@ -71,7 +70,7 @@ public class ThreeSum {
             Arrays.sort(nums);
             List<List<Integer>> result = new ArrayList<>();
             Map<Integer, Integer> map = new HashMap<>();
-    
+
             for (int i = 0; i < nums.length - 1; i++) {
                 map.clear();
                 for (int j = i + 1; j < nums.length; j++) {
@@ -88,8 +87,7 @@ public class ThreeSum {
             }
             return result;
         }
-    
-    
+
     /**
      * Time Complexity = O(n^2) + O(n log n) = O(n^2)
      * use sorting
@@ -102,7 +100,7 @@ public class ThreeSum {
             if (i > 0 && nums[i] == nums[i-1]) {
                 continue;
             }
-            
+
             int j = i + 1;
             int k = nums.length - 1;
 
@@ -123,7 +121,7 @@ public class ThreeSum {
                 }
             }
         }
-        return res;        
+        return res;
     }
     public static List<List<Integer>> threeSumBruteFroce(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
@@ -141,9 +139,9 @@ public class ThreeSum {
     }
 
     /**
-     * 
+     *
      * My thoughts on achieving < O(n^2)
-     * 
+     *
      */
     public List<List<Integer>> threeSum2
     (int[] nums) {
@@ -164,26 +162,26 @@ public class ThreeSum {
 
             for(r=l+1; r<nums.length; r++){
 
-            
+
             Integer need = -( nums[l] + nums[r] );
 
             List<Integer> subList = new ArrayList<>( Arrays.asList(nums[l], need, nums[r] ));
-            Collections.sort(subList); 
-            
+            Collections.sort(subList);
+
             boolean isMatched = false;
-            if(map.containsKey(need)){            
+            if(map.containsKey(need)){
                 for (Integer i: map.get(need)){
                     if (i==l || i==r)
                         isMatched = true;
                 }
             }
             if( map.containsKey(need) && list.contains(subList)  && !isMatched)  {
-            
+
                 list.add(subList);
             }
 
             System.out.println("need:"+need+ " , l num:" +nums[l]+ " , r num:" + nums[r]);
-             
+
             }
             l++;
         }

@@ -6,12 +6,11 @@ import java.util.List;
 import java.util.Queue;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinivas Vadige, srinivas.vadige@gmail.com
 * @since 23 Sept 2024
 */
-public class InvertBinaryTree {    
+public class InvertBinaryTree {
 
-    
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         TreeNode root = buildTree(nums);

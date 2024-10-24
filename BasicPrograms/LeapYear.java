@@ -3,13 +3,13 @@ package BasicPrograms;
 // import java.util.Scanner;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class LeapYear {
 
     public static void main(String[] args) {
-        
+
         // Scanner sc=new Scanner(System.in);
         // System.out.println("Enter a Year");
         // int year = sc.nextInt();
@@ -25,5 +25,5 @@ public class LeapYear {
          System.out.println("Leap year");
         else System.out.println("Not a leap year");
     }
-    
+
 }

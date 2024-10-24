@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class RomanToInteger {
@@ -33,7 +33,7 @@ public class RomanToInteger {
             int charValue = map.get(s.charAt(i));
             int nextCharValue = i+1<s.length()? map.get(s.charAt(i+1)): 0;
             result = result + (charValue<nextCharValue? -charValue: +charValue); // IV, IX, XL, XC.....
-            
+
             // // or skip nextChar itertion
             // if (charValue < nextCharValue){
             //     charValue = nextCharValue - charValue;
@@ -64,7 +64,7 @@ public class RomanToInteger {
                     i++;
                 }
             }
-            sum += charValue; 
+            sum += charValue;
         }
         return sum;
     }
@@ -102,6 +102,5 @@ public class RomanToInteger {
     }
 
 
-    
-    
+
 }

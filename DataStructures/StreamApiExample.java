@@ -1,17 +1,17 @@
 package DataStructures;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class StreamApiExample {
 
     public static void main(String[] args) {
-        
+
     }
 }
 
-/* 
+/*
 
 
 

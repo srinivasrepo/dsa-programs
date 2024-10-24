@@ -34,7 +34,7 @@ package Algorithms.DynamicProgramming;
 
 
 
-@author Srinvas Vadige
+@author Srinvas Vadige, srinivas.vadige@gmail.com
 @since 14 Oct 2024
 @see /Algorithms/DynamicProgramming/UniquePathSum.java
 

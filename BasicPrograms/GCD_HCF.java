@@ -8,16 +8,16 @@ import java.util.List;
 * GCD = Greatest Common Divisor of any two integers is the largest number that divides both integers
 * HCF = Highest Common Factor (same as GCD)
 * in our schooling we used LCM to find the GCD or HCF
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class GCD_HCF {
     public static void main(String[] args) {
         int a = 9, b = 12;
-        System.out.println("gcdOfLongApproach => " + gcdOfLongApproach(a, b));     
-        System.out.println("gcdOfUsingMinNumLoopExtraVar => " + gcdOfUsingMinNumLoopExtraVar(a, b));     
-        System.out.println("gcdOfUsingMinNumLoopNoExtraVar => " + gcdOfUsingMinNumLoopNoExtraVar(a, b));     
-        System.out.println("Euclidean Algorithm while loop => " + euclideanAlgorithmWhileLoop(a, b));     
+        System.out.println("gcdOfLongApproach => " + gcdOfLongApproach(a, b));
+        System.out.println("gcdOfUsingMinNumLoopExtraVar => " + gcdOfUsingMinNumLoopExtraVar(a, b));
+        System.out.println("gcdOfUsingMinNumLoopNoExtraVar => " + gcdOfUsingMinNumLoopNoExtraVar(a, b));
+        System.out.println("Euclidean Algorithm while loop => " + euclideanAlgorithmWhileLoop(a, b));
     }
 
     static int gcdOfLongApproach(int a, int b) {
@@ -56,8 +56,8 @@ public class GCD_HCF {
 
 
 /* 
-    The Euclidean Algorithm is a method for finding the greatest common divisor of two numbers. 
-    It operates on the principle that the GCD of two numbers remains the same 
+    The Euclidean Algorithm is a method for finding the greatest common divisor of two numbers.
+    It operates on the principle that the GCD of two numbers remains the same
     even if the smaller number is subtracted from the larger number.
 
     To find the GCD of n1 and n2 where n1 > n2:

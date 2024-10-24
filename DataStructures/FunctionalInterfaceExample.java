@@ -5,20 +5,20 @@ import java.util.function.Predicate;
 
 /**
 Fuctional interfaces in Java is introduced in v8
-An Interface that contains exactly one abstract method is known as functional interface. 
-It can have any number of default, static methods but can contain only one abstract method. 
-It can also declare methods of object class. 
+An Interface that contains exactly one abstract method is known as functional interface.
+It can have any number of default, static methods but can contain only one abstract method.
+It can also declare methods of object class.
 Functional Interface is also known as Single Abstract Method Interfaces or SAM Interfaces.
 
 USE
-1) we can define a method with functional interface as a parameter 
-Eg: 
+1) we can define a method with functional interface as a parameter
+Eg:
 Collections.sort(nums, ()->), reduce(), map(), filter()
 List.forEach()
 HashMap.merge(), HashMap.compute()
-EVERY JAVA LAMBA METHODS AND METHOD REFERENCES USES THIS FUNCTIONAL INTERFACE PRINCIPLE
+EVERY JAVA LAMBDA METHODS AND METHOD REFERENCES USES THIS FUNCTIONAL INTERFACE PRINCIPLE
 
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class FunctionalInterfaceExample {
@@ -76,24 +76,24 @@ interface MyFunctionalInterface {
 A functional interface can extends another interface only when it does not have any abstract method.
 */
 
-interface Sayable{  
-    void say(String msg);   // abstract method  
-} 
-// @FunctionalInterface // ===> cannot declare it as @FunctionalInterface
-// cause Invalid '@FunctionalInterface' annotation; Doable is not a functional interface  
-interface Doable extends Sayable{  
-    void doIt();  
+interface Sayable{
+    void say(String msg);   // abstract method
 }
-	
-interface Sayable2 {  
-    default void doIt(){  // non-abstract method  
-        System.out.println("Do it now");  
-    }  
-}  
-@FunctionalInterface  
-interface Doable2 extends Sayable2{  
-    void say(String msg);   // abstract method  
-}  
+// @FunctionalInterface // ===> cannot declare it as @FunctionalInterface
+// cause Invalid '@FunctionalInterface' annotation; Doable is not a functional interface
+interface Doable extends Sayable{
+    void doIt();
+}
+
+interface Sayable2 {
+    default void doIt(){  // non-abstract method
+        System.out.println("Do it now");
+    }
+}
+@FunctionalInterface
+interface Doable2 extends Sayable2{
+    void say(String msg);   // abstract method
+}
 
 
 

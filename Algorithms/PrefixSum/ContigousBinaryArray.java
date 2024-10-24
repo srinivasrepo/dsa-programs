@@ -3,7 +3,7 @@ package Algorithms.PrefixSum;
 import java.util.HashMap;
 import java.util.Map;
 /**<pre>
- * @author Srinivas Vadige,
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 25 Sept 2024,
  */
 public class ContigousBinaryArray {
@@ -14,7 +14,7 @@ public class ContigousBinaryArray {
 
     // prefixSum Hashmap approach
     public static int findMaxLength(int[] nums) {
-    
+
         int prefixSum = 0;
         int maxLength = 0;
 
@@ -35,12 +35,9 @@ public class ContigousBinaryArray {
 
             if(!sumsMap.containsKey(prefixSum)) // or map.putIfAbsent
                 sumsMap.put(prefixSum, i);
-    
         }
-        
         return maxLength;
     }
 
     // we can also use zerosCount and onesCount approach and check zerosCount == onesCount but research on start index like zerosCount - onesCount == 2
-    
 }

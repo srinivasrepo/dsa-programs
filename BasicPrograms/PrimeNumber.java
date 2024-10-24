@@ -1,7 +1,7 @@
 package BasicPrograms;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class PrimeNumber {
@@ -21,11 +21,11 @@ public class PrimeNumber {
     }
 
     /*
-     * 
-     * or loop untill i <= (int) Math.sqrt(num); or i <= num/2 with
+     *
+     * or loop until=l i <= (int) Math.sqrt(num); or i <= num/2 with
      * Add the counterpart divisor if it's different from i
      * => if (i != num / i) divisors.add(num / i);
-     * 
+     *
      * cause
      * the divisors of 36 number are [1, 2, 3, 4, 6, 9, 12, 18, 36]
      * 1*36
@@ -37,19 +37,19 @@ public class PrimeNumber {
      * 12*3
      * 18*2
      * 36*1
-     * 
+     *
      * this is repeating after 6*6 in reverse order
      */
 
-    static boolean isPrimeUsingSqrtLoopWithNumOfFactors(int n) {        
+    static boolean isPrimeUsingSqrtLoopWithNumOfFactors(int n) {
         if (n <= 1) return false; // Corner case as 1 is not prime and 0 & negatives are also not prime
         int numOfFactors = 0;
         for (int i = 1; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
-                numOfFactors++;                
+                numOfFactors++;
                 if (n/i != i) numOfFactors++; // for "perfect squre" 6*6 = 36 scenario i.e don't add 6 two times. The COUNTERPART or Reciprocal factor of i is n/i. Eg: 1 is 36. And skipping numOfFactors for 6*6 perfect square scenario i.e num != counterpart of num
             }
-        }        
+        }
         return numOfFactors == 2; // i.e number of factors is exactly 2
     }
 

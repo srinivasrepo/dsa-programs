@@ -7,7 +7,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * @author Srinivas Vadige
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 28 Sept 2023
 */
 public class MinimumWindowSubstring {
@@ -18,12 +18,10 @@ public class MinimumWindowSubstring {
         // System.out.println( "minWindowBruteForce: " + minWindowBruteForce(s, t));
     }
 
-  
-     
-     
+
     /*
       "TO_FIND" counter is length of "t" and it is constant
-      "found" counter is used to store the count of t characters in the current subString or window. 
+      "found" counter is used to store the count of t characters in the current subString or window.
       So, max value of found counter is TO_FOUND t length i.e always foundCounter <= TO_FIND
       if found < TO_FIND ---> then move right pointer to find the remaining t chars. And check if we found remaining t char then increase found counter and "decrease" charsMap or ascii array int[128] specific char by 1
       main while loop with right++
@@ -31,13 +29,13 @@ public class MinimumWindowSubstring {
       if found == TO_FIND ---> then move left pointer (as we got all t chars & we want min subStr) & check if the current left index char is in t string chars, if it is then decrease found counter and "increase" charsMap or ascii array int[128] specific char by 1 as we need to find that in future
       sub while loop with left++
       charsMap.get('left') > 0 then found--
-      i.e iterate main loop untill found == TO_FIND then loop sub while loop and then repeat the process untill 
-      Remeber to always decrease the right pointer charsMap, ascii array char count by 1 in the parent while loop
+      i.e iterate main loop until found == TO_FIND then loop sub while loop and then repeat the process untill 
+      Remember to always decrease the right pointer charsMap, ascii array char count by 1 in the parent while loop
       NOTE
       1. we can use charsMap with char counter or ascii array new int[128] with ascii char counter to store the t chars and visited s chars. Because s and t consist of uppercase and lowercase English letters only
       2. And specific s chars are always negative i.e <= -1. And t specific char counter max value is it's repition in t string and min value of negative as per presense in s.
       3. if the t char in charsMap is > 0 then it means we need find that char in s substring that many times.
-      4. while loop instead of for ---> while(rightIndex < s.length) eventhough we didn't loop till leftIndex in the rightIndex < s.length last loop we have the TO_FIND == found while loop to complete the left pointer
+      4. while loop instead of for ---> while(rightIndex < s.length) even though we didn't loop till leftIndex in the rightIndex < s.length last loop we have the TO_FIND == found while loop to complete the left pointer
     */
       /**
       * @TimeComplexity - O(m+n)
@@ -65,27 +63,27 @@ public class MinimumWindowSubstring {
 
             // --- left pointer loop
             // After all t chars count reduced to 0 or lower in charsMap i.e one of the subStr
-            while(found==TO_FIND_TARGET){ 
+            while(found==TO_FIND_TARGET){
                 // calculate subStr ---> as per window len i.e rightIndex-leftIndex+1
                 int currWindowL = right - left + 1;
                 if(subStr.length() > currWindowL || subStr.length()==0){
                     subStr = s.substring(left, right+1);
                 }
-                
+
                 // INCREASE THE LEFT VISITED CHAR COUNT IN CHARSMAP -------------
                 // i.e revert the charsMap as per left pointer
                 // note that what ever we decreased in right pointer, we're increasing the same in left
                 charsMap.merge(s.charAt(left), 1, Integer::sum);
-                
+
                 // is t char?
                 if(charsMap.get(s.charAt(left)) > 0){
                     found--;
                 }
                 left++;
             }
-            
+
             right++;
-        }        
+        }
         return subStr;
     }
 
@@ -138,7 +136,7 @@ public class MinimumWindowSubstring {
     */
     public static String minWindowUsingSet(String s, String t) {
         if(t.length() > s.length()) return "";
-       String subStr = "";        
+       String subStr = "";
 
        for(int i=0; i<s.length(); i++){
            for(int j=i+t.length(); j<s.length()+1; j++){ // non exclusive
@@ -148,7 +146,7 @@ public class MinimumWindowSubstring {
                Set<String> set = Arrays.stream(t.split("")).collect(Collectors.toSet());
 
                System.out.println(set);
-               
+
                for (String c:  set){
                    if(!tempSub.contains(c))
                        isMatched = false;
@@ -162,10 +160,10 @@ public class MinimumWindowSubstring {
                }
                System.out.println(tempSub);
            }
-       }        
+       }
        return subStr;
    }
-    
+
 
 
 
@@ -177,12 +175,12 @@ public class MinimumWindowSubstring {
     public static String minWindowBruteForce(String s, String t) {
         if(t.length() > s.length()) return "";
         String subStr = "";
-        
+
         Map<String, Integer> tMap = Arrays.stream(t.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(e->1)) );
 
         for(int i=0; i<s.length(); i++){
             for(int j=i+t.length(); j<s.length()+1; j++){ // non exclusive
-                String tempSub = s.substring(i, j);                              
+                String tempSub = s.substring(i, j);
                 Map<String, Integer> subStrMap = Arrays.stream(tempSub.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(e->1)) );
                 // check t in tempSub
                 if(validate(tMap, subStrMap)){
@@ -191,7 +189,7 @@ public class MinimumWindowSubstring {
                 }
                 System.out.println(tempSub);
             }
-        }        
+        }
         return subStr;
     }
 

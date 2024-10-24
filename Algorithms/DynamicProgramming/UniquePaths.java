@@ -4,9 +4,9 @@ package Algorithms.DynamicProgramming;
 <pre>
 
     m*n allowed -> so RB? or TD dp?
-    
+
     a[0][0] -> a[1][0] or a[0][1] only one sub-array will change
-     
+
     now continue choices from a[1][0] - again 2
     and choices for a[0][1] - again 2
 
@@ -19,7 +19,7 @@ package Algorithms.DynamicProgramming;
               ______|______     ______|______
              /             \   /             \
            2,0            1,1  1,1           0,2
-         3,0  2,1      
+         3,0  2,1
 
 
 Here 1,1 is already calculated --- Top-Down memo DP with hashmap or dp array
@@ -35,7 +35,7 @@ start from m not 0
 
 
 
-@author Srinvas Vadige
+@author Srinvas Vadige, srinivas.vadige@gmail.com
 @since 13 Oct 2024
 </pre>
 

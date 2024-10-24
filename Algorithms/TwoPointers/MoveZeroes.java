@@ -3,6 +3,10 @@ package Algorithms.TwoPointers;
 import java.util.*;
 import java.util.stream.*;
 
+/**
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
+ * @since 03 Sept 2024
+ */
 public class MoveZeroes {
     public static void main(String[] args) {
 
@@ -14,7 +18,7 @@ public class MoveZeroes {
     // keep left pointer in 1st 0 num index
     public static void moveZeroes(int[] nums) {
         int left = 0;
-        
+
         for (int right = 0; right < nums.length; right++) {
             if (nums[right] != 0) {
                 int temp = nums[right];

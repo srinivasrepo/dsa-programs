@@ -1,5 +1,5 @@
 package Algorithms.DynamicProgramming;
- 
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -7,10 +7,10 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 /**
  * Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
- * 
+ *
  * Examples: "()())", "(())", "()(()", "()(())"
- * 
- * @author Srinivas Vadige
+ *
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 12 Oct 2024
  */
 class  LongestValidParenthesis{
@@ -82,7 +82,7 @@ class  LongestValidParenthesis{
      * As we want the stack size >0 and "prev index of validWith" store ')' close parentheses indices too only if size == 0
      * And calculate the maxL when current char is ')' and stack size > 0
      * </pre>
-     * 
+     *
      * @TimeComplexity - O(n)
      * @SpaceComplexity - O(n) -- extra space for stack
      */
@@ -108,7 +108,7 @@ class  LongestValidParenthesis{
 
     /**
      * @Approach Bottom-Up Tabulation DP as we use dp = new int[s.length()]
-     * 
+     *
      * @TimeComplexity - O(n)
      * @SpaceComplexity - O(n)
      */
@@ -120,7 +120,7 @@ class  LongestValidParenthesis{
             // if *)
             if(s.charAt(i) == ')') {
                 //if *()
-                if(s.charAt(i-1) == '(') {                 
+                if(s.charAt(i-1) == '(') {
                     dp[i] = (i>=2 ? dp[i-2] : 0) + 2; // so "*()" i.e i-2 is "*" is previous valid parenthesis start index and current "()" length = 2 and so current length = prevLength + 2. Note that prevLength can be 0 because of invalid parenthesisWidth or i=2 index.
                 }
                 // by default else will be *))
@@ -185,12 +185,12 @@ class  LongestValidParenthesis{
         int maxLength = 0;
         int prefixSum = 0;
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < s.length(); i++) {  
+        for (int i = 0; i < s.length(); i++) {
             int n = s.charAt(i) == '(' ? -1 : 1;
 
             if(n == 1 && map.size() == 0) {
-                continue;                
-            } 
+                continue;
+            }
 
             prefixSum += n;
 
@@ -198,8 +198,8 @@ class  LongestValidParenthesis{
 
             if (prefixSum != 0 && map.containsKey((0-prefixSum))) {
                 maxLength = Math.max(maxLength, i - map.get(-(prefixSum))-1);
-            }                      
-            
+            }
+
             map.putIfAbsent(prefixSum, i); // as we need max length
         }
 
@@ -213,19 +213,19 @@ class  LongestValidParenthesis{
         int l = -1;
         int prefixSum = 0;
         for(int r=0;  r<s.length(); r++ ){
-            int i = ( s.charAt(r)=='(' ) ? -1 : 1 ;            
+            int i = ( s.charAt(r)=='(' ) ? -1 : 1 ;
             if(l<0 && i == -1){
                 l = r;
                 prefixSum = 0;
-            }        
+            }
             if(r>0 && s.charAt(r) == s.charAt(r-1) ){
-                prefixSum = 0;             
+                prefixSum = 0;
                 if(i == -1){
                     l = r;
                     prefixSum += i;
                 }
-                else 
-                    l = -1;                
+                else
+                    l = -1;
                 continue;
             }
             System.out.println(l);

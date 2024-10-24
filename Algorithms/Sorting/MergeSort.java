@@ -1,16 +1,16 @@
 package Algorithms.Sorting;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 import java.util.Arrays;
 
 // take the middle item, divide the into 2 sublists(0 to m and m to length) and continue so on
 // recursion function and update the inputArr and it's sub halfs using pass by reference
-public class MergeSort { 
+public class MergeSort {
 
-    
+
     public static void main(String[] args) {
         int[] inputArr = new int[]{3, 2, 4, -1, 1000, 100, 3, 1, 0};
         System.out.println("------------------ Before sorting: " + Arrays.toString(inputArr));
@@ -18,10 +18,10 @@ public class MergeSort {
         System.out.println("------------------ After sorting: " + Arrays.toString(inputArr));
     }
 
-    
+
     public static void sort(int[] inputArr){
 
-        // -------- DIVIDE ---------    
+        // -------- DIVIDE ---------
 
         // no need to divide [e] or [] again into two halfs
         if(inputArr.length < 2) return;
@@ -43,9 +43,9 @@ public class MergeSort {
         merge(inputArr, leftHalf, rightHalf);
         System.out.println("==========> inputArr after sorting => " + Arrays.toString(inputArr));
     }
-    
+
     static void merge(int[] inputArr, int[] leftHalf, int[] rightHalf){
-    
+
         // ----- loop leftHalf and rightHalf at once using while loop ----
 
         // left, right, input arrays indexes
@@ -80,5 +80,5 @@ public class MergeSort {
             j++;k++;
         }
     }
-    
+
 }

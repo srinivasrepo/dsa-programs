@@ -2,17 +2,17 @@ package LeetCode;
 import java.util.*;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class Anagram {
     public static void main(String[] args) {
         List<String> lst = Arrays.asList("codee", "ecoe","eecod");
-        HashMap<Character, Integer> map = new HashMap<>(); 
+        HashMap<Character, Integer> map = new HashMap<>();
         // or Map<String, Long> charMap = Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         for(char c: lst.get(0).toCharArray()){
-            map.put(c, map.get(c)!=null? map.get(c)+1 : 1); 
-            // or map.merge('A', 1, Integer::sum); 
+            map.put(c, map.get(c)!=null? map.get(c)+1 : 1);
+            // or map.merge('A', 1, Integer::sum);
             // or map.put('A', map.getOrDefault('A', 0) + 1 );
         }
         System.out.println(map);
@@ -28,6 +28,6 @@ public class Anagram {
             }
         });
         System.out.println("ALL THOSE STRS ARE ANAGRAMS");
-    } 
+    }
 
 }

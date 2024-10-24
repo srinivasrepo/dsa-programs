@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
- * A subarray is a contiguous non-empty sequence of elements within an array.
+ * Given an array of integers nums and an integer k, return the total number of sub-arrays whose sum equals to k.
+ * A sub-array is a contiguous non-empty sequence of elements within an array.
  * And these numbers can be positive and negative
  * nums = [1,1,1], k = 2 => Output: 2
  * nums = [1,2,3], k = 3 => Output: 2
- * 
- * @author Srinivas Vadige
+ *
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 25 Sept 2024
  */
 public class SubarraySumEqualsK {
@@ -20,7 +20,6 @@ public class SubarraySumEqualsK {
         System.out.println("subarraySumUsingPrefixSumIndex: " + subarraySumUsingPrefixSumIndex(arr, k));
         System.out.println("subarraySumTwoPointerBruteForce: " + subarraySumTwoPointerBruteForce(arr, k));
         System.out.println("subarraySumByStoringNeededSum: " + subarraySumUsingPrefixSum(arr, k));
-        
 	}
 
         /**
@@ -33,13 +32,13 @@ public class SubarraySumEqualsK {
         sumsMap.put(0, 1);
         for (int i=0; i<arr.length; i++) {
             prefixSum += arr[i]; // running sum
-            
+
             int prevPrefixSum = prefixSum - k; // y-x == k then y-k == x
 
             // no need to compare arr[i] == k as prefixSum -k means the previous prevPrefixSum and it is already present in hashmap
             // prefixSum == k if it is the first time note that we already have sumsMap.put(0, 1);
-            
-            if(sumsMap.containsKey(prevPrefixSum))  
+
+            if(sumsMap.containsKey(prevPrefixSum))
                 count += sumsMap.get(prevPrefixSum); // we need to add the sum as we can have same prevPrefixSum multiple times.. why not ++ instead??
 
             sumsMap.merge(prevPrefixSum, 1, Integer::sum); // update the map +1 otherwise prev sums will override
@@ -48,9 +47,9 @@ public class SubarraySumEqualsK {
         }
         return count;
     }
-    
+
     /**
-     * 
+     *
      * @Technique Prefix-Sum or Cumulative Sum
      * @TimeComplexity O(n)
     */
@@ -73,7 +72,7 @@ public class SubarraySumEqualsK {
 
     /**
      * @Technique Brute Force, 2 pointer sliding window technique -> calculate the sum of eles in a contiguous segment of an array 
-     * 
+     *
      * @TimeComplexity O(n^2)
     */
 	public static int subarraySumTwoPointerBruteForce(int[] arr, int k) {

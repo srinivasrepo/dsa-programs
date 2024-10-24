@@ -1,21 +1,21 @@
 package Algorithms.DynamicProgramming;
 
 /**
- * 
- * @author Srinvas Vadige 
+ *
+ * @author Srinvas Vadige, srinivas.vadige@gmail.com
  * @since 06 Oct 2024
  */
 public class LongestPalindromicSubstring {
 
     static int start = 0; // -- only for longestPalindrome()
     static int end = 0; // or use dp = new int[2] instead or just store the maxLen string
-    
+
     public static void main(String[] args) {
         String s = "cbbd";
         System.out.println("longestPalindrome: " + longestPalindrome2Improved(s));
         System.out.println("longestPalindromeBruteForce: " + longestPalindromeBruteForce(s));
     }
-    
+
     // Bottom-Up NoMemory DP in palindrome() method
     public static String longestPalindrome(String s) {
         char[] ch = s.toCharArray();
@@ -45,16 +45,16 @@ public class LongestPalindromicSubstring {
         palindrome(ch, i+1); // to traverse each index i.e 0 to n-1
     }
 
-    public static String longestPalindrome2(String s) {    
+    public static String longestPalindrome2(String s) {
         String res = "";
-        
+
         for(int i=0; i<s.length(); i++){
             res = extendPalindrome(s, i, i, res); // non-dup chars --> not even len odd len case
             res = extendPalindrome(s, i, i+1, res); // dup chars or just skip the dup chars like while (r < n-1 && ch[r] == ch[r+1]) {r++;} ---> check longestPalindrome2Improved() and extendPalindrome2Improved
-        }        
+        }
         return res;
     }
-    
+
     public static String extendPalindrome(String s, int l, int r, String res){
         while(l>=0 && r<s.length() && s.charAt(l) == s.charAt(r)){
             if(r-l+1 > res.length())
@@ -65,17 +65,17 @@ public class LongestPalindromicSubstring {
         return res;
     }
 
-    public static String longestPalindrome2Improved(String s) {    
-        String res = "";        
+    public static String longestPalindrome2Improved(String s) {
+        String res = "";
         for(int i=0; i<s.length(); i++){
             res = extendPalindrome2Improved(s, i, i, res);
         }
         return res;
     }
-    
+
     public static String extendPalindrome2Improved(String s, int l, int r, String res){
         while (r < s.length()-1 && s.charAt(r) == s.charAt(r+1)) {r++;} // dup chars case
-        while(l>=0 && r<s.length() && s.charAt(l) == s.charAt(r)){ // validate palindrome case 
+        while(l>=0 && r<s.length() && s.charAt(l) == s.charAt(r)){ // validate palindrome case
             if(r-l+1 > res.length())
                 res = s.substring(l, r+1);
             l--;
@@ -108,10 +108,10 @@ public class LongestPalindromicSubstring {
                     int nl = substr.length();
                     if (nl > maxLength) {
                         maxLength = nl;
-                        res = substr; 
+                        res = substr;
                     }
                 }
-            } 
+            }
         }
         return res;
     }

@@ -6,16 +6,16 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- *  1. build treee 
+ *  1. build tree
     2. print tree in the form of array
     3. update
     4. swap left and right nodes
     5. invert tree
- * 
- * 
- * 
- * 
-* @author Srinvas Vadige 
+ *
+ *
+ *
+ *
+* @author Srinivas Vadige, srinivas.vadige@gmail.com
 * @since 23 Sept 2024
 */
 public class BinaryTree {
@@ -95,7 +95,7 @@ public class BinaryTree {
             }
 
             final int mid = (l + r) / 2;
-            
+
             result.get(level).set(mid, String.valueOf(root.val));
 
             dfs(root.left, result, l, mid, level + 1, width);
@@ -106,14 +106,14 @@ public class BinaryTree {
     private static int getHeight(final TreeNode root) {
         if(root == null)
             return 0;
-        
+
         return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
     }
 
-      
+
     public static TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
-        swapNodes(root);        
+        swapNodes(root);
         return root;
     }
 

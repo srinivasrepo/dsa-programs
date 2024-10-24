@@ -19,7 +19,7 @@ package Algorithms.TwoPointers;
     0i    1i     2i     3i     4i     5i     6i     7i     8i     9i     10i    11i    12i
 
 </pre>
- * @author Srinvas Vadige
+ * @author Srinvas Vadige, srinivas.vadige@gmail.com
  * @since 02 Oct 2024
 */
 public class TrappingRainWater {
@@ -49,7 +49,7 @@ public class TrappingRainWater {
             }
         }
 
-        return water;        
+        return water;
     }
 
     public static int trap2(int[] height) {
@@ -63,7 +63,7 @@ public class TrappingRainWater {
                 leftMax = Math.max(leftMax, height[left]);
                 total += Math.min(leftMax, height[left]) - height[left];
                 left++;
-            } else {    
+            } else {
                 rightMax = Math.max(rightMax, height[right]);
                 total += Math.min(rightMax, height[right]) - height[right];
                 right--;
@@ -75,12 +75,12 @@ public class TrappingRainWater {
     /**
      * <pre>
         water stagnates only if lh>rh upto lh<=rh
-        need bigger heights 
+        need bigger heights
         calculate hight diffs in each r loop with current l
         scenario is changing after r == height.length-1
 
-        If we move both pointers to right side 
-        And now let's the r pointer just passed the biggest of all heights 
+        If we move both pointers to right side
+        And now let's the r pointer just passed the biggest of all heights
         then we are keeping that biggest height as l
         Once we reached lh <= rh it makes us count the dummies even if we don't have lh <= rh height
 
@@ -91,18 +91,18 @@ public class TrappingRainWater {
     </pre>
     */
     public static int trapMyThoughts(int[] height) {
-        
+
         int l = 0, r =1;
 
         int units = 0;
-        
+
         int tempUnits = 0; // as we are not sure if we have bigger r in future
         //int tempHeight = 0; // my thoughts on this
         while(l < height.length){
 
             System.out.println("l:" +l + ", r:" + r);
 
-            if(height[l]>height[r]){                
+            if(height[l]>height[r]){
                 tempUnits += height[l]-height[r];
                 System.out.println("inside tempUnits: " + tempUnits);
             }
@@ -111,7 +111,7 @@ public class TrappingRainWater {
                 units += tempUnits;
                 tempUnits=0;
                 l = r;
-                System.out.println("--------- inside Units: " + units);    
+                System.out.println("--------- inside Units: " + units);
             }
             if (r < height.length-1)
                 r++;

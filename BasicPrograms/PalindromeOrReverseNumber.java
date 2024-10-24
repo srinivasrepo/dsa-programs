@@ -1,34 +1,34 @@
 package BasicPrograms;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class PalindromeOrReverseNumber {
 
     public static void main(String[] args) {
-        int n = 543212345; 
+        int n = 543212345;
         System.out.println("Given number is: " + n);
         System.out.println("Reverse using DIV /10 AND MODULS %10 APPROACH => " + reverse(n));
-        System.out.println("Reverse using STRING REVERSE => " + stringReverse(n)); 
+        System.out.println("Reverse using STRING REVERSE => " + stringReverse(n));
         System.out.println("Reverse using STRING BUILDER REVERSE => " + stringBuilderReverse(n));
         System.out.println("isPalindrome: " + isPalindrome(n));
         System.out.println("isPalindromeStringApproach: " + isPalindromeStringApproach(n));
     }
 
     // reversing using %10 and /10 concept
-    static int reverse(int n) { 
+    static int reverse(int n) {
 
-        // reversed number 
-        int rev = 0; 
-  
-        while (n > 0) { 
+        // reversed number
+        int rev = 0;
+
+        while (n > 0) {
         int lastDigit = n % 10; // remainder
-            rev = (rev * 10) + lastDigit; 
+            rev = (rev * 10) + lastDigit;
             n = n / 10; // quotient
-        } 
-  
-        return rev; 
+        }
+
+        return rev;
     }
 
 
@@ -40,7 +40,7 @@ public class PalindromeOrReverseNumber {
             nStr = i+nStr; // it is different from nStr += i
         }
 
-        // // or 
+        // or
         // while (!oStr.equals("")) {
         //     nStr += oStr.charAt(oStr.length()-1);
         //     oStr = oStr.substring(0, oStr.length()-1);
@@ -66,8 +66,8 @@ public class PalindromeOrReverseNumber {
         return x == y;
     }
 
-    public static boolean isPalindromeStringApproach(int x) {       
+    public static boolean isPalindromeStringApproach(int x) {
         return new StringBuilder(String.valueOf(x)).reverse().toString().equals(String.valueOf(x));
     }
-    
+
 }

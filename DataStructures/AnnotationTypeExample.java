@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
 /**
 In annotation type interface we can only use methods with return type as primitives, String, Array of primitives. 
 We cannot use Non-primitives or classes or list.
@@ -19,9 +20,9 @@ We cannot use Non-primitives or classes or list.
 /* Annotation Types basically don’t change our code in real-time but will helpful in the runtime. Annotations can be class level @Path, method level @Override or variable level @SuppressWarnings. And will defining our custom annotations we use some in-built or another custom annotations. This custom annotation’s in-built annotations are 
 1) @Target(“ClassMethodVarLevel”) - optional and leave it if you want to use this for all levels. Inside value is like ElementType.METHOD, .TYPE(class), .PACKAGE., .CONSTRUCTOR, .FIELD(variable)
 2) @Retention(RetentionPolicy.RUNTIME) to keep this annotation alive up to what extent i.e annotation life cycle. RUNTIME means alive all the way through runtime, so that other code can use this annotation. Other values like RetentionPolicy.SOURCE means make alive even before the code is complied like SuppressWarning annotation, RetentionPolicy.CLASS means only active up to compile and destroys at runtime.
-3) @Documented...... 
+3) @Documented......
 
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 @Retention(RetentionPolicy.RUNTIME) // optional
@@ -44,7 +45,7 @@ public @interface AnnotationTypeExample {
     int times() default 1;
 }
 
-/* 
+/*
 which can then annotate a class as follows:
 @AnnotationTypeExample (       //The annotation @AnnotationTypeExample is disallowed for this location or same file
    author = "John Doe",
@@ -78,7 +79,7 @@ for (Method method : myCat.getclass.getDeclaredMethods()){
         RunImmediately annotation = method.getAnnotation(RunImmediately.class)
         for (int i = 0; i ‹ annotation.times); i++){ method. invoke(myCat); }
     }
-} 
+}
 */
 class AnotherClass {
 
@@ -90,7 +91,7 @@ class AnotherClass {
                                         .map(Package::getName)
                                         .filter(n -> n.startsWith(packageNamePattern))
                                         .toList();
-        
+
         // get List of all classes from a single packege
         String packageName = packagesList.get(0);
         InputStream stream = ClassLoader.getSystemClassLoader()
@@ -116,7 +117,7 @@ class AnotherClass {
                 for (int i = 0; i < annotation.times(); i++)
                     method.invoke(new Object());
             }
-        } 
+        }
 
     }
 

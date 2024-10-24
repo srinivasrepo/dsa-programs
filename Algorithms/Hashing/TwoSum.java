@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class TwoSum {
@@ -26,7 +26,7 @@ public class TwoSum {
             for(int j=i+1; j<nums.length; j++){
                 if(nums[i]+nums[j] == target){
                     return res = new int[]{i,j}; // or assign res & break; or just return new int[]{i,j} & return new int[] at method end line;
-                }                    
+                }
             }
         }
        return res;
@@ -70,5 +70,4 @@ public class TwoSum {
 
         return new int[]{}; // No solution found
     }
-    
 }

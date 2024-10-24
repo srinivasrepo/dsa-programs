@@ -1,17 +1,17 @@
 package DataStructures;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class ListExample {
 
     public static void main(String[] args) {
-        
+
     }
 }
 
-/* 
+/*
 DECLARE & INITIALIZE LIST:
 —————————————————
 List<String> list1 = List.of(...) => immutable just use it for looping i.e acts as tuples in python
@@ -32,7 +32,7 @@ Stream.toList() or Stream.collect(toList) are IMMUTABLE. So, use only Stream.col
 
 
 
-/* 
+/*
 
 LIST METHODS
 ============
@@ -104,7 +104,7 @@ Arrays.stream(int[]).boxed().collect( Collectors.toCollection(ArrayList::new) );
 —————————-
 String[] arr = {"foo", "bar"};
 List<String> lst=new ArrayL<>(Arrays.asList(arr));
-lst.toArray() => returns Object[] not String[]. 
+lst.toArray() => returns Object[] not String[].
 So, arr = lst.toArray(String[]::new);
 
 

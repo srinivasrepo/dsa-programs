@@ -5,11 +5,11 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class BinarySearch {
-    
+
     public static void main(String[] args) {
         Random random = new Random();
         int[] intArr = new int[100];
@@ -35,7 +35,7 @@ public class BinarySearch {
                 return mid;
             else if (intArr[mid] > target)
                 r = mid-1;
-            else 
+            else
                 l = mid+1;
         }
         return -1;

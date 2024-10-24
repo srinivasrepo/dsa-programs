@@ -2,7 +2,7 @@ package Algorithms.Sorting;
 import java.util.Arrays;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class BubbleSort { // compares "adjacent pairs"; j=0 and compare j & j+1 and sort <- from right to left
@@ -15,7 +15,7 @@ public class BubbleSort { // compares "adjacent pairs"; j=0 and compare j & j+1 
     // and -i cause last items already been sorted. So, -i is optional & we add this to make less iterations
     public static int[] sort(int[] items){
         for(int i=0; i<items.length; i++){
-            for(int j=0; j<items.length-i-1; j++){ 
+            for(int j=0; j<items.length-i-1; j++){
                 int jItem = items[j];
                 int jNextItem = items[j+1];
                 System.out.println(Arrays.toString(items));
@@ -30,5 +30,4 @@ public class BubbleSort { // compares "adjacent pairs"; j=0 and compare j & j+1 
 
         return items;
     }
-    
 }

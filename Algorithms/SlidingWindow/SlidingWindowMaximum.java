@@ -35,7 +35,7 @@ import java.util.stream.IntStream;
  *      </tbody>
  * </table>
 
- * @author Srinivas Vadige
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 28 Sept 2024,
  *
 */

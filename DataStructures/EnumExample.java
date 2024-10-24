@@ -39,7 +39,7 @@ import java.lang.constant.ClassDesc;;
  * @see {@linkplain java.lang.Enum java.lang.Enum} - since JDK 1.5 2004
  * @see {@linkplain java.util.EnumMap java.util.EnumMap} - since JDK 1.5 2004
  * @see {@linkplain java.util.EnumSet java.util.EnumSet} - since JDK 1.5 2004
- * @author Srinivas Vadige
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 17 Oct 2024
  *
  */

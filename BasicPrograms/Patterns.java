@@ -1,7 +1,7 @@
 package BasicPrograms;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class Patterns {
@@ -11,19 +11,19 @@ public class Patterns {
 
 
 
-/* 
+/*
     METHOD INVOCATIONS --------------------------------------------------
 */
         int n = 5;
         /*
         1) Rectangular Star Pattern
-        
+
         * * * * *
         * * * * *
         * * * * *
         * * * * *
         * * * * *
-        
+
          */
         System.out.println("1) Rectangular Star Pattern");
         rectangularStarPattern(n);                      System.out.println(); // new line for next method
@@ -32,13 +32,13 @@ public class Patterns {
 
         /*
         2) Right-Angled Triangle Pattern
-          
+
         *
         * *
         * * *
         * * * *
         * * * * *
-          
+
          */
         System.out.println("2) Right-Angled Triangle Pattern");
         rightAngledTrianglePattern(n);                      System.out.println();
@@ -47,13 +47,13 @@ public class Patterns {
 
         /*
         3) Right-Angled Triangle Number Pattern
-         
+
         1
         1 2
         1 2 3
         1 2 3 4
         1 2 3 4 5
-         
+
          */
         System.out.println("3) Right-Angled Triangle Number Pattern");
         rightAngledTriangleNumberPattern(n);                      System.out.println();
@@ -62,13 +62,13 @@ public class Patterns {
 
         /*
         4) Right-Angled Triangle Number Pattern - 2
-        
+
         1
         2 2
         3 3 3
         4 4 4 4
-        5 5 5 5 5 
-        
+        5 5 5 5 5
+
          */
         System.out.println("4) Right-Angled Triangle Number Pattern - 2");
         rightAngledTriangleNumberPattern2(n);                      System.out.println();
@@ -77,13 +77,13 @@ public class Patterns {
 
         /*
         5) Inverted Right-Angled Triangle Pattern
-        
+
         * * * * *
         * * * *
         * * *
         * *
         *
-        
+
          */
         System.out.println("5) Inverted Right-Angled Triangle Pattern");
         invertedRightAngledTrianglePattern(n);                      System.out.println();
@@ -92,7 +92,7 @@ public class Patterns {
 
         /*
         6) Inverted Right-Angled Triangle Pattern
-        
+
         1 2 3 4 5
         1 2 3 4
         1 2 3
@@ -122,7 +122,7 @@ public class Patterns {
 
         /*
         8) Inverted Star Pyramid
-        
+
         *********
         _*******_
         __*****__
@@ -134,7 +134,7 @@ public class Patterns {
         invertedStarPyramid(n);                      System.out.println();
 
 
-        
+
         /*
         9) Diamond Star Pyramid
 
@@ -148,15 +148,15 @@ public class Patterns {
         __*****__
         ___***___
         ____*____
-        
+
          */
         System.out.println("9) Diamond Star Pyramid");
         diamondStarPyramid(n);                      System.out.println();
 
 
         /*
-        10) Half Diamond Star Pattern 
-        
+        10) Half Diamond Star Pattern
+
         *
         * *
         * * *
@@ -165,7 +165,7 @@ public class Patterns {
         * * * *
         * * *
         * *
-        * 
+        *
 
          */
         System.out.println("10) Half Diamond Star Pattern");
@@ -175,7 +175,7 @@ public class Patterns {
 
         /*
         11) Binary Number Triangle Pattern
-        
+
         1
         01
         101
@@ -190,7 +190,7 @@ public class Patterns {
 
         /*
         12) Number Crown Pattern"
-        
+
         1       1
         12     21
         123   321
@@ -206,13 +206,13 @@ public class Patterns {
 
         /*
         13) Increasing Number Triangle Pattern
-        
+
         1
         2 3
         4 5 6
         7 8 9 10
         11 12 13 14 15        //note 10 and 14 in same col
-        
+
          */
         System.out.println("13) Increasing Number Triangle Pattern");
         increasingNumberTrianglePattern(n);                      System.out.println();
@@ -222,14 +222,14 @@ public class Patterns {
 
         /*
         14) Increasing Letter Triangle Pattern
-        
+
         A
         A B
         A B C
         A B C D
         A B C D E
         A B C D E F
-        
+
          */
         System.out.println("14) Increasing Letter Triangle Pattern");
         increasingLetterTrianglePattern(n);                      System.out.println();
@@ -239,7 +239,7 @@ public class Patterns {
 
 
 
-        /* 
+        /*
         15) Reverse Letter Triangle Pattern
 
         A B C D E
@@ -253,12 +253,11 @@ public class Patterns {
         reverseLetterTrianglePattern(n);                      System.out.println();
 
 
-        
-        
-        /* 
+
+        /*
         16) Alpha-Ramp Pattern
-        
-        A 
+
+        A
         B B
         C C C
         D D D D
@@ -271,25 +270,25 @@ public class Patterns {
 
 
 
-      
-        /* 
+
+        /*
         17) Alpha-Hill Pattern
-        
-            A     
-           ABA    
-          ABCBA   
-         ABCDCBA  
-        ABCDEDCBA 
+
+            A
+           ABA
+          ABCBA
+         ABCDCBA
+        ABCDEDCBA
 
          */
         System.out.println("17) Alpha-Hill Pattern");
         alphaHillPattern(n);                      System.out.println();
-      
 
 
-        /* 
+
+        /*
         18) Alpha-Triangle Pattern
-        
+
         E
         D E
         C D E
@@ -300,8 +299,8 @@ public class Patterns {
         System.out.println("18) Alpha-Triangle Pattern");
         alphaTrianglePattern(n);                      System.out.println();
 
-        
-        /* 
+
+        /*
         19) Symmetric-Void Pattern
 
         **********
@@ -319,8 +318,8 @@ public class Patterns {
         System.out.println("19) Symmetric-Void Pattern");
         symmetricVoidPattern(n);                      System.out.println();
 
-        
-        /* 
+
+        /*
         20) Symmetric-Butterfly Pattern
 
         *        *
@@ -339,7 +338,7 @@ public class Patterns {
 
 
 
-        /* 
+        /*
         21) Hollow Rectangle Pattern
 
         *****
@@ -352,7 +351,7 @@ public class Patterns {
         System.out.println("21) Hollow Rectangle Pattern");
         hollowRectangularPattern(n);                      System.out.println();
 
-        /* 
+        /*
         22) The Number Pattern
 
         555555555
@@ -368,7 +367,7 @@ public class Patterns {
          */
         System.out.println("22) The Number Pattern");
         theNumberPattern(n);                      System.out.println();
-    }   
+    }
 
 
 
@@ -378,7 +377,7 @@ public class Patterns {
 
 
 
-/* 
+/*
     METHOD DECLARATIONS --------------------------------------------------
 */
 
@@ -409,7 +408,6 @@ public class Patterns {
         }
     }
 
-    
     static void rightAngledTriangleNumberPattern2(int n) {
         for(int i=1; i<=n; i++){
             for(int j=1; j<=i; j++){
@@ -436,7 +434,7 @@ public class Patterns {
             System.out.println();
         }
     }
-    
+
     /**
      * i == rows and j == columns
      * @param n
@@ -469,7 +467,7 @@ public class Patterns {
         //     System.out.print(".");
         //   }
         //   // print stars
-        //   for (int k = 0; k < 2 * i + 1; k++) { 
+        //   for (int k = 0; k < 2 * i + 1; k++) {
         //     System.out.print("*");
         //   }
         //   // pritn spaces again
@@ -597,31 +595,30 @@ public class Patterns {
             for (int j = 0; j < startWidth; j++) System.out.print(" ");
             for (int j = startWidth; j <= midIndex; j++) System.out.print(  (char) (j - startWidth + 'A'));
             for (int j = midIndex +1 ; j <= endWidth; j++) System.out.print(  (char) (endWidth - j + 'A'));
-            
+
             System.out.println();
 
-            // or insted of second & third loop  use this instead
-            /*             
+            // or instead of second & third loop  use this instead
+            /*
             char ch = 'A';
             int breakpoint = (2*i+1)/2;
-            for(int j=1;j<=2*i+1;j++){    
+            for(int j=1;j<=2*i+1;j++){
                 System.out.print(ch);
                 if(j <= breakpoint) ch++;
                 else ch--;
-            } 
+            }
             */
         }
     }
-        
-    
+
     static void alphaTrianglePattern(int rows) {
         for (int i = 1; i <= rows; i++) {
-            for (int j = i; j >= 1; j--) 
+            for (int j = i; j >= 1; j--)
                 System.out.print((char) (rows - j + 'A') + " ");
             System.out.println();
         }
     }
-        
+
 
 
     static void symmetricVoidPattern(int n) {
@@ -638,7 +635,7 @@ public class Patterns {
                 if (col>=startWidth && col<endWidthEx) // col<endWidthEx EXCLUSIVE => because we are considering 6th ele / 5th index as middle item
                     System.out.print(" ");
                 else System.out.print("*");
-                
+
             }
             // increase the width or i-pattern upto n-1 skip n-1 and then decrease from n
             // skip i=5 step cause maintain two similar i => 0, 1, 2, 3, 4, 4, 3, 2, 1, 0
@@ -646,7 +643,7 @@ public class Patterns {
             // *        *
             // in the middle rows
             if (row < n-1)  // considering i as fill pattern as per n cols not 2n cols. Here row is row < 4 i.e upto row == 3 or 4th ele i.e upto i==3 val is 4th ele
-                i++; 
+                i++;
             else if( row >= n) // from row == 5 i.e 6th ele there i = 4
                 i--;
             System.out.println();
@@ -654,7 +651,7 @@ public class Patterns {
 
         // or use two parts of n rows instead of direct 2n rows
     }
-    
+
     static void symmetricButterflyPattern(int n) { // if you don't wan to use i then change values of startWidth and endWidth in  if (row <= n) condition instead of i
         int rows = 2*n;
         int cols = 2*n;
@@ -669,15 +666,15 @@ public class Patterns {
                 if (col >= startWidth && col<=endWidth)
                     System.out.print(" ");
                 else System.out.print("*");
-                
+
             }
             // remember that current row is less than next loop
             // i & row will increase/decrease at once after the child for loop
-            // row starts from 1; 
+            // row starts from 1;
             // let n =5; i decrease upto 0 i.e when row = 5 and i should increase when row becomes 6
             // i.e here increase i at row = 4 (when i = 0) => i should not be less than 0
             if (row <= n)
-                i--; 
+                i--;
             else
                 i++;
             System.out.println();
@@ -710,7 +707,7 @@ public class Patterns {
             for (int j = 0; j < cols; j++) {
                 if (j < startWidth)
                     System.out.print(n-j);
-                else if (j >= startWidth && j <= endWidth ) 
+                else if (j >= startWidth && j <= endWidth )
                     System.out.print(i);
                 else // j > endWidth
                     System.out.print(j-n+2); // here min of j-n is 0  || (i + distance++ to right)
@@ -729,7 +726,7 @@ public class Patterns {
         System.out.println();
 
         // //or use DISTANCE pattern Algorithm
-/* 
+/*
         for example take n = 4
 
         4 4 4 4 4 4 4
@@ -746,7 +743,7 @@ public class Patterns {
 
 
           j distance
-        ◄-----------► 
+        ◄-----------►
         left    right
 
         0 0 0 0 0 0 0   ▲   top distance
@@ -763,21 +760,21 @@ public class Patterns {
         "Right" distance same top-left 0 is: 2n-2 || and for other eles that is: 2n-2-j as j is 0
         "Bottom" distance of same 0 is: 2n-2 || and for other eles that is: 2n-2-i as i is 0
         and calculate the min distance of any element here, then that distance will the element's value
-        and finally substract current 0 1 2 3... matrix with n
+        and finally subtract current 0 1 2 3... matrix with n
         then we'll get the original matrix
  */
 
         // for(int i=0;i<2*n-1;i++){ // rows, start from 0 as index means distance - iDistance
-         
+
         //     for(int j=0;j<2*n-1;j++){ // cols, start from 0 as index means distance - jDistance
-                
+
         //         int top = i;
         //         int left = j;
         //         int bottom = (2*n - 2) - i;
         //         int right = (2*n - 2) - j;
-                
+
         //         // Min of 4 directions and then we subtract from n
-        //         // This pattern is little similary to above hollowRectangularPattern() logic
+        //         // This pattern is little similarly to above hollowRectangularPattern() logic
         //         System.out.print(n- Math.min(Math.min(top,bottom), Math.min(left,right)) + " ");
         //     }
         //     System.out.println();

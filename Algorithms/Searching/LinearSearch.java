@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class LinearSearch {
@@ -13,12 +13,12 @@ public class LinearSearch {
         int[] intArr = new int[100];
         for (int i = 0; i < 100; i++)
             intArr[i] = random.nextInt(1, 100);
-        
+
         System.out.println("Input Array: " + Arrays.toString(intArr));
         int target = random.nextInt(1, 100);
         int targetIdex = search(intArr, target);
         System.out.println("target is: "+ target + " and it's index after the linear search is: "+targetIdex);
-        
+
 
     }
 

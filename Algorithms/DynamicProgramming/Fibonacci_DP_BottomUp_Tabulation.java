@@ -3,24 +3,24 @@ package Algorithms.DynamicProgramming;
 import java.util.Arrays;
 
 /**
- * 
+ *
  * <p> smaller number to bigger number
  * <p> And it can be normal loop or recursion or recursion with loop
- * 
+ *
  * @Approach: Bottom Up Tabulation - add all the series/node values in an array
  * @TimeComplexity: O(n)
- * 
+ *
  * @see ./Fibonacci_DP_BottomUp_NoMemory.java
- * 
- * 
- * 
-* @author Srinvas Vadige 
+ *
+ *
+ *
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 public class Fibonacci_DP_BottomUp_Tabulation {
 
     public static void main(String[] args) {
-        int n = 5;        
+        int n = 5;
         fib(n);
         fib2(n);
     }
@@ -42,7 +42,7 @@ public class Fibonacci_DP_BottomUp_Tabulation {
         int[] dp = new int[n+1];
         for (int i = 0; i <= n; i++) {
             if (i <= 1) {  // 0,1 are base cases
-                dp[i] = i; 
+                dp[i] = i;
             } else {
                 dp[i] = dp[i-1] + dp[i-2];
             }
@@ -50,5 +50,5 @@ public class Fibonacci_DP_BottomUp_Tabulation {
         }
         return dp[n]; // root node value
     }
-    
+
 }

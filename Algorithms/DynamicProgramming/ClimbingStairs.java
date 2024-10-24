@@ -3,40 +3,40 @@ package Algorithms.DynamicProgramming;
 
 /**
  * Can only move 1 step or 2 steps at a time
- * 
- * 
+ *
+ *
 
                                                  n=5
                                     4_____________|________________3
                          3__________|__________2         2_________|_______1
                2_________|_____1           1___|___0  1___|___0
-       1_______|______0      0  -1       0  -1            
-                               
-                          
+       1_______|______0      0  -1       0  -1
+
+
     how many times we got 1?
 
     no memo --- as we need all cases i.e min and max
 
-    rec backtracking ---- TLE -> memo?? 
+    rec backtracking ---- TLE -> memo??
 
-    => we already know 
+    => we already know
 
     ways for reaching 1  =>
     3,2,1
     3,1
-    
+
     so, from 3 we can see that it has two ways --> memo the ways??
 
     imagine 3 as a graph
- * 
- * 
- * 
- * 
- * @author Srinvas Vadige
+ *
+ *
+ *
+ *
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 15 Oct 2024
  */
 public class ClimbingStairs {
-    
+
     public static void main(String[] args) {
         System.out.println("climbStairsBottomUpTabulationDp: " + climbStairsBottomUpTabulationDp(5));
         System.out.println("climbStairsTopDownMemoDp: " + climbStairsTopDownMemoDp(5));
@@ -46,7 +46,7 @@ public class ClimbingStairs {
     /**
      * @Time Complexity: O(n)
      * @Space Complexity: O(n+1) // for O(n) use if condition to return 1 in the base case
-     */    
+     */
     public static int climbStairsBottomUpTabulationDp(int n) {
         int[] dp = new int[n+1]; // n+1 because dp[n] will work for n and will also work for n-2 logic
         dp[0] = 1; // cause from 2 we can like 1,1 or 2,1 i.e 2 ways i.e n-1, n-1 or n-2, 0
@@ -92,7 +92,7 @@ public class ClimbingStairs {
 
     /**
      * Got TLE in LeetCode
-     * 
+     *
      * @Time Complexity: O(2^n)
      * @Space Complexity: O(1)
      */

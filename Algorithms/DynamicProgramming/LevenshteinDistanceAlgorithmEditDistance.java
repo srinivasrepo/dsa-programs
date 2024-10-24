@@ -33,7 +33,7 @@ import java.util.Map;
  * </pre>
  *
  * @see "Longest common subsequence"
- * @author Srinivas Vadige
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 22 Oct 2024
  */
 public class LevenshteinDistanceAlgorithmEditDistance {

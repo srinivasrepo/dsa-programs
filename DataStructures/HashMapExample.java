@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 // NOTE: In loops (Eg: for counting num of chars in a string) use stream or MERGE or COMPUTE instead of get and put combined
 /**
-* @author Srinvas Vadige 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
 * @since 21 Sept 2024
 */
 @SuppressWarnings("unused")
@@ -33,7 +33,7 @@ public class HashMapExample {
                                         .collect(Collectors.groupingBy(i-> i, Collectors.summingInt(e -> 1)));
         // Function.identity() or i->i ---- both works
         // Collectors.summingInt(e -> 1) will count but Collectors.summingInt(Integer::valueOf) will sum all the items / values but here the item is char.
-/* 
+/*
         Here we cannot use identity (Function::identity) and counting as method references and get error 
         Because this identity and counting methods don't have expected number of arguments 
         (here expected number of args in classifier.apply(t) is 1 but Function.identity() method has 0 args) 
@@ -49,8 +49,8 @@ public class HashMapExample {
         HashMap<Character, Integer> map2 = new HashMap<>();
         // IMP NOTE
         // instead of
-        map.put('A', map.get('A')!=null? map.get('A')+1 : 1); 
-        // or 
+        map.put('A', map.get('A')!=null? map.get('A')+1 : 1);
+        // or
         map.put('A', map.getOrDefault('A', 0) + 1 );
         //use
         map.merge('A', 1, Integer::sum);
@@ -60,7 +60,7 @@ public class HashMapExample {
         map.put('A',1); //=> map.put(k,v) to insert new or update existing
         map.putIfAbsent('A',1); //=> only insert new entry set
         map.putAll(map2); //=> map.putAll(HashMap / TreeMap / any Map obj) to add 2 maps
-        
+
         // GET
         map.get('A'); //=> returns value or null
         map.getOrDefault('B', 0); //=> map.getOrDefault(k, defaultValue); v or defVal
@@ -76,7 +76,7 @@ public class HashMapExample {
         map.containsKey('Z'); // => boolean
         map.containsValue(99); // => boolean
 
-        // 
+        //
         map.isEmpty();
         map.clear();
         map.clone();
@@ -96,7 +96,7 @@ public class HashMapExample {
 
         // TO ITERATE Map.entrySet() & Map.keySet() => In collection or stream Java8 Iterable.forEach() lambda
         // we can only use continue using “return;” but cannot break the look. So, use collection.forEach or stream.forEach or java 5 traditional 'enhanced for loop (for each)' / traditional for loop.
-        
+
         // MAP TO ENTRY SET
         Set<Map.Entry<Character, Integer>> entrySet = map.entrySet(); // map.entrySet()=> Set<Map.Entry<kdt,vdt>> entry => entry.getKey() and entry.getValue()
         // FYI: "Set" or "HashSet" don't have .get() method. So, iterate or convert to stream, list or iterator
@@ -104,11 +104,11 @@ public class HashMapExample {
         entrySet.stream().toList().get(0).getValue();
         map.entrySet().iterator().next().getKey();
 
-        
+
         // MAP TO KEY SET
         Set<Character> set = map.keySet(); // => Set<kdt> set
         set.stream().toList().get(0); // => key
-        
+
         // MAP TO VALUES COLLECTION
         Collection<Integer> collecOfVals = map.values(); // => Collection<ValDataType>
 
@@ -143,9 +143,9 @@ public class HashMapExample {
 
         // Partition employees into passing and failing the A band for annual appraisal
         Map<Boolean, List<Employee>> passingFailing = employees.stream()
-                                                        .collect(Collectors.partitioningBy(s -> 
+                                                        .collect(Collectors.partitioningBy(s ->
                                                         s.getGrade() >= 4.0));
-           
+
     }
 
     public class Department {}
@@ -157,5 +157,4 @@ public class HashMapExample {
         int getSalary() {return salary;}
         double getGrade(){return grade;}
     }
-    
 }

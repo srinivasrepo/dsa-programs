@@ -9,8 +9,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**<pre>
-* @author Srinvas Vadige 
-* @since 23 Sept 2024, 
+* @author Srinvas Vadige, srinivas.vadige@gmail.com
+* @since 23 Sept 2024,
 */
 public class GroupAnagrams {
 
@@ -22,7 +22,7 @@ public class GroupAnagrams {
         public static List<List<String>> groupAnagrams(String[] strs) {
 
         Map<Map<String, Long>, List<String>> mapWithList = new HashMap<>();
-        
+
         for(String str: strs) {
             Map<String, Long> map = Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())); // or we can use keyStr = Arrays.sort(chars); to compare the keyStr to the items in the loop
 
@@ -32,7 +32,7 @@ public class GroupAnagrams {
         }
 
         return mapWithList.values().stream().collect(Collectors.toList());
-        
+
     }
-    
+
 }

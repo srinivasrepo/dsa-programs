@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
  * 1. s and p chars are lowercase english letters
  *
  * </pre>
- * @author Srinivas Vadige
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 29 Sept 2024
 */
 public class FindAllAnagramsInString {
@@ -30,23 +30,23 @@ public class FindAllAnagramsInString {
         List<Integer> list = new ArrayList<>();
         int[] markArr = new int[26];
         int left=0, right=0, found=0;
-      
-        for(char c: p.toCharArray())
-            markArr[c-'a']++; 
 
-        while (right<s.length()) { 
+        for(char c: p.toCharArray())
+            markArr[c-'a']++;
+
+        while (right<s.length()) {
             if(markArr[s.charAt(right++)-'a']-- >= 1) found++;
             if(found==p.length()) list.add(left);
-            if(right - left == p.length() && markArr[s.charAt(left++)-'a']++ >= 0) found--; 
+            if(right - left == p.length() && markArr[s.charAt(left++)-'a']++ >= 0) found--;
         }
         return list;
     }
 
     /**
      * This is exactly same findAnagrams() logic but explained the each step in detailed
-     * 
+     *
      * Note that mark or visit means decreasing the char count in markArr
-     * and similarly to unmark or revist means increasing back the char count in the markArr 
+     * and similarly to unmark or revist means increasing back the char count in the markArr
     */
     public static List<Integer> findAnagramsExplained(String s, String p) {
         List<Integer> list = new ArrayList<>();
@@ -57,7 +57,7 @@ public class FindAllAnagramsInString {
         for(char c: p.toCharArray())
             markArr[c-'a']++;  // 'a' is char i.e ascii value and c-'a' means char-65 Eg: 'a'-'a' => 0 as 65-65=0
 
-        while (right<s.length()) { 
+        while (right<s.length()) {
             System.out.println(s.substring(left, right+1));
             // IS RIGHT S CHAR IS IN P? --- check before marking the right char in markArr and before incresing the right pointer
             if(markArr[s.charAt(right) - 'a'] >= 1)  // p char in right pointer s chars is always >=1 as we unmark every char in WINDOW LENGTH condition 
@@ -91,7 +91,7 @@ public class FindAllAnagramsInString {
     /**
      * ---- my thoughts --- need to research more
      * @Intuition - p is window length and we can use left and right pointers with sliding
-     * 
+     *
      * <p> but gettting TLE
     */
     public static List<Integer> findAnagramsDoResearch(String s, String p) {

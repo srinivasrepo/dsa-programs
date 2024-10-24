@@ -185,7 +185,7 @@ My Leetcode profile: <https://leetcode.com/srinivas_vadige/>
 </br>
 </br>
 
-## Other Github project ([MaRuifeng/DummyLovesAlgorithms](https://github.com/MaRuifeng/DummyLovesAlgorithms))
+## Other Github project ([williamfiset/Algorithms](https://github.com/williamfiset/Algorithms) and  [MaRuifeng/DummyLovesAlgorithms](https://github.com/MaRuifeng/DummyLovesAlgorithms))
 
 ### List of algorithmic questions
 
