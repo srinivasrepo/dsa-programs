@@ -67,6 +67,7 @@ Data Structures And Algorithm Programs
     * [MinimumPathSum](/Algorithms/DynamicProgramming/MinimumPathSum.java)
     * [ClimbingStairs](/Algorithms/DynamicProgramming/ClimbingStairs.java)
     * [Levenshtein Distance Algorithm - EditDistance](/Algorithms/DynamicProgramming/LevenshteinDistanceAlgorithmEditDistance.java)
+    * [PascalsTriangle](/Algorithms/DynamicProgramming/PascalsTriangle.java)
 
 5. #### [Graphs](/Algorithms/Graphs/)
 
