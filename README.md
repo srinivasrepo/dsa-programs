@@ -18,8 +18,9 @@ Data Structures And Algorithm Programs
 * ### [Data Structures & important classes](DataStructures/)
 
   * [AnnotationType](DataStructures/AnnotationTypeExample.java)
-  * [BinaryTreeNode](DataStructures/BinaryTreeNode.java)
   * [BinaryTree](DataStructures/BinaryTree.java)
+  * [BinaryTreeNode example](DataStructures/BinaryTreeNode.java)
+  * [DynamicIntArray](/DataStructures/DynamicIntArray.java)
   * [Enum Types & Conversions](DataStructures/EnumExample.java)
   * [FunctionalInterface](DataStructures/FunctionalInterfaceExample.java)
   * [HashMap](/DataStructures/HashMapExample.java)
