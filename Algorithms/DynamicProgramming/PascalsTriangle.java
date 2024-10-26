@@ -77,7 +77,7 @@ public class PascalsTriangle {
                 }
             }
             list.add( Arrays.asList(arr) );
-            // or list.add( Arrays.stream(arr).collect(Collectors.toList()) );
+            // or list.add( Arrays.stream(arr).collect(Collectors.toList()) ); or Arrays.stream(arr).toList();
             Arrays.stream(arr).collect(Collectors.toList());
         }
         return list;
