@@ -76,7 +76,9 @@ public class PascalsTriangle {
                     arr[j] = arr[n - j - 1] = prevList.get(j-1) + prevList.get(j);
                 }
             }
-            list.add( Arrays.stream(arr).collect(Collectors.toList()) );
+            list.add( Arrays.asList(arr) );
+            // or list.add( Arrays.stream(arr).collect(Collectors.toList()) );
+            Arrays.stream(arr).collect(Collectors.toList());
         }
         return list;
     }
