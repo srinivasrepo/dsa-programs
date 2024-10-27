@@ -157,7 +157,7 @@ public class WordBreak {
         if(s.isEmpty()) return true;
         for (Map.Entry<String, Integer> entry: map.entrySet()){
             //System.out.println(s + " " + entry.getKey());
-            if(s.equals(entry.getValue()) || map.keySet().contains(s)) return true;
+            if(s.equals(entry.getKey()) || map.keySet().contains(s)) return true;
 
             i = s.indexOf(entry.getKey());
 
