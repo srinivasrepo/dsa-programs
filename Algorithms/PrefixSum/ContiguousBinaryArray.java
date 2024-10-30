@@ -6,7 +6,7 @@ import java.util.Map;
  * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 25 Sept 2024,
  */
-public class ContigousBinaryArray {
+public class ContiguousBinaryArray {
 
     public static void main(String[] args) {
         System.out.println(findMaxLength(new int[]{0,1,0,0,1,1,1})); // it is little similar to Longest Valid Parentheses ")()())"
