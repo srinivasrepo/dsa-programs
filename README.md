@@ -70,6 +70,8 @@ Data Structures And Algorithm Programs
     * [Levenshtein Distance Algorithm - EditDistance](/Algorithms/DynamicProgramming/LevenshteinDistanceAlgorithmEditDistance.java)
     * [PascalsTriangle](/Algorithms/DynamicProgramming/PascalsTriangle.java)
     * [WordBreak](/Algorithms/DynamicProgramming/WordBreak.java)
+    * [MaximumProductSubArray](/Algorithms/DynamicProgramming/MaximumProductSubArray.java)
+    * [HouseRobber](/Algorithms/DynamicProgramming/HouseRobber.java)
 
 5. #### [Graphs](/Algorithms/Graphs/)
 
