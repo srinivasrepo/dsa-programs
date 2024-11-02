@@ -144,6 +144,7 @@ public class WordBreak {
 
     // -------------- MY THOUGHTS -------------
 
+    @SuppressWarnings("unused")
     public static boolean wordBreakIndexOfApproach(String s, List<String> wordDict) {
         Map<String, Integer> map = wordDict.stream().collect(
             Collectors.groupingBy(i->i, Collectors.summingInt(e->0)) );

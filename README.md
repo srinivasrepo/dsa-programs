@@ -165,9 +165,9 @@ Author: Srinivas Vadige
 
 Email: <srinivas.vadige@gmail.com>
 
-LinkedIn: <https://www.linkedin.com/in/srinivas-vadige>
+LinkedIn: [linkedin.com/in/srinivasvadige](https://www.linkedin.com/in/srinivasvadige)
 
-My Leetcode profile: <https://leetcode.com/srinivas_vadige/>
+My Leetcode profile: [leetcode.com/srinivasvadige](https://www.leetcode.com/srinivasvadige)
 
 </br>
 </br>

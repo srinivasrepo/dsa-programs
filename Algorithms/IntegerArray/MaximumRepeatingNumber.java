@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 /**
  * Frequent element in an array or maximum repeating number in an array
- * 
+ *
  * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 13 Oct 2024
  */
@@ -74,6 +74,7 @@ class MaximumRepeatingNumber{
      * @TimeComplexity O(n)
      * @SpaceComplexity O(n)
      */
+    @SuppressWarnings("unused")
     public static int maxRepeatingUsingHashMap(int[] nums) {
         int maxRep = 0;
         int maxCount = 0;

@@ -94,6 +94,7 @@ public class FindAllAnagramsInString {
      *
      * <p> but gettting TLE
     */
+    @SuppressWarnings("unused")
     public static List<Integer> findAnagramsDoResearch(String s, String p) {
         List<Integer> list = new ArrayList<>();
         if(s.length() < p.length()) return list;

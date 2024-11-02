@@ -40,6 +40,7 @@ public class MinimumWindowSubstring {
       /**
       * @TimeComplexity - O(m+n)
     */
+    @SuppressWarnings("unused")
     public static String minWindow(String s, String t) {
         if(t.length() > s.length()) return "";
         String subStr = "";
@@ -47,7 +48,7 @@ public class MinimumWindowSubstring {
         int left=0, right=0;
 
         // map for both t and s chars
-        Map<Character, Integer> charsMap = t.chars().mapToObj(e->(char)e).collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(e->1)) );        
+        Map<Character, Integer> charsMap = t.chars().mapToObj(e->(char)e).collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(e->1)) );
 
         while(right<s.length()){ // --- right pointer loop (main expression)
 
@@ -172,6 +173,7 @@ public class MinimumWindowSubstring {
      * @Intution - the chars in t strings <= chars in subStr. So we can use 2 pointer sliding window technique
      * @Approach - Check each and every subString and it's length >= t length
     */
+    @SuppressWarnings("unused")
     public static String minWindowBruteForce(String s, String t) {
         if(t.length() > s.length()) return "";
         String subStr = "";
