@@ -72,6 +72,7 @@ Data Structures And Algorithm Programs
     * [WordBreak](/Algorithms/DynamicProgramming/WordBreak.java)
     * [MaximumProductSubArray](/Algorithms/DynamicProgramming/MaximumProductSubArray.java)
     * [HouseRobber](/Algorithms/DynamicProgramming/HouseRobber.java)
+    * [PerfectSquares](/Algorithms/DynamicProgramming/PerfectSquares.java)
 
 5. #### [Graphs](/Algorithms/Graphs/)
 
