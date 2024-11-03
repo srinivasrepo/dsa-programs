@@ -97,7 +97,7 @@ public class LinkedListExample {
 
 
         System.out.println("DoublyLinkedList ----------"); // same like Deque
-        DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
+        DoublyLinkedList<Integer> doublyLinkedList = new DoublyLinkedList<>();
         doublyLinkedList.addFirst(1);
         doublyLinkedList.addLast(2);
         doublyLinkedList.addFirst(3);
@@ -132,9 +132,9 @@ public class LinkedListExample {
         cll.traverseList();
     }
 
-    static class Node { // separate static class or can have private class in LinkedListStack itself
-        int value;
-        Node next; // next or head
+    static class Node <T> { // separate static class or can have private class in LinkedListStack itself
+        T value;
+        Node <T> next; // next or head
     }
 
     // we can have it as static class or separate class
@@ -219,13 +219,13 @@ public class LinkedListExample {
         }
     }
 
-    static class DoublyLinkedList {
-        Node head;
-        Node tail;
+    static class DoublyLinkedList <T> {
+        Node <T> head;
+        Node <T> tail;
         int size;
 
-        public void addFirst(int value) {
-            Node newNode = new Node();
+        public void addFirst(T value) {
+            Node <T> newNode = new Node<>();
             newNode.value = value;
             newNode.next = head;
             head = newNode;
@@ -235,8 +235,8 @@ public class LinkedListExample {
             }
         }
 
-        public void addLast(int value) {
-            Node newNode = new Node();
+        public void addLast(T value) {
+            Node <T> newNode = new Node<>();
             newNode.value = value;
             if (tail == null) {
                 head = newNode;
@@ -248,7 +248,7 @@ public class LinkedListExample {
         }
 
         public void display() {
-            Node current = head;
+            Node <T> current = head;
             while (current != null) {
                 System.out.print(current.value + " ");
                 current = current.next;
@@ -266,8 +266,8 @@ public class LinkedListExample {
             size = 0;
         }
 
-        public boolean contains(int value) {
-            Node current = head;
+        public boolean contains(T value) {
+            Node <T> current = head;
             while (current != null) {
                 if (current.value == value) {
                     return true;
@@ -277,8 +277,8 @@ public class LinkedListExample {
             return false;
         }
 
-        public boolean containsAll(int[] arr) {
-            Node current = head;
+        public boolean containsAll(T[] arr) {
+            Node <T> current = head;
             while (current != null) {
                 for (int i = 0; i < arr.length; i++) {
                     if (current.value == arr[i]) {
@@ -290,16 +290,16 @@ public class LinkedListExample {
             return false;
         }
 
-        public int get(int index) {
-            Node current = head;
+        public T get(int index) {
+            Node <T> current = head;
             for (int i = 0; i < index; i++) {
                 current = current.next;
             }
             return current.value;
         }
 
-        public int indexOf(int value) {
-            Node current = head;
+        public int indexOf(T value) {
+            Node <T> current = head;
             int index = 0;
             while (current != null) {
                 if (current.value == value) {
@@ -311,8 +311,8 @@ public class LinkedListExample {
             return -1;
         }
 
-        public int lastIndexOf(int value) {
-            Node current = head;
+        public int lastIndexOf(T value) {
+            Node <T> current = head;
             int index = 0;
             int lastIndex = -1;
             while (current != null) {
@@ -325,9 +325,9 @@ public class LinkedListExample {
             return lastIndex;
         }
 
-        public boolean remove(int value) {
-            Node current = head;
-            Node previous = null;
+        public boolean remove(T value) {
+            Node <T> current = head;
+            Node <T> previous = null;
             while (current != null) {
                 if (current.value == value) {
                     if (previous == null) {
@@ -344,9 +344,9 @@ public class LinkedListExample {
             return false;
         }
 
-        public boolean removeAll(int[] arr) {
-            Node current = head;
-            Node previous = null;
+        public boolean removeAll(T[] arr) {
+            Node <T> current = head;
+            Node <T> previous = null;
             while (current != null) {
                 for (int i = 0; i < arr.length; i++) {
                     if (current.value == arr[i]) {
@@ -366,9 +366,9 @@ public class LinkedListExample {
         }
 
         public void reverse() {
-            Node current = head;
-            Node previous = null;
-            Node next = null;
+            Node <T> current = head;
+            Node <T> previous = null;
+            Node <T> next = null;
             while (current != null) {
                 next = current.next;
                 current.next = previous;
@@ -382,9 +382,10 @@ public class LinkedListExample {
             return head == null;
         }
 
-        public int[] toArray() {
-            int[] arr = new int[size];
-            Node current = head;
+        @SuppressWarnings("unchecked")
+        public T[] toArray() {
+            T[] arr = (T[]) new Object[size];
+            Node <T> current = head;
             int index = 0;
             while (current != null) {
                 arr[index] = current.value;
@@ -395,14 +396,16 @@ public class LinkedListExample {
         }
 
         public void sort() {
-            Node current = head;
+            Node <T> current = head;
             while (current != null) {
-                Node next = current.next;
+                Node <T> next = current.next;
                 while (next != null) {
-                    if (current.value > next.value) {
-                        int temp = current.value;
-                        current.value = next.value;
-                        next.value = temp;
+                    if (next.value instanceof Integer && current.value instanceof Integer) {
+                        if ((int)current.value > (int)next.value) {
+                            T temp = current.value;
+                            current.value = next.value;
+                            next.value = temp;
+                        }
                     }
                     next = next.next;
                 }
@@ -410,7 +413,7 @@ public class LinkedListExample {
             }
         }
 
-        public void add(int index, int value) {
+        public void add(int index, T value) {
             if (index == 0) {
                 addFirst(value);
             } else if (index == size) {
@@ -418,9 +421,9 @@ public class LinkedListExample {
             } else if (index > size) {
                 System.out.println("Index out of bounds");
             } else {
-                Node newNode = new Node();
+                Node <T> newNode = new Node<>();
                 newNode.value = value;
-                Node current = head;
+                Node <T> current = head;
                 for (int i = 0; i < index - 1; i++) {
                     current = current.next;
                 }
