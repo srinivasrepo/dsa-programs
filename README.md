@@ -25,6 +25,7 @@ Data Structures And Algorithm Programs
   * [FunctionalInterface](DataStructures/FunctionalInterfaceExample.java)
   * [HashMap](/DataStructures/HashMapExample.java)
   * [List](/DataStructures/ListExample.java)
+  * [LinkedList & DoubleLinkedList](/DataStructures/LinkedListExample.java)
   * [Record](DataStructures/RecordExample.java)
   * [Stream API](DataStructures/StreamApiExample.java)
 
