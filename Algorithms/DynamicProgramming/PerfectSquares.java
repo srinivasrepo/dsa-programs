@@ -16,7 +16,7 @@ import java.util.List;
  * => 2² + 2² + 2² + 1² = 4 + 4 + 4 + 1 --> 4 count
  * => 1² + 1² + 1² + 1² + 1² + 1² + 1² + 1² + 1² + 1² + 1² + 1² --> 12 count
  * ... so on
- * Finally min square root sum pair count is 2
+ * Finally min square root sum pair count is 2 (because of n=9+4)
  *
  * similarly for n=12, check the need graph
  *                                                     0² need 12
@@ -54,7 +54,7 @@ public class PerfectSquares {
     public static int numSquares(int n) {
         int[] dp = new int[n + 1]; // each number min pair count i.e from 1 to n & 0 is dummy
         Arrays.fill(dp, Integer.MAX_VALUE); // or Arrays.fill(dp, n);
-        dp[0] = 0; // for 0 sum target we don't have any pairs to sum and used in dp[target - square]
+        dp[0] = 0; // to reach 0 sum we don't need to add any pairs to get sum '0'.. and this dp[0]=0 is used in dp[target - square]
         for (int target = 1; target <= n; target++) { // target = targetSum and dp[target]= min pair count of that target
             for (int i = 1; i * i <= target; i++) { // all possible perfect squares but not exceed the targetSum
                 int square = i * i;

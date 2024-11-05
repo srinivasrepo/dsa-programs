@@ -68,7 +68,7 @@ public class LongestIncreasingSubsequence {
             // but we have to check the next all ints too cause we might get something like {1, 2, 5, 3, 4} -> {1, 2, 3, 4} is LIS
             // and by using max() we only taking the max of all possibilities
             // Eg: LIS[1] = Math.max(LIS[1], 1+LIS[2], 1+LIS[3], 1+LIS[4]); i.e max of all possibilities sub indices
-            // and so we're avoiding n^3 or more graph traversals
+            // and so we're avoiding n^3 or more graph traversals using max() and dp[]
             }
         }
 
