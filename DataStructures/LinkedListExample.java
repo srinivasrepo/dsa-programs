@@ -132,9 +132,9 @@ public class LinkedListExample {
         cll.traverseList();
     }
 
-    static class Node <T> { // separate static class or can have private class in LinkedListStack itself
-        T value;
-        Node <T> next; // next or head
+    static class DummyNode { // separate static class or can have private class in LinkedListStack itself
+        int value;
+        DummyNode next; // next or head
     }
 
     // we can have it as static class or separate class
@@ -220,56 +220,237 @@ public class LinkedListExample {
     }
 
     static class DoublyLinkedList <T> {
-        Node <T> head;
-        Node <T> tail;
+
+        private Node <T> head = null;
+        private Node <T> tail = null;
         int size;
 
-        public void addFirst(T value) {
-            Node <T> newNode = new Node<>();
-            newNode.value = value;
-            newNode.next = head;
-            head = newNode;
-            size++;
-            if (tail == null) {
-                tail = head;
+        @SuppressWarnings("hiding")
+        private class Node <T> {
+            T data;
+            Node <T> next, prev;
+
+            Node(T val, Node <T> next, Node <T> prev) {
+                this.data = val;
+                this.next = next;
+                this.prev = prev;
+            }
+
+            Node() { // default constructor needs to be define manually as we have 3 parameter constructor. If no other param constructor then the compiler will construct a default constructor by default
+            }
+
+            @Override
+            public String toString() {
+                return data.toString();
             }
         }
 
-        public void addLast(T value) {
-            Node <T> newNode = new Node<>();
-            newNode.value = value;
-            if (tail == null) {
-                head = newNode;
+        // O(1)
+        public void addFirst(T data) {
+            if(isEmpty()) {
+                head = tail = new Node<>(data, null, null);
             } else {
-                tail.next = newNode;
+                head.prev = new Node<>(data, null, head);
+                head = head.prev;
             }
-            tail = newNode;
             size++;
         }
 
+        // O(1)
+        public void addLast(T data) {
+            if(isEmpty()) {
+                head = tail = new Node<>(data, null, null);
+            } else {
+                tail.next = new Node<>(data, null, tail); // by default tail.next is null
+                tail = tail.next;
+            }
+            size++;
+        }
+
+        // O(1)
+        public void add(T data){
+            addLast(data);
+        }
+
+        // O(1)
+        public T peekFirst() {
+            if(isEmpty()) throw new LinkedListEmptyException("List is empty");
+            return head.data;
+        }
+
+        // O(1)
+        public T peekLast() {
+            if(isEmpty()) throw new LinkedListEmptyException("List is empty");
+            return tail.data;
+        }
+
+        // O(1)
+        public T removeFirst() {
+            if(isEmpty()) throw new LinkedListEmptyException("List is empty");
+            T data = head.data;
+            head = head.next; // next can be null if only one node in the list
+            size--;
+
+            // what if we removed the node from the list with one node -- it'll become empty?
+            if(isEmpty()) tail = null; // head is already null if empty from above head = head.next;
+            else head.prev = null; // "!isEmpty()" means head != null
+
+            return data;
+        }
+
+        // O(1)
+        public T removeLast() {
+            if(isEmpty()) throw new LinkedListEmptyException("List is empty");
+            T data = tail.data;
+            tail = tail.prev; // prev can be null if only one node in the list
+            size--;
+
+            // what if we removed the node from the list with one node -- it'll become empty?
+            if(isEmpty()) head = null; // tail is already null if empty from above tail = tail.prev;
+            else tail.next = null; // "!isEmpty()" means tail != null
+
+            return data;
+        }
+
+        // O(1)
+        public T remove(Node <T> node) { // we already know what that node is
+            if(isEmpty()) throw new LinkedListEmptyException("List is empty");
+
+            if (node.prev == null)  return removeFirst();
+            else if (node.next == null) return removeLast();
+
+            // skip this current node in adjacent nodes of it
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+            T data = node.data;
+            // memory clean up
+            node.data = null;
+            node = node.prev = node.next = null;
+
+            size--;
+
+            return data;
+        }
+
+        // O(n)
+        public T removeAt(int index) {
+            if(isEmpty()) throw new LinkedListEmptyException("List is empty");
+
+            if(index < 0 || index >= size) throw new IndexOutOfBoundsException(); // or IllegalArgumentException
+
+            // we can use one for loop or two for loops based on the index size like below
+            int i;
+            Node <T> trav;
+            if(index < size/2) { // i.e first half
+                for (i = 0, trav = head; i < index; i++) // loops up to i == index
+                    trav = trav.next;
+            } else {
+                for (i=size-1, trav = tail; i > index; i--) // loops up to i == index
+                    trav = trav.prev;
+            }
+
+            return remove(trav);
+        }
+
+
+        // O(n)
+        public boolean remove(T data) {
+            Node <T> trav = head;
+
+            // Support Searching for null as data can be null but if Node is null then it has to be before head or after tail
+            if(data == null) {
+                for (trav = head; trav != null; trav = trav.next) { // similar to below commented while loop condition
+                    if(trav.data == null) {
+                        remove(trav); // remove(Node <T> node)
+                        return true;
+                    }
+                }
+            } else { // Search for non-null
+                for (trav = head; trav != null; trav = trav.next) { // similar to below commented while loop condition
+                    if(trav.data.equals(data) || trav.data == data) { // cause data can be Object
+                        remove(trav); // remove(Node <T> node)
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+
+            // THIS IS ONLY FOR SINGLY LINKED LIST -- so, ignore it
+            // Node <T> current = head;
+            // Node <T> previous = null;
+            // while (current != null) { // just traversing, not updating the head or tail
+            //     if (current.data == data) { // got the data?
+            //         if (previous == null) { // i.e data is at the root / head node --> then interchange head
+            //             head = current.next;
+            //         } else {
+            //             previous.next = current.next;
+            //         }
+            //         size--;
+            //         return true;
+            //     } // else
+            //     previous = current;
+            //     current = current.next;
+            // }
+            // return false;
+        }
+
+        public boolean removeAll(T[] arr) { // array of data
+            Node <T> trav = head;
+            while (trav != null) {
+                for (int i = 0; i < arr.length; i++) {
+                    if (trav.data == arr[i]) {
+                        Node <T> tempNext = trav.next;
+                        remove(trav);
+                        if (tempNext == null) {
+                            head = trav.next;
+                        } else {
+                            tempNext.next = trav.next;
+                        }
+                        size--;
+                        return true;
+                    }
+                }
+                trav = trav.next;
+            }
+            return false;
+        }
+
+        // O(n)
         public void display() {
             Node <T> current = head;
             while (current != null) {
-                System.out.print(current.value + " ");
+                System.out.print(current.data + " ");
                 current = current.next;
             }
             System.out.println();
+        }
+
+        // O(1)
+        public void clear() {
+            Node <T> current = head; // trav / traverser
+            while (current != null) { // use this while loop to clean up the memory but it is optional
+                Node <T> next = current.next;
+                current.data = null;
+                current.prev = current.next = null;
+                current = next;
+            }
+            head = tail = null;
+            size = 0;
         }
 
         public int size() {
             return size;
         }
 
-        public void clear() {
-            head = null;
-            tail = null;
-            size = 0;
+        public boolean isEmpty() {
+            return size == 0; // head == null; won't work as non-circular linked list can have head == null
         }
 
-        public boolean contains(T value) {
+        public boolean contains(T data) {
             Node <T> current = head;
             while (current != null) {
-                if (current.value == value) {
+                if (current.data == data) {
                     return true;
                 }
                 current = current.next;
@@ -281,7 +462,7 @@ public class LinkedListExample {
             Node <T> current = head;
             while (current != null) {
                 for (int i = 0; i < arr.length; i++) {
-                    if (current.value == arr[i]) {
+                    if (current.data == arr[i]) {
                         return true;
                     }
                 }
@@ -295,14 +476,14 @@ public class LinkedListExample {
             for (int i = 0; i < index; i++) {
                 current = current.next;
             }
-            return current.value;
+            return current.data;
         }
 
-        public int indexOf(T value) {
+        public int indexOf(T data) {
             Node <T> current = head;
             int index = 0;
             while (current != null) {
-                if (current.value == value) {
+                if (current.data == data) {
                     return index;
                 }
                 current = current.next;
@@ -311,58 +492,18 @@ public class LinkedListExample {
             return -1;
         }
 
-        public int lastIndexOf(T value) {
+        public int lastIndexOf(T data) {
             Node <T> current = head;
             int index = 0;
             int lastIndex = -1;
             while (current != null) {
-                if (current.value == value) {
+                if (current.data == data) {
                     lastIndex = index;
                 }
                 current = current.next;
                 index++;
             }
             return lastIndex;
-        }
-
-        public boolean remove(T value) {
-            Node <T> current = head;
-            Node <T> previous = null;
-            while (current != null) {
-                if (current.value == value) {
-                    if (previous == null) {
-                        head = current.next;
-                    } else {
-                        previous.next = current.next;
-                    }
-                    size--;
-                    return true;
-                }
-                previous = current;
-                current = current.next;
-            }
-            return false;
-        }
-
-        public boolean removeAll(T[] arr) {
-            Node <T> current = head;
-            Node <T> previous = null;
-            while (current != null) {
-                for (int i = 0; i < arr.length; i++) {
-                    if (current.value == arr[i]) {
-                        if (previous == null) {
-                            head = current.next;
-                        } else {
-                            previous.next = current.next;
-                        }
-                        size--;
-                        return true;
-                    }
-                }
-                previous = current;
-                current = current.next;
-            }
-            return false;
         }
 
         public void reverse() {
@@ -378,17 +519,13 @@ public class LinkedListExample {
             head = previous;
         }
 
-        public boolean isEmpty() {
-            return head == null;
-        }
-
         @SuppressWarnings("unchecked")
         public T[] toArray() {
             T[] arr = (T[]) new Object[size];
             Node <T> current = head;
             int index = 0;
             while (current != null) {
-                arr[index] = current.value;
+                arr[index] = current.data;
                 current = current.next;
                 index++;
             }
@@ -400,11 +537,11 @@ public class LinkedListExample {
             while (current != null) {
                 Node <T> next = current.next;
                 while (next != null) {
-                    if (next.value instanceof Integer && current.value instanceof Integer) {
-                        if ((int)current.value > (int)next.value) {
-                            T temp = current.value;
-                            current.value = next.value;
-                            next.value = temp;
+                    if (next.data instanceof Integer && current.data instanceof Integer) {
+                        if ((int)current.data > (int)next.data) {
+                            T temp = current.data;
+                            current.data = next.data;
+                            next.data = temp;
                         }
                     }
                     next = next.next;
@@ -413,16 +550,16 @@ public class LinkedListExample {
             }
         }
 
-        public void add(int index, T value) {
+        public void add(int index, T data) {
             if (index == 0) {
-                addFirst(value);
+                addFirst(data);
             } else if (index == size) {
-                addLast(value);
+                addLast(data);
             } else if (index > size) {
                 System.out.println("Index out of bounds");
             } else {
                 Node <T> newNode = new Node<>();
-                newNode.value = value;
+                newNode.data = data;
                 Node <T> current = head;
                 for (int i = 0; i < index - 1; i++) {
                     current = current.next;
