@@ -50,6 +50,8 @@ Data Structures And Algorithm Programs
 
 1. #### [BackTracking](Algorithms/BackTracking/)
 
+    * [NonContiguousSubArraySum](/Algorithms/BackTracking/NonContiguousSubArraySum.java)
+
 2. #### [BinaryTrees](Algorithms/BinaryTrees/)
 
     * [Binary Tree basic methods](/DataStructures/BinaryTree.java)
@@ -76,6 +78,7 @@ Data Structures And Algorithm Programs
     * [LongestIncreasingSubsequence](/Algorithms/DynamicProgramming/LongestIncreasingSubsequence.java)
     * [PerfectSquares](/Algorithms/DynamicProgramming/PerfectSquares.java)
     * [CoinChange](/Algorithms/DynamicProgramming/CoinChange.java)
+    * [PartitionEqualSubsetSum](/Algorithms/DynamicProgramming/PartitionEqualSubsetSum.java)
 
 5. #### [Graphs](/Algorithms/Graphs/)
 
@@ -85,8 +88,8 @@ Data Structures And Algorithm Programs
 
     * [GroupAnagrams](Algorithms/Hashing/GroupAnagrams.java)
     * [LongestConsecutiveSequence](Algorithms/Hashing/LongestConsecutiveSequence.java)
-    * [SubarraySumEqualsK](Algorithms/Hashing/SubarraySumEqualsK.java)
-    * [2Summ](Algorithms/Hashing/TwoSum.java)
+    * [SubArraySumEqualsK (contiguous sub-array sum)](Algorithms/Hashing/SubArraySumEqualsK.java)
+    * [2Sum](Algorithms/Hashing/TwoSum.java)
 
 8. #### [Heap](/Algorithms/HeapAlgos/)
 
