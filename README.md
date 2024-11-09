@@ -79,6 +79,7 @@ Data Structures And Algorithm Programs
     * [PerfectSquares](/Algorithms/DynamicProgramming/PerfectSquares.java)
     * [CoinChange](/Algorithms/DynamicProgramming/CoinChange.java)
     * [PartitionEqualSubsetSum](/Algorithms/DynamicProgramming/PartitionEqualSubsetSum.java)
+    * [LongestCommonSubsequence](/Algorithms/DynamicProgramming/LongestCommonSubsequence.java)
 
 5. #### [Graphs](/Algorithms/Graphs/)
 
