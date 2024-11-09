@@ -102,8 +102,8 @@ Data Structures And Algorithm Programs
 
 11. #### [PrefixSum](/Algorithms/PrefixSum/)
 
-    * [ContigousBinaryArray](/Algorithms/PrefixSum/ContigousBinaryArray.java)
-    * [SubarraySumEqualsK](Algorithms/Hashing/SubarraySumEqualsK.java)
+    * [ContiguousBinaryArray](/Algorithms/PrefixSum/ContiguousBinaryArray.java)
+    * [SubArraySumEqualsK](Algorithms/Hashing/SubArraySumEqualsK.java)
 
 12. #### [Queues](/Algorithms/QueueAlgos/)
 
