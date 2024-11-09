@@ -137,8 +137,21 @@ public class LinkedListExample {
         DummyNode next; // next or head
     }
 
-    // we can have it as static class or separate class
-    private static class LinkedListStack { // or implements Queue
+
+
+
+
+
+
+
+    /**
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     * LinkedListStack
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+    */
+    private static class LinkedListStack { // or implements Queue & we can have it as static class or separate class
         private Node head; // the first node
         private int size;
 
@@ -219,7 +232,22 @@ public class LinkedListExample {
         }
     }
 
-    static class DoublyLinkedList <T> {
+
+
+
+
+
+
+
+
+    /**
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     * DoublyLinkedList
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+    */
+    static class DoublyLinkedList <T> implements Iterable <T> {
 
         private Node <T> head = null;
         private Node <T> tail = null;
@@ -236,6 +264,7 @@ public class LinkedListExample {
                 this.prev = prev;
             }
 
+            @SuppressWarnings("unused")
             Node() { // default constructor needs to be define manually as we have 3 parameter constructor. If no other param constructor then the compiler will construct a default constructor by default
             }
 
@@ -243,6 +272,15 @@ public class LinkedListExample {
             public String toString() {
                 return data.toString();
             }
+        }
+
+        // O(n)
+        public T get(int index) {
+            Node <T> current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+            return current.data;
         }
 
         // O(1)
@@ -270,6 +308,28 @@ public class LinkedListExample {
         // O(1)
         public void add(T data){
             addLast(data);
+        }
+
+        // O(n)
+        public void add(int index, T data) {
+            if (index == 0) {
+                addFirst(data);
+            } else if (index == size) {
+                addLast(data);
+            } else if (index > size) {
+                System.out.println("Index out of bounds");
+            } else {
+                Node <T> current = head;
+                for (int i = 0; i < index-1; i++) {
+                    current = current.next; // finally, we get i-1 node
+                }
+                // place newNode between current (i-1) and current.next (i) --> so, newNode will be at i
+                Node <T> newNode = new Node<>(data, current.next, current);
+                current.next.prev = newNode;
+                current.next = newNode;
+
+                size++;
+            }
         }
 
         // O(1)
@@ -375,45 +435,22 @@ public class LinkedListExample {
             }
 
             return false;
-
-            // THIS IS ONLY FOR SINGLY LINKED LIST -- so, ignore it
-            // Node <T> current = head;
-            // Node <T> previous = null;
-            // while (current != null) { // just traversing, not updating the head or tail
-            //     if (current.data == data) { // got the data?
-            //         if (previous == null) { // i.e data is at the root / head node --> then interchange head
-            //             head = current.next;
-            //         } else {
-            //             previous.next = current.next;
-            //         }
-            //         size--;
-            //         return true;
-            //     } // else
-            //     previous = current;
-            //     current = current.next;
-            // }
-            // return false;
         }
 
+        // O(n*m)
         public boolean removeAll(T[] arr) { // array of data
+            int removed = 0;
             Node <T> trav = head;
             while (trav != null) {
                 for (int i = 0; i < arr.length; i++) {
                     if (trav.data == arr[i]) {
-                        Node <T> tempNext = trav.next;
                         remove(trav);
-                        if (tempNext == null) {
-                            head = trav.next;
-                        } else {
-                            tempNext.next = trav.next;
-                        }
-                        size--;
-                        return true;
+                        removed++;
                     }
                 }
                 trav = trav.next;
             }
-            return false;
+            return removed == arr.length;
         }
 
         // O(n)
@@ -447,47 +484,23 @@ public class LinkedListExample {
             return size == 0; // head == null; won't work as non-circular linked list can have head == null
         }
 
-        public boolean contains(T data) {
-            Node <T> current = head;
-            while (current != null) {
-                if (current.data == data) {
-                    return true;
-                }
-                current = current.next;
-            }
-            return false;
-        }
-
-        public boolean containsAll(T[] arr) {
-            Node <T> current = head;
-            while (current != null) {
-                for (int i = 0; i < arr.length; i++) {
-                    if (current.data == arr[i]) {
-                        return true;
-                    }
-                }
-                current = current.next;
-            }
-            return false;
-        }
-
-        public T get(int index) {
-            Node <T> current = head;
-            for (int i = 0; i < index; i++) {
-                current = current.next;
-            }
-            return current.data;
-        }
-
         public int indexOf(T data) {
-            Node <T> current = head;
+            Node <T> trav = head;
             int index = 0;
-            while (current != null) {
-                if (current.data == data) {
-                    return index;
+
+            // for null
+            if (data == null) {
+                for (trav = head; trav != null; trav = trav.next, index++) {
+                    if (trav.data == null)
+                        return index;
                 }
-                current = current.next;
-                index++;
+            } else {
+                while (trav != null) {
+                    if (trav.data.equals(data))
+                        return index;
+                    trav = trav.next;
+                    index++;
+                }
             }
             return -1;
         }
@@ -504,6 +517,64 @@ public class LinkedListExample {
                 index++;
             }
             return lastIndex;
+        }
+
+        public boolean contains(T data) {
+            return indexOf(data) != -1;
+        }
+
+        public boolean contains2(T data) {
+            Node <T> current = head;
+            while (current != null) {
+                if (current.data == data) {
+                    return true;
+                }
+                current = current.next;
+            }
+            return false;
+        }
+
+        public boolean containsAll(T[] arr) {
+            int found = 0;
+            Node <T> current = head;
+            while (current != null) {
+                for (int i = 0; i < arr.length; i++) {
+                    if (current.data == arr[i]) {
+                        found++;
+                    }
+                }
+                current = current.next;
+            }
+            return found == arr.length;
+        }
+
+        @Override public java.util.Iterator <T> iterator () {
+            return new java.util.Iterator <T> () {
+                private Node<T> trav = head;
+                @Override public boolean hasNext() {
+                    return trav != null;
+                }
+
+                @Override public T next() {
+                    T data = trav.data;
+                    trav = trav.next;
+                    return data;
+                }
+            };
+        }
+
+        @Override public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("[");
+
+            Node <T> trav = head;
+            while (trav != null) {
+                sb.append(trav.data + ", ");
+                trav = trav.next;
+            }
+
+            sb.append("]");
+            return sb.toString();
         }
 
         public void reverse() {
@@ -549,28 +620,19 @@ public class LinkedListExample {
                 current = current.next;
             }
         }
-
-        public void add(int index, T data) {
-            if (index == 0) {
-                addFirst(data);
-            } else if (index == size) {
-                addLast(data);
-            } else if (index > size) {
-                System.out.println("Index out of bounds");
-            } else {
-                Node <T> newNode = new Node<>();
-                newNode.data = data;
-                Node <T> current = head;
-                for (int i = 0; i < index - 1; i++) {
-                    current = current.next;
-                }
-                newNode.next = current.next;
-                current.next = newNode;
-                size++;
-            }
-        }
     }
 
+
+
+
+
+    /**
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+     * CircularLinkedList
+     * -------------------------------------------------------------------------
+     * -------------------------------------------------------------------------
+    */
     static class CircularLinkedList {
         private class Node {
             int value;
