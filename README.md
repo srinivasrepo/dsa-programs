@@ -88,6 +88,7 @@ Data Structures And Algorithm Programs
 7. #### [Hashing / HashMap](Algorithms/Hashing/)
 
     * [GroupAnagrams](Algorithms/Hashing/GroupAnagrams.java)
+    * [RansomNote](Algorithms/Hashing/RansomNote.java)
     * [LongestConsecutiveSequence](Algorithms/Hashing/LongestConsecutiveSequence.java)
     * [SubArraySumEqualsK (contiguous sub-array sum)](Algorithms/Hashing/SubArraySumEqualsK.java)
     * [2Sum](Algorithms/Hashing/TwoSum.java)
@@ -99,6 +100,8 @@ Data Structures And Algorithm Programs
     * [MaximumRepeatingNumber](Algorithms/IntegerArray/MaximumRepeatingNumber.java)
 
 10. #### [LinkedList](/Algorithms/LinkedList/)
+
+    *[MiddleOfTheLinkedList](/Algorithms/LinkedList/MiddleOfTheLinkedList.java)
 
 11. #### [PrefixSum](/Algorithms/PrefixSum/)
 
