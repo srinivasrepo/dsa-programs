@@ -15,7 +15,7 @@ import java.util.Map;
  * @author Srinivas Vadige, srinivas.vadige@gmail.com
  * @since 25 Sept 2024
  */
-public class SubArraySumEqualsK1 {
+public class SubArraySumEqualsK {
     public static void main(String[] args) {
 		// int[] arr = new int[]{1,2,1,2,1};
 		// int k = 3;
