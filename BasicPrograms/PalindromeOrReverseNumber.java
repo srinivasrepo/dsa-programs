@@ -14,6 +14,27 @@ public class PalindromeOrReverseNumber {
         System.out.println("Reverse using STRING BUILDER REVERSE => " + stringBuilderReverse(n));
         System.out.println("isPalindrome: " + isPalindrome(n));
         System.out.println("isPalindromeStringApproach: " + isPalindromeStringApproach(n));
+
+
+        System.out.println("ListNode approach --------------------------------------- ");
+        ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+
+        int n1 = 0;
+        for(ListNode trav=l1; trav!=null; trav=trav.next){ // ----- normal sequence
+            n1 = n1*10 + trav.val;
+        }
+        System.out.println(n1); // 243
+
+        n1 = 0;
+        for(ListNode trav=l1; trav!=null; trav=trav.next){ // ----- reverse sequence
+            int zeros = (int) Math.log10(n1==0?1:n1)+1; // Math.log10(0) is -Infinity and (int)Math.log10(0) is -2147483648
+            // or zeros = String.valueOf(n1).length();
+            int mul = (int) Math.pow(10, zeros);
+            if(n1 == 0)
+                mul = 1;
+            n1 = trav.val*mul + n1;
+        }
+        System.out.println(n1); // 342
     }
 
     // reversing using %10 and /10 concept
@@ -69,5 +90,14 @@ public class PalindromeOrReverseNumber {
     public static boolean isPalindromeStringApproach(int x) {
         return new StringBuilder(String.valueOf(x)).reverse().toString().equals(String.valueOf(x));
     }
+
+    @SuppressWarnings("unused")
+    private static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+   }
 
 }
