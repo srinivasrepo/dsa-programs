@@ -99,9 +99,10 @@ Data Structures And Algorithm Programs
 
     * [MaximumRepeatingNumber](Algorithms/IntegerArray/MaximumRepeatingNumber.java)
 
-10. #### [LinkedList](/Algorithms/LinkedList/)
+10. #### [LinkedList Algos](/Algorithms/LinkedListAlgos/)
 
-    *[MiddleOfTheLinkedList](/Algorithms/LinkedList/MiddleOfTheLinkedList.java)
+    *[MiddleOfTheLinkedList](/Algorithms/LinkedListAlgos/MiddleOfTheLinkedList.java)
+    *[AddTwoNumbers](/Algorithms/LinkedListAlgos/AddTwoNumbers.java)
 
 11. #### [PrefixSum](/Algorithms/PrefixSum/)
 
