@@ -62,22 +62,24 @@ public class AddTwoNumbers {
 
             System.out.println("carryForward: " + carryForward +", n3: " + n3);
 
-            if (n3 > 9) {
-                carryForward = n3/10;
-                n3 = n3 % 10;
-            } else {
-                carryForward = 0;
-            }
+            // if (n3 > 9) { ---- OPTIONAL as n3 = 5%10 = 5 and carryForward =5/10 = 0 -- int not double
+            //     carryForward = n3/10;
+            //     n3 = n3 % 10;
+            // } else {
+            //     carryForward = 0;
+            // }
+
+            carryForward = n3/10;
+            n3 = n3 % 10;
 
             trav.val = n3;
             trav.next = new ListNode();
 
-            if (l1 == null && l2 == null){
-                if(carryForward !=0) {
+            if (l1 == null && l2 == null){ // to carryForward the last digit sum if > 9
+                if(carryForward !=0)
                     trav.next.val = carryForward;
-                    trav.next.next = null;
-                } else
-                    trav.next = null;
+                else
+                    trav.next = null; // because of above trav.next = new ListNode(); condition
             } else {
                 trav = trav.next;
             }
