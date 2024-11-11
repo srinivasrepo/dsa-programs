@@ -40,11 +40,15 @@ Data Structures And Algorithm Programs
   * [Patterns and shapes](BasicPrograms/Patterns.java)
   * [PrimeNumber](BasicPrograms/PrimeNumber.java)
 
-* ### [LeetCode Programs](LeetCode/)
+* ### [LeetCode Basic Programs](LeetCodeBasic/)
 
-  * [Anagram](/LeetCode/Anagram.java)
-  * [RomanToInteger](LeetCode/RomanToInteger.java)
-  * [WordPattern](LeetCode/WordPattern.java)
+  * [Anagram](/LeetCodeBasic/Anagram.java)
+  * [RomanToInteger](LeetCodeBasic/RomanToInteger.java)
+  * [WordPattern](LeetCodeBasic/WordPattern.java)
+  * [Number of Steps to Reduce a Number to Zero](LeetCodeBasic/NumberOfStepsToReduceNumberToZero.java)
+  * [Fizz Buzz](LeetCodeBasic/FizzBuzz.java)
+  * [Richest Customer Wealth](LeetCodeBasic/RichestCustomerWealth.java)
+  * [Running Sum of 1D Array](LeetCodeBasic/RunningSumOf1DArray.java)
 
 * ### [----  ALGORITHMS  ----](Algorithms/)
 
