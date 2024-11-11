@@ -32,11 +32,15 @@ public class MergeKSortedLists {
         ListNode list3 = new ListNode(2, new ListNode(6));
 
         ListNode mergedList = mergeKListsUsingSort(new ListNode[]{list1, list2, list3});
-
         for(ListNode trav = mergedList; trav != null; trav = trav.next) {
             System.out.print(trav.val + " ");
         }
 
+        System.out.println();
+        mergedList = mergeKListsUsingBinaryTree(new ListNode[]{list1, list2, list3});
+        for(ListNode trav = mergedList; trav != null; trav = trav.next) {
+            System.out.print(trav.val + " ");
+        }
     }
 
     public static ListNode mergeKListsUsingSort(ListNode[] lists) {
@@ -59,7 +63,132 @@ public class MergeKSortedLists {
         return dummy.next;
     }
 
-    public ListNode mergeKLists(ListNode[] lists) {
+    /**
+     * Convert this to binary tree approach---> brute force
+     *
+     *        l1    l2     l3      l4     l5
+     *        |_____|       |       |      |
+     *           |__________|       |      |
+     *                 |____________|      |
+     *                        |____________|
+     *                               |
+     *                              res
+     *
+     * Convert this to binary tree best approach---> improved
+     *
+     *         l1    l2     l3      l4     l5
+     *          |_____|      |_______|      |
+     *             |_____________|          |
+     *                    |_________________|
+     *                              |
+     *                             res
+     */
+    public static ListNode mergeKListsUsingBinaryTree(ListNode[] lists) {
+        if (lists == null || lists.length == 0) return null;
+
+        while (lists.length > 1) {
+            List<ListNode> res = new ArrayList<>();
+
+            for (int i=0; i<lists.length; i+=2) { // do two and skip to third node
+                ListNode l1 = lists[i];
+                ListNode l2 = (i+1) < lists.length? lists[i+1]: null;
+                res.add(mergeTwoListNodes(l1, l2));
+            }
+            lists = res.toArray(ListNode[]::new);
+        }
+
+        return lists[0];
+    }
+
+    private static ListNode mergeTwoListNodes(ListNode l1, ListNode l2) {
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+
+        ListNode head = new ListNode(), trav = head;
+        while(l1 != null && l2 !=null) {
+            if(l1.val < l2.val) {
+                trav.next = l1;
+                l1 = l1.next;
+                trav = trav.next;
+            } else {
+                trav.next = l2;
+                l2 = l2.next;
+                trav = trav.next;
+            }
+        }
+        trav.next = (l1 == null)? l2: l1;
+
+        return head.next;
+    }
+
+    public static ListNode mergeKListsUsingBinaryTree2(ListNode[] lists) {
+        if (lists == null || lists.length == 0) return null;
+
+        while (lists.length > 1) {
+            ListNode[] mergedLists = new ListNode[lists.length / 2]; // we already know how many ListNodes we have in "Convert this to binary tree best approach---> improved"
+            for (int i = 0; i < lists.length; i += 2) {
+                mergedLists[i / 2] = mergeTwoLists2(lists[i], lists[i + 1]);
+            }
+            lists = mergedLists;
+        }
+
+        if (lists.length == 1) return lists[0];
+
+        return null;
+    }
+
+    private static ListNode mergeTwoLists2(ListNode list1, ListNode list2) {
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+        if (list1.val < list2.val) {
+            list1.next = mergeTwoLists2(list1.next, list2);
+            return list1;
+        } else {
+            list2.next = mergeTwoLists2(list1, list2.next);
+            return list2;
+        }
+    }
+
+    public ListNode mergeKListsUsingPriorityQueue(ListNode[] lists) {
+        PriorityQueue<Integer> max = new PriorityQueue<>();
+        for(ListNode node : lists){
+            while(node!=null){
+                max.offer(node.val);
+                node = node.next;
+            }
+        }
+
+        ListNode dummy = new ListNode(0);
+        ListNode trav = dummy;
+        while(!max.isEmpty()){
+            trav.next = new ListNode(max.poll());
+            trav = trav.next;
+        }
+        return dummy.next;
+    }
+
+    public static ListNode mergeKListsUsingPriorityQueue2(ListNode[] lists) {
+        Queue<ListNode> queue = new PriorityQueue<>((a, b) -> a.val - b.val);
+        for (ListNode list : lists) {
+            if (list != null) {
+                queue.add(list);
+            }
+        }
+        ListNode dummy = new ListNode(-1), trav = dummy;
+        while (!queue.isEmpty()) {
+            ListNode node = queue.poll();
+            trav.next = node;
+            trav = trav.next;
+            if (node.next != null) {
+                queue.add(node.next);
+            }
+        }
+        return dummy.next;
+    }
+
+
+
+    public ListNode mergeKListsUsingTable(ListNode[] lists) {
         int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
         for (ListNode list : lists) {
             while (list != null) {
@@ -102,7 +231,7 @@ public class MergeKSortedLists {
         return result.next;
     }
 
-        public ListNode mergeKLists2(ListNode[] lists) {
+    public ListNode mergeKListsUsingArrayDeque(ListNode[] lists) {
         Queue<ListNode> queue = new ArrayDeque<>();
 
         for (ListNode l : lists) {
@@ -148,21 +277,5 @@ public class MergeKSortedLists {
         return merged.next;
     }
 
-    public ListNode mergeKLists3(ListNode[] lists) {
-        PriorityQueue<Integer> max = new PriorityQueue<>();
-        for(ListNode node : lists){
-            while(node!=null){
-                max.offer(node.val);
-                node = node.next;
-            }
-        }
-        //System.out.println(max.size());
-        ListNode res = new ListNode(0);
-        ListNode dummy = res;
-        while(!max.isEmpty()){
-            dummy.next = new ListNode(max.poll());
-            dummy = dummy.next;
-        }
-        return res.next;
-    }
+
 }
