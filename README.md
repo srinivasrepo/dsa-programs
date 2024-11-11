@@ -166,14 +166,17 @@ Data Structures And Algorithm Programs
 
 ## Sources
 
-1) [takeuforward.org - Strivers A2Z DSA Course/Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
-2) [COURSERA DSA ROADMAP PART 1](https://www.coursera.org/learn/algorithms-part1)
-3) [COURSERA DSA ROADMAP PART 2](https://www.coursera.org/learn/algorithms-part2)
-4) [GFG DSA course](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
-5) [FCC DSA course with 48hrs YT video](https://www.freecodecamp.org/news/learn-data-structures-and-algorithms-2/)
-6) [GFG interview DSA FAQs](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
-7) [Columbia University DSA Research Papers](https://timroughgarden.org/)
-8) [From my LeetCode experience](https://leetcode.com/u/srinivas_vadige/)
+1) [From my LeetCode experience- leetcode/srinivasvadige](https://leetcode.com/u/srinivasvadige/)
+2) Personal experience and research
+3) Official java documentations, blogs
+4) [WilliamFiset - YT Data structures playlist](https://www.youtube.com/watch?v=Qmt0QwzEmh0&list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
+5) [takeuforward.org - Strivers A2Z DSA Course/Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
+6) [COURSERA DSA ROADMAP PART 1](https://www.coursera.org/learn/algorithms-part1)
+7) [COURSERA DSA ROADMAP PART 2](https://www.coursera.org/learn/algorithms-part2)
+8) [GFG DSA course](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
+9) [FCC DSA course with 48hrs YT video](https://www.freecodecamp.org/news/learn-data-structures-and-algorithms-2/)
+10) [GFG interview DSA FAQs](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
+11) [Columbia University DSA Research Papers](https://timroughgarden.org/)
 
 </br>
 </br>
