@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class MergeTwoSortedLists {
 
-    private static class ListNode {
+    static class ListNode {
         int val;
         ListNode next;
         ListNode() {}
