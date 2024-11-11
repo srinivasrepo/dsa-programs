@@ -130,7 +130,26 @@ public class LinkedListExample {
         cll.containsNode(8);
         cll.deleteNode(1);
         cll.traverseList();
+
+
+
+        System.out.println("Convert int[] to LinkedList using dummy node approach ----------");
+        // So we can avoid the edge of inserting the trav.next into an empty list null
+        // i.e no need for trav.next = list1.next != null ? new ListNode() : null;
+        int[] array = {1, 2, 3, 4, 5};
+        ListNode head = new ListNode(array[0]);
+        ListNode current = head;
+        for (int i = 1; i < array.length; i++) {
+            current.next = new ListNode(array[i]); // i.e we avoided trav.next = new ListNode(lst.get(i), list1.next != null ? new ListNode() : null);
+            current = current.next;
+        }
+
+        for (ListNode trav = head; trav != null; trav = trav.next) {
+            System.out.println(trav.val);
+        }
     }
+
+    private static class ListNode { int val; ListNode next; ListNode(int x) { val = x; } }
 
     static class DummyNode { // separate static class or can have private class in LinkedListStack itself
         int value;
