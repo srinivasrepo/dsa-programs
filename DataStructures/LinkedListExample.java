@@ -116,9 +116,47 @@ public class LinkedListExample {
         deque.element();
 
 
+        System.out.println("SELF-REFERENTIAL / CIRCULAR LINKED LIST / INFINITE SINGULAR LINKED LIST ---------- 🔥🔥🔥");
+        ListNode head = new ListNode( 1, new ListNode(2, new ListNode(3) ) );
+        head.next.next.next = head; // or head.next = head
+        ListNode current = head;
+
+        // To print self referential / circular linked list
+		do {
+			System.out.println(current.val);
+			current = current.next;
+		} while (current != head);
+        // or
+        for (current = head; current != null; current = current.next) {
+            System.out.println(current.val);
+            if (current.next == head) break;
+        }
+
+        /*
+         * EXPLANATION:
+         * ListNode head = new ListNode( 1, new ListNode(2, new ListNode(3) ) );
+         * head.next = head; ✅ but ---> SELF-REFERENTIAL
+         * But we can do head.next = head.next.next; ✅
+         * And to traverse use head = head.next; ✅
+         * And we know that head.next = head.next; won't do anything but it's not an error
+         *
+         * Similarly
+         *
+         * ListNode trav = head.next;
+         * trav.next = head; // ---> this will create a self referential
+         *
+         * It's not a problem to have a self referential LinkedList -> It'll become Circular LinkedList
+         *
+         * But if we print it like a normal SingularLinedList, DoublyLinkedList it'll be a Self-Referential Infinite Loop
+         * When head.next=head;
+         * for(ListNode trav=head; trav!=null; trav=trav.next){ sout(trav.val); }
+         *    __ 1 __
+         *   |__ 2 __| ---> loop, at first 1 will be printed and it checks next node 2 -> this reference is the self-reference, now it goes inside this reference and we know thats 1 is already assigned and then it'll print 1 again and goes to next node 2 which is a self reference --- infante loop that prints 1
+         *       3
+        */
 
 
-        System.out.println("CircularLinkedList ----------");
+        System.out.println("Custom CircularLinkedList ----------");
         CircularLinkedList cll = new CircularLinkedList();
         cll.addNode(13);
         cll.addNode(7);
@@ -132,13 +170,12 @@ public class LinkedListExample {
         cll.traverseList();
 
 
-
         System.out.println("Convert int[] to LinkedList using dummy node approach ----------");
         // So we can avoid the edge of inserting the trav.next into an empty list null
         // i.e no need for trav.next = list1.next != null ? new ListNode() : null;
         int[] array = {1, 2, 3, 4, 5};
-        ListNode head = new ListNode(array[0]);
-        ListNode current = head;
+        head = new ListNode(array[0]); // or use dummy node, loop from 0 then return dummy.next as result--> ListNode dummy = new ListNode(-1);
+        current = head;
         for (int i = 1; i < array.length; i++) {
             current.next = new ListNode(array[i]); // i.e we avoided trav.next = new ListNode(lst.get(i), list1.next != null ? new ListNode() : null);
             current = current.next;
@@ -149,7 +186,7 @@ public class LinkedListExample {
         }
     }
 
-    private static class ListNode { int val; ListNode next; ListNode(int x) { val = x; } }
+    private static class ListNode { int val; ListNode next; ListNode(int x) { val = x; }; ListNode(int x, ListNode next) { val = x; this.next = next; } }
 
     static class DummyNode { // separate static class or can have private class in LinkedListStack itself
         int value;
