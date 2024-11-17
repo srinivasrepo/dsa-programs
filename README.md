@@ -106,6 +106,8 @@ Data Structures And Algorithm Programs
 10. #### [LinkedList Algos](/Algorithms/LinkedListAlgos/)
 
     * [MiddleOfTheLinkedList](/Algorithms/LinkedListAlgos/MiddleOfTheLinkedList.java)
+    * [Reverse LinkedList](/Algorithms/LinkedListAlgos/ReverseLinkedList.java)
+    * [Zipper LinkedLists](/Algorithms/LinkedListAlgos/ZipperLinkedLists.java)
     * [AddTwoNumbers](/Algorithms/LinkedListAlgos/AddTwoNumbers.java)
     * [Remove Nth Node From End of List](/Algorithms/LinkedListAlgos/RemoveNthNodeFromEndOfList.java)
     * [Merge Two Sorted Lists](/Algorithms/LinkedListAlgos/MergeTwoSortedLists.java)
