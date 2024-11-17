@@ -6,7 +6,25 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * @author Srinivas Vadige, srinivas.vadige@gmail.com
+ * @since 11 Nov 2024
+ */
 public class LinkedListExample {
+
+    private static class ListNode {
+        int val;
+        ListNode next;
+        ListNode(){};
+        ListNode(int x) { val = x; };
+        ListNode(int x, ListNode next) { val = x; this.next = next; }
+    }
+
+    static class DummyNode { // separate static class or can have private class in LinkedListStack itself
+        int value;
+        DummyNode next; // next or head
+    }
+
     public static void main(String[] args) {
         System.out.println("LinkedList with List Interface ----------");
         List<Integer> arrList = new ArrayList<>();
@@ -54,6 +72,7 @@ public class LinkedListExample {
 
 
 
+
         System.out.println("LinkedList with Queue Interface ----------");
         Queue<Integer> queue = new LinkedList<>();
         queue.add(1);
@@ -77,7 +96,22 @@ public class LinkedListExample {
         queue.toString();
 
 
-        System.out.println("LinkedList with Custom Stack ----------");
+
+
+        System.out.println("LinkedList with Deque Interface ----------");
+        Deque<Integer> deque = new LinkedList<>();
+        deque.addFirst(1);
+        deque.addLast(2);
+        deque.addFirst(3);
+        deque.addLast(4);
+        deque.addFirst(5);
+        deque.addLast(6);
+        deque.element();
+
+
+
+
+        System.out.println("Custom SinglyLinkedList class using Stack approach ----------");
         LinkedListStack stack = new LinkedListStack();
         stack.push(1);
         stack.push(2);
@@ -96,28 +130,87 @@ public class LinkedListExample {
 
 
 
-        System.out.println("DoublyLinkedList ----------"); // same like Deque
-        DoublyLinkedList<Integer> doublyLinkedList = new DoublyLinkedList<>();
-        doublyLinkedList.addFirst(1);
-        doublyLinkedList.addLast(2);
-        doublyLinkedList.addFirst(3);
-        doublyLinkedList.addLast(4);
-        doublyLinkedList.addFirst(5);
-        doublyLinkedList.addLast(6);
-        doublyLinkedList.display();
 
-        Deque<Integer> deque = new LinkedList<>();
-        deque.addFirst(1);
-        deque.addLast(2);
-        deque.addFirst(3);
-        deque.addLast(4);
-        deque.addFirst(5);
-        deque.addLast(6);
-        deque.element();
+        System.out.println("Initialize SinglyLinkedList using ListNode class ----------");
+        // Using val+next constructor
+        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+        // Using val constructor
+        head = new ListNode(1);
+        ListNode curr = head;
+        curr.next = new ListNode(2);
+        curr = curr.next;
+        curr.next = new ListNode(3);
+        // Using default constructor
+        head = new ListNode();
+        curr = head;
+        curr.val = 1;
+        curr.next = new ListNode();
+        curr = curr.next;
+        curr.val = 2;
+        curr.next = new ListNode();
+        curr = curr.next;
+        curr.val = 3;
+
+
+        System.out.println("SinglyLinkedList Traversal ----------");
+        // for-loop
+        for(ListNode trav=head; trav!=null; trav=trav.next)
+            System.out.println(trav.val);
+        // while-loop
+        ListNode trav=head;
+        while(trav != null){
+            System.out.println(trav.val);
+            trav=trav.next;
+        }
+        // recursive method
+        /*
+            void printSinglyLinkedList(ListNode head) {
+                if(head == null) return;
+                System.out.println(head.val);
+                printSinglyLinkedList(head.next);
+            }
+        */
+
+
+
+        System.out.println("Convert int[] to SinglyLinkedList ----------");
+        int[] array = {1, 2, 3, 4, 5};
+
+        // dummy node + prev approach
+        ListNode dummy = new ListNode(-1), prev=dummy;
+        for(Integer n: array) {
+            prev.next = new ListNode(n);
+            prev=prev.next;
+        }
+        for (trav = dummy.next; trav != null; trav = trav.next) System.out.println(trav.val);
+
+        // head node + prev approach
+        head = new ListNode(array[0]);
+        prev = head;
+        for (int i = 1; i < array.length; i++, prev = prev.next) {
+            prev.next = new ListNode(array[i]);
+        }
+        for (trav = head; trav != null; trav = trav.next) System.out.println(trav.val);
+
+        // head node + curr approach
+        head = new ListNode();
+        curr = head;
+        for(int i=0; i<array.length; i++){
+            curr.val = array[i];
+
+            if(i != array.length-1) {
+                curr.next = new ListNode();
+                curr = curr.next;
+            }
+        }
+        for (trav = head; trav != null; trav = trav.next) System.out.println(trav.val);
+
+
+
 
 
         System.out.println("SELF-REFERENTIAL / CIRCULAR LINKED LIST / INFINITE SINGULAR LINKED LIST ---------- 🔥🔥🔥");
-        ListNode head = new ListNode( 1, new ListNode(2, new ListNode(3) ) );
+        head = new ListNode( 1, new ListNode(2, new ListNode(3) ) );
         head.next.next.next = head; // or head.next = head
         ListNode current = head;
 
@@ -131,32 +224,36 @@ public class LinkedListExample {
             System.out.println(current.val);
             if (current.next == head) break;
         }
-
         /*
-         * EXPLANATION:
-         * ListNode head = new ListNode( 1, new ListNode(2, new ListNode(3) ) );
-         * head.next = head; ✅ but ---> SELF-REFERENTIAL
-         * But we can do head.next = head.next.next; ✅
-         * And to traverse use head = head.next; ✅
-         * And we know that head.next = head.next; won't do anything but it's not an error
-         *
-         * Similarly
-         *
-         * ListNode trav = head.next;
-         * trav.next = head; // ---> this will create a self referential
-         *
-         * It's not a problem to have a self referential LinkedList -> It'll become Circular LinkedList
-         *
-         * But if we print it like a normal SingularLinedList, DoublyLinkedList it'll be a Self-Referential Infinite Loop
-         * When head.next=head;
-         * for(ListNode trav=head; trav!=null; trav=trav.next){ sout(trav.val); }
-         *    __ 1 __
-         *   |__ 2 __| ---> loop, at first 1 will be printed and it checks next node 2 -> this reference is the self-reference, now it goes inside this reference and we know thats 1 is already assigned and then it'll print 1 again and goes to next node 2 which is a self reference --- infante loop that prints 1
-         *       3
+        EXPLANATION:
+        ListNode head = new ListNode( 1, new ListNode(2, new ListNode(3) ) );
+        head.next = head; ✅ but ---> SELF-REFERENTIAL
+        But we can do head.next = head.next.next; ✅
+        And to traverse use head = head.next; ✅
+        And we know that head.next = head.next; won't do anything but it's not an error
+
+        Similarly
+
+        ListNode trav = head.next;
+        trav.next = head; // ---> this will create a self referential
+
+        It's not a problem to have a self referential LinkedList -> It'll become Circular LinkedList
+
+        But if we print it like a normal SingularLinedList, DoublyLinkedList it'll be a Self-Referential Infinite Loop
+        When head.next=head;
+        for(ListNode trav=head; trav!=null; trav=trav.next){ sout(trav.val); }
+           __ 1 __
+          |__ 2 __| ---> loop, at first 1 will be printed and it checks next node 2 -> this reference is the self-reference, now it goes inside this reference and we know thats 1 is already assigned and then it'll print 1 again and goes to next node 2 which is a self reference --- infante loop that prints 1
+              3
         */
 
 
-        System.out.println("Custom CircularLinkedList ----------");
+
+
+
+
+
+        System.out.println("Custom SinglyCircularLinkedList class ----------");
         CircularLinkedList cll = new CircularLinkedList();
         cll.addNode(13);
         cll.addNode(7);
@@ -170,28 +267,23 @@ public class LinkedListExample {
         cll.traverseList();
 
 
-        System.out.println("Convert int[] to LinkedList using dummy node approach ----------");
-        // So we can avoid the edge of inserting the trav.next into an empty list null
-        // i.e no need for trav.next = list1.next != null ? new ListNode() : null;
-        int[] array = {1, 2, 3, 4, 5};
-        head = new ListNode(array[0]); // or use dummy node, loop from 0 then return dummy.next as result--> ListNode dummy = new ListNode(-1);
-        current = head;
-        for (int i = 1; i < array.length; i++) {
-            current.next = new ListNode(array[i]); // i.e we avoided trav.next = new ListNode(lst.get(i), list1.next != null ? new ListNode() : null);
-            current = current.next;
-        }
 
-        for (ListNode trav = head; trav != null; trav = trav.next) {
-            System.out.println(trav.val);
-        }
+
+
+
+
+        System.out.println("Custom DoublyLinkedList class ----------"); // same like Deque
+        DoublyLinkedList<Integer> doublyLinkedList = new DoublyLinkedList<>();
+        doublyLinkedList.addFirst(1);
+        doublyLinkedList.addLast(2);
+        doublyLinkedList.addFirst(3);
+        doublyLinkedList.addLast(4);
+        doublyLinkedList.addFirst(5);
+        doublyLinkedList.addLast(6);
+        doublyLinkedList.display();
     }
 
-    private static class ListNode { int val; ListNode next; ListNode(int x) { val = x; }; ListNode(int x, ListNode next) { val = x; this.next = next; } }
 
-    static class DummyNode { // separate static class or can have private class in LinkedListStack itself
-        int value;
-        DummyNode next; // next or head
-    }
 
 
 
@@ -203,11 +295,12 @@ public class LinkedListExample {
     /**
      * -------------------------------------------------------------------------
      * -------------------------------------------------------------------------
-     * LinkedListStack
+     * Custom SinglyLinkedList using Stack approach
      * -------------------------------------------------------------------------
      * -------------------------------------------------------------------------
     */
     private static class LinkedListStack { // or implements Queue & we can have it as static class or separate class
+        // most of these methods are same as java.util.LinkedList class
         private Node head; // the first node
         private int size;
 
@@ -685,7 +778,7 @@ public class LinkedListExample {
     /**
      * -------------------------------------------------------------------------
      * -------------------------------------------------------------------------
-     * CircularLinkedList
+     * SinglyCircularLinkedList
      * -------------------------------------------------------------------------
      * -------------------------------------------------------------------------
     */
