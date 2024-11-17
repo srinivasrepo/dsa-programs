@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * @see ZipperLinkedLists.java
  * @author Srinvas Vadige, srinivas.vadige@gmail.com
  * @since 13 Oct 2024
  */
@@ -92,9 +93,9 @@ public class SwapNodesInPairs {
         curr = head;
         while (curr != null && curr.next != null) {
             // save pointers ------------
-            ListNode nextPairStart = curr.next.next;
+            ListNode nextPairStart = curr.next.next; // [3, 4, 5]
             // curr == first
-            ListNode second = curr.next;
+            ListNode second = curr.next; // [2, 3, 4, 5]
 
             // reverse pairs ------------
             second.next = curr; // [2,1,...] self-referential
