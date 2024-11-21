@@ -113,6 +113,7 @@ Data Structures And Algorithm Programs
     * [Merge Two Sorted Lists](/Algorithms/LinkedListAlgos/MergeTwoSortedLists.java)
     * [Merge k Sorted Lists](/Algorithms/LinkedListAlgos/MergeKSortedLists.java)
     * [Swap Nodes In Pairs](/Algorithms/LinkedListAlgos/SwapNodesInPairs.java)
+    * [Reverse Nodes in k-Group](/Algorithms/LinkedListAlgos/ReverseNodesInKGroup.java)
 
 11. #### [PrefixSum](/Algorithms/PrefixSum/)
 
