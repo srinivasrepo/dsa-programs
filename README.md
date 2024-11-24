@@ -118,6 +118,7 @@ Data Structures And Algorithm Programs
     * [Merge k Sorted Lists](/Algorithms/LinkedListAlgos/MergeKSortedLists.java)
     * [Swap Nodes In Pairs](/Algorithms/LinkedListAlgos/SwapNodesInPairs.java)
     * [Reverse Nodes in k-Group](/Algorithms/LinkedListAlgos/ReverseNodesInKGroup.java)
+    * [Copy/Clone ListWithRandomPointer](/Algorithms/LinkedListAlgos/CopyListWithRandomPointer.java)
 
 12. #### [Matrix](/Algorithms/Matrix/)
 
