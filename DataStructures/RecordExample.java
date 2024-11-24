@@ -11,7 +11,7 @@ public record RecordExample(int foo, String bar) {
     public RecordExample setFoo(int newFoo){ // optional but it has to be public for setting as it record IMMUTABLE
         return new RecordExample(newFoo,  bar);
     }
-    RecordExample setbar(String newBar){ // optional
+    RecordExample setBar(String newBar){ // optional
         return new RecordExample(foo,  newBar);
     }
     public RecordExample{} // optional
