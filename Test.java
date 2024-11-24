@@ -1,16 +1,15 @@
+import java.util.*;
+import java.util.stream.*;
+import java.util.function.*;
 
+@SuppressWarnings("unused")
 public class Test {
 
 /**
- *
- * @param args
+ * Practice your Java doubts here ---------->
  */
 	public static void main(String[] args) {
-		String s = "HelloWorld!";
-		String p = "World";
-		int i = 5;
-		System.out.println(s.startsWith(p, i));
-		System.out.println( s.substring(i, i + p.length()).equals(p) );
+
 	}
 
 
