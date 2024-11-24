@@ -63,7 +63,9 @@ Data Structures And Algorithm Programs
 
 3. #### [BitManipulation](Algorithms/BitManipulation/)
 
-4. #### [DynamicProgramming](Algorithms/DynamicProgramming/)
+4. #### [Disjoint Set / Union Find](Algorithms/DisjointSetUnionFind/)
+
+5. #### [DynamicProgramming](Algorithms/DynamicProgramming/)
 
     * [Fibonacci_DP_Recursive_Backtracking](Algorithms/DynamicProgramming/Fibonacci_DP_Recursive_Backtracking.java)
     * [Fibonacci_DP_TopDown_Memoization](Algorithms/DynamicProgramming/Fibonacci_DP_TopDown_Memoization.java)
@@ -85,11 +87,13 @@ Data Structures And Algorithm Programs
     * [PartitionEqualSubsetSum](/Algorithms/DynamicProgramming/PartitionEqualSubsetSum.java)
     * [LongestCommonSubsequence](/Algorithms/DynamicProgramming/LongestCommonSubsequence.java)
 
-5. #### [Graphs](/Algorithms/Graphs/)
+6. #### [Graphs](/Algorithms/Graphs/)
 
-6. #### [GreedyAlgorithms](Algorithms/GreedyAlgorithms/)
+    * [OptimizingBoxWeights](/Algorithms/GreedyAlgorithms/OptimizingBoxWeights.java)
 
-7. #### [Hashing / HashMap](Algorithms/Hashing/)
+7. #### [GreedyAlgorithms](Algorithms/GreedyAlgorithms/)
+
+8. #### [Hashing / HashMap](Algorithms/Hashing/)
 
     * [GroupAnagrams](Algorithms/Hashing/GroupAnagrams.java)
     * [RansomNote](Algorithms/Hashing/RansomNote.java)
@@ -97,13 +101,13 @@ Data Structures And Algorithm Programs
     * [SubArraySumEqualsK (contiguous sub-array sum)](Algorithms/Hashing/SubArraySumEqualsK.java)
     * [2Sum](Algorithms/Hashing/TwoSum.java)
 
-8. #### [Heap](/Algorithms/HeapAlgos/)
+9. #### [Heap](/Algorithms/HeapAlgos/)
 
-9. #### [IntegerArray](/Algorithms/IntegerArray/)
+10. #### [IntegerArray](/Algorithms/IntegerArray/)
 
     * [MaximumRepeatingNumber](Algorithms/IntegerArray/MaximumRepeatingNumber.java)
 
-10. #### [LinkedList Algos](/Algorithms/LinkedListAlgos/)
+11. #### [LinkedList Algos](/Algorithms/LinkedListAlgos/)
 
     * [MiddleOfTheLinkedList](/Algorithms/LinkedListAlgos/MiddleOfTheLinkedList.java)
     * [Reverse LinkedList](/Algorithms/LinkedListAlgos/ReverseLinkedList.java)
@@ -115,29 +119,33 @@ Data Structures And Algorithm Programs
     * [Swap Nodes In Pairs](/Algorithms/LinkedListAlgos/SwapNodesInPairs.java)
     * [Reverse Nodes in k-Group](/Algorithms/LinkedListAlgos/ReverseNodesInKGroup.java)
 
-11. #### [PrefixSum](/Algorithms/PrefixSum/)
+12. #### [Matrix](/Algorithms/Matrix/)
+
+    * [GiftingGroups](/Algorithms/Matrix/GiftingGroups.java)
+
+13. #### [PrefixSum](/Algorithms/PrefixSum/)
 
     * [ContiguousBinaryArray](/Algorithms/PrefixSum/ContiguousBinaryArray.java)
     * [SubArraySumEqualsK](Algorithms/Hashing/SubArraySumEqualsK.java)
 
-12. #### [Queues](/Algorithms/QueueAlgos/)
+14. #### [Queues](/Algorithms/QueueAlgos/)
 
-13. #### [Recursion](/Algorithms/Recursion/)
+15. #### [Recursion](/Algorithms/Recursion/)
 
-14. #### [Searching](Algorithms/Searching/)
+16. #### [Searching](Algorithms/Searching/)
 
     * [BinaryRecursionSearch](Algorithms/Searching/BinaryRecursionSearch.java)
     * [BinarySearch](Algorithms/Searching/BinarySearch.java)
     * [LinearSearch](Algorithms/Searching/LinearSearch.java)
 
-15. #### [Sliding Window](Algorithms/SlidingWindow/)
+17. #### [Sliding Window](Algorithms/SlidingWindow/)
 
     * [Find all the Anagrams in a String](/Algorithms/SlidingWindow/FindAllAnagramsInString.java)
     * [LengthOfLongestSubstring](/Algorithms/SlidingWindow/LengthOfLongestSubstring.java)
     * [Minimum Window Substring](Algorithms/SlidingWindow/MinimumWindowSubstring.java)
     * [Sliding Window Maximum](Algorithms/SlidingWindow/SlidingWindowMaximum.java)
 
-16. #### [Sorting](Algorithms/Sorting/)
+18. #### [Sorting](Algorithms/Sorting/)
 
     * [SelectionSort](Algorithms/Sorting/SelectionSort.java)
     * [BubbleSort](Algorithms/Sorting/BubbleSort.java)
@@ -152,18 +160,29 @@ Data Structures And Algorithm Programs
     * [ShellSort](Algorithms/Sorting/ShellSort.java)
     * [TimSort](Algorithms/Sorting/TimSort.java)
 
-17. #### [Stack](/Algorithms/StackAlgos/)
+19. #### [Stack](/Algorithms/StackAlgos/)
 
-18. #### [Strings](/Algorithms/Strings/)
+20. #### [Strings](/Algorithms/Strings/)
 
-19. #### [Tries](/Algorithms/Tries/)
+21. #### [Tries](/Algorithms/Tries/)
 
-20. #### [Two Pointers](/Algorithms/TwoPointers/)
+22. #### [Two Pointers](/Algorithms/TwoPointers/)
 
     * [ContainerWithMostWater - maxArea](/Algorithms/TwoPointers/ContainerWithMostWater.java)
     * [Move Zeros](/Algorithms/TwoPointers/MoveZeros.java)
     * [3Sum](/Algorithms/TwoPointers/ThreeSum.java)
     * [Trapping Rain Water](/Algorithms/TwoPointers/TrappingRainWater.java)
+
+</br>
+</br>
+
+# COMPANIES
+
+## AMAZON
+
+1. [GiftingGroups](/Algorithms/Matrix/GiftingGroups.java)
+2. [OptimizingBoxWeights](/Algorithms/GreedyAlgorithms/OptimizingBoxWeights.java)
+3. [MinimumNumberOfSwapsToSort](/Algorithms/IntegerArray/MinimumNumberOfSwapsToSort.java)
 
 </br>
 </br>
