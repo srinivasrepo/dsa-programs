@@ -57,12 +57,12 @@ public class OptimizingBoxWeights {
         return lst;
     }
 
-    // not as expected
+    // NOT WORKING ---- WRONG APPROACH
     public static List<Integer> minimalHeaviestSetA2(List<Integer> arr) {
         List<Integer> lstA = new ArrayList<>(), lstB = new ArrayList<>();
         Collections.sort(arr, Collections.reverseOrder());
         for (int num: arr) {
-            if (lstA.stream().mapToInt(i->i).sum() > lstB.stream().mapToInt(i->i).sum())
+            if (lstA.stream().mapToInt(i->i).sum() > lstB.stream().reduce(0, Integer::sum))
                 lstB.add(num);
             else
                 lstA.add(num);
