@@ -89,9 +89,11 @@ Data Structures And Algorithm Programs
 
 6. #### [Graphs](/Algorithms/Graphs/)
 
-    * [OptimizingBoxWeights](/Algorithms/GreedyAlgorithms/OptimizingBoxWeights.java)
+    * [GiftingGroups](/Algorithms/Matrix/GiftingGroups.java)
 
 7. #### [GreedyAlgorithms](Algorithms/GreedyAlgorithms/)
+
+    * [OptimizingBoxWeights](/Algorithms/GreedyAlgorithms/OptimizingBoxWeights.java)
 
 8. #### [Hashing / HashMap](Algorithms/Hashing/)
 
