@@ -38,8 +38,8 @@ public class OptimizingBoxWeights {
 
         List<Integer> sums = new ArrayList<>();
         int sum = 0;
-        for (int i=0; i<arr.size(); i++) {
-            sum += arr.get(i);
+        for (int n: arr) {
+            sum += n;
             sums.add(sum);
         }
 
