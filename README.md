@@ -183,9 +183,26 @@ Data Structures And Algorithm Programs
 
 ## AMAZON
 
-1. [GiftingGroups](/Algorithms/Matrix/GiftingGroups.java)
-2. [OptimizingBoxWeights](/Algorithms/GreedyAlgorithms/OptimizingBoxWeights.java)
-3. [MinimumNumberOfSwapsToSort](/Algorithms/IntegerArray/MinimumNumberOfSwapsToSort.java)
+1. [LeetCode Amazon top questions](https://leetcode.com/problem-list/xyknlrg2/)
+2. [GiftingGroups](/Algorithms/Matrix/GiftingGroups.java)
+3. [OptimizingBoxWeights](/Algorithms/GreedyAlgorithms/OptimizingBoxWeights.java)
+4. [MinimumNumberOfSwapsToSort](/Algorithms/IntegerArray/MinimumNumberOfSwapsToSort.java)
+
+## GOOGLE
+
+1. [LeetCode Google top questions](https://leetcode.com/problem-list/7p55wqm/)
+
+## MICROSOFT
+
+1. [LeetCode Microsoft top questions](https://leetcode.com/problem-list/55vr69d7/)
+
+## META
+
+1. [LeetCode Meta / Facebook top questions](https://leetcode.com/problem-list/7p59281/)
+
+## APPLE
+
+1. [LeetCode Apple questions in discussion](https://leetcode.com/discuss/general-discussion/1734481/apple-top-100-questions)
 
 </br>
 </br>
