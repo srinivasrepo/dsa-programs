@@ -181,7 +181,7 @@ public class HashMapExample {
         entry4.setValue("bar");
 
         // But we cannot setKey()
-        // and cannot AbstractMap.SimpleEntry<Integer, String> entry3 = new Map.Entry<>(1, "foo");
+        // and cannot AbstractMap.SimpleEntry<Integer, String> entry3 = Map.entry(1, "foo");
 
     }
 
