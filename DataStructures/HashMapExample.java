@@ -1,5 +1,8 @@
 package DataStructures;
 
+import java.util.AbstractMap;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.AbstractMap.SimpleImmutableEntry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -145,6 +148,40 @@ public class HashMapExample {
         Map<Boolean, List<Employee>> passingFailing = employees.stream()
                                                         .collect(Collectors.partitioningBy(s ->
                                                         s.getGrade() >= 4.0));
+
+
+
+
+
+       // In Java we have AbstractMap, HashMap, LinkedHashMap, TreeMap, ConcurrentHashMap, IdentityHashMap
+       // And in AbstractMap we have AbstractMap.SimpleEntry, AbstractMap.SimpleImmutableEntry
+       // i.e just like 'cpp STL <utility> header - pair container' --> SimpleEntry & 'python tuple' --> SimpleImmutableEntry
+       // Note that we can also use Map.Entry & map.entry() in the same way
+       AbstractMap.SimpleEntry<Integer, String> entry = new SimpleEntry<>(1, "foo");
+		entry.getKey();
+		entry.getValue();
+		entry.setValue("bar");
+
+		AbstractMap.SimpleImmutableEntry<Integer, String> entry2 = new SimpleImmutableEntry<>(1, "foo");
+		entry2.getKey();
+		entry2.getValue();
+		// entry2.setValue("bar"); // java.lang.UnsupportedOperationException
+
+		System.out.println(entry);
+		System.out.println(entry2);
+
+        Map.Entry<Integer, String> entry3 = new AbstractMap.SimpleEntry<>(1, "foo");
+        entry3.getKey();
+        entry3.getValue();
+        entry3.setValue("bar");
+
+        Map.Entry<Integer, String> entry4 = Map.entry(1, "foo");
+        entry4.getKey();
+        entry4.getValue();
+        entry4.setValue("bar");
+
+        // But we cannot setKey()
+        // and cannot AbstractMap.SimpleEntry<Integer, String> entry3 = new Map.Entry<>(1, "foo");
 
     }
 
