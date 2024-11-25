@@ -94,6 +94,7 @@ Data Structures And Algorithm Programs
 7. #### [GreedyAlgorithms](Algorithms/GreedyAlgorithms/)
 
     * [OptimizingBoxWeights](/Algorithms/GreedyAlgorithms/OptimizingBoxWeights.java)
+    * [MinimumNumberOfSwapsToSort](/Algorithms/GreedyAlgorithms/MinimumNumberOfSwapsToSort.java)
 
 8. #### [Hashing / HashMap](Algorithms/Hashing/)
 
@@ -179,30 +180,39 @@ Data Structures And Algorithm Programs
 </br>
 </br>
 
-# COMPANIES
+# COMPANIES [Hiring Overview](https://interviewing.io/guides/hiring-process)
 
 ## AMAZON
 
-1. [LeetCode Amazon top questions](https://leetcode.com/problem-list/xyknlrg2/)
-2. [GiftingGroups](/Algorithms/Matrix/GiftingGroups.java)
-3. [OptimizingBoxWeights](/Algorithms/GreedyAlgorithms/OptimizingBoxWeights.java)
-4. [MinimumNumberOfSwapsToSort](/Algorithms/IntegerArray/MinimumNumberOfSwapsToSort.java)
+1. [Hiring Process](https://interviewing.io/guides/hiring-process/amazon)
+2. [LeetCode Amazon top questions](https://leetcode.com/problem-list/xyknlrg2/)
+3. [GiftingGroups](/Algorithms/Matrix/GiftingGroups.java)
+4. [OptimizingBoxWeights](/Algorithms/GreedyAlgorithms/OptimizingBoxWeights.java)
+5. [MinimumNumberOfSwapsToSort](/Algorithms/GreedyAlgorithms/MinimumNumberOfSwapsToSort.java)
 
 ## GOOGLE
 
-1. [LeetCode Google top questions](https://leetcode.com/problem-list/7p55wqm/)
+1. [Hiring Process](https://interviewing.io/guides/hiring-process/google)
+2. [LeetCode Google top questions](https://leetcode.com/problem-list/7p55wqm/)
 
 ## MICROSOFT
 
-1. [LeetCode Microsoft top questions](https://leetcode.com/problem-list/55vr69d7/)
+1. [Hiring Process](https://interviewing.io/guides/hiring-process/microsoft)
+2. [LeetCode Microsoft top questions](https://leetcode.com/problem-list/55vr69d7/)
 
 ## META
 
-1. [LeetCode Meta / Facebook top questions](https://leetcode.com/problem-list/7p59281/)
+1. [Hiring Process](https://interviewing.io/guides/hiring-process/meta-facebook#meta)
+2. [LeetCode Meta / Facebook top questions](https://leetcode.com/problem-list/7p59281/)
 
 ## APPLE
 
-1. [LeetCode Apple questions in discussion](https://leetcode.com/discuss/general-discussion/1734481/apple-top-100-questions)
+1. [Hiring Process](https://interviewing.io/guides/hiring-process/apple)
+2. [LeetCode Apple questions in discussion](https://leetcode.com/discuss/general-discussion/1734481/apple-top-100-questions)
+
+## NETFLIX
+
+1. [Hiring Process](https://interviewing.io/guides/hiring-process/netflix)
 
 </br>
 </br>
