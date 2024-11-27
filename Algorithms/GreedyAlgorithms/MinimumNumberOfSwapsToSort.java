@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Srinivas Vadige, srinivas.vadige@gmail.com
@@ -11,14 +13,14 @@ import java.util.HashMap;
  */
 public class MinimumNumberOfSwapsToSort {
     public static void main(String[] args) {
-        int[] arr = new int[]{2, 3, 88, 3, 4, 8, 5}, nonContiguousArr = new int[]{1, 4, 3, 2};
+        int[] arr = new int[]{2, 3, 88, 3, 4, 8, 5}, nonContiguousArr = new int[]{6, 3, 1, 2, 4, 5};
         int[] temp = nonContiguousArr.clone();
         System.out.println("Contiguous numbers minSwaps of " + Arrays.toString(temp));
-        System.out.println("minSwaps using brute force: " + minSwapsForContiguousOrderBruteForce(temp));
+        System.out.println("minSwaps using brute force: " + minSwapsBruteForce(temp));
         temp = nonContiguousArr.clone();
-        System.out.println("minSwaps using HashMap: " + minSwapsForContiguousOrderUsingHashMap(temp));
-        temp = new int[]{6, 3, 1, 2, 4, 5};
-        System.out.println("minSwaps using HashMap2: " + minSwapsForContiguousOrderUsingHashMap2(temp));
+        System.out.println("minSwaps using HashMap: " + minSwapsUsingHashMap(temp));
+        temp = nonContiguousArr.clone();
+        System.out.println("minSwaps using List<Map.Entry>: " + minSwapsUsingMapEntryList(temp));
 
         temp = arr.clone();
         System.out.println("\nNon-contiguous numbers minSwaps of " + Arrays.toString(temp) );
@@ -40,7 +42,7 @@ public class MinimumNumberOfSwapsToSort {
 */
 
     //
-    public static int minSwapsForContiguousOrderBruteForce(int[] arr) {
+    public static int minSwapsBruteForce(int[] arr) {
         int minSwaps = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != i + 1) {
@@ -56,7 +58,7 @@ public class MinimumNumberOfSwapsToSort {
         return minSwaps;
     }
 
-    public static int minSwapsForContiguousOrderUsingHashMap(int[] arr) {
+    public static int minSwapsUsingHashMap(int[] arr) {
         int swaps = 0;
         HashMap<Integer, Integer> map = new HashMap<>(); // {expected num, curr num} ==> num=curr
         boolean[] visited = new boolean[arr.length + 1];
@@ -87,23 +89,44 @@ public class MinimumNumberOfSwapsToSort {
         return swaps;
     }
 
-    public static int minSwapsForContiguousOrderUsingHashMap2(int[] arr) {
+    public static int minSwapsUsingMapEntryList(int[] arr) {
         int swaps = 0;
-        HashMap<Integer, Integer> map = new HashMap<>(); // {num, index}
+        List<Map.Entry<Integer, Integer>> lst = new ArrayList<>(); // List<{num, index}>
+        //---> so we have 3 properties here - list index or sorted index, expected num and given index
 
         for (int i = 0; i < arr.length; i++)
-            map.put(arr[i], i); // by default the keys i.e nums are sorted
+            lst.add(Map.entry(arr[i], i)); // by default the keys i.e nums are sorted
+        lst.sort(Comparator.comparing(Map.Entry::getKey)); // or lst.sort((o1, o2) -> o1.getKey() - o2.getKey()); sort by needed nums
 
         /*
              0, 1, 2, 3, 4, 5   ----> indices
             [6, 3, 1, 2, 4, 5]  ----> nums
-            {1=2, 2=3, 3=1, 4=4, 5=5, 6=0}  ----> map
+
+              0    1    2    3    4    5   ----> indices of lst
+            [1=2, 2=3, 3=1, 4=4, 5=5, 6=0]  ----> lst swap 0
+            [3=1*, 2=3, 1=2*, 4=4, 5=5, 6=0]  ----> lst swap 1
+            [2=3*, 3=1*, 1=2, 4=4, 5=5, 6=0]  ----> lst swap 2
+            [4=4*, 3=1, 1=2, 2=3*, 5=5, 6=0]  ----> lst swap 3
+            [5=5*, 3=1, 1=2, 2=3, 4=4*, 6=0]  ----> lst swap 4
+            [6=0*, 3=1, 1=2, 2=3, 4=4, 5=5*]  ----> lst swap 5
 
         */
 
+        // check how many swaps needed to convert the lst to before sort
+        for (int i = 0; i < lst.size(); i++) {
+            Map.Entry<Integer, Integer> entry = lst.get(i);
+            if (entry.getValue() != i ) { // lst sorted - given index != lst index
+                System.out.println(lst);
+                // swap(arr[], i, j)
+                int givenIndex = entry.getValue();
+                lst.set(i, lst.get(givenIndex));
+                lst.set(givenIndex, entry);
 
-
-        System.out.println(map);
+                swaps++;
+                i--; // maintain same lst index until we obtain the exact swap i.e (lst num == arr num) i.e back to original form before sorting the lst
+            }
+        }
+        System.out.println(lst);
         return swaps;
     }
 
