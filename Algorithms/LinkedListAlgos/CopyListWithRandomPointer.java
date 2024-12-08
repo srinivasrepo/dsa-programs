@@ -31,11 +31,35 @@ public class CopyListWithRandomPointer {
         head.next.next.random = head.next.next.next;
         head.next.random = head.next.next.next.next;
         head.random = head.next;
+        System.out.print("Given: \n");
         for (Node trav = head; trav != null; trav = trav.next)
+            System.out.print(trav.val + " " + (trav.random == null? null: trav.random.val) + ", ");
+        System.out.println("\n\ncopyRandomList -----------");
+        for (Node trav = copyRandomList(head); trav != null; trav = trav.next)
             System.out.print(trav.val + " " + (trav.random == null? null: trav.random.val) + ", ");
         System.out.println("\ncopyRandomListMyApproach -----------");
         for (Node trav = copyRandomListMyApproach(head); trav != null; trav = trav.next)
             System.out.print(trav.val + " " + (trav.random == null? null: trav.random.val) + ", ");
+    }
+
+    public static Node copyRandomList(Node head) {
+        Map<Node, Node> oldToCopy = new HashMap<>(); // i.e old node as key and the new node as value
+
+        Node curr = head;
+        while(curr != null){
+            Node copy = new Node(curr.val);
+            oldToCopy.put(curr, copy); // or oldToCopy.put(curr, new Node(curr.val));
+            curr = curr.next;
+        }
+
+        curr = head;
+        while(curr != null){
+            Node copy = oldToCopy.get(curr);
+            copy.next = oldToCopy.get(curr.next); // or oldToCopy.get(curr).next = oldToCopy.get(curr.next);
+            copy.random = oldToCopy.get(curr.random); // or oldToCopy.get(curr).random = oldToCopy.get(curr.random);
+            curr = curr.next;
+        }
+        return oldToCopy.get(head);
     }
 
     public static Node copyRandomListMyApproach(Node head) {
@@ -53,7 +77,7 @@ public class CopyListWithRandomPointer {
         i=0;
         for (Node trav = head; trav != null; trav = trav.next,i++) {
             prev.next = new Node(trav.val);
-            prev.next.random = trav.random == null? null: new Node(-1);
+            prev.next.random = trav.random == null? null: new Node(-1); // optional & in the next loop skip if (trav.random != null)
             lst.add(trav.random == null? null: ogNodeIndexMap.get(trav.random));
 
             copyIndexNodeMap.put(i, prev.next);
@@ -68,7 +92,7 @@ public class CopyListWithRandomPointer {
         return dummy.next;
     }
 
-    public Node copyRandomList(Node head) {
+    public static Node copyRandomList2(Node head) {
         Map<Node, Node> oldToCopy = new HashMap<>();
         oldToCopy.put(null,null);
 
@@ -81,7 +105,7 @@ public class CopyListWithRandomPointer {
             //oldToCopy.get(curr).val = curr.val;
             Node copy = oldToCopy.get(curr);
             copy.val = curr.val;
-            // Step1 - end
+
 
             // Step2 - start - for curr.next
             if(!oldToCopy.containsKey(curr.next)){
@@ -89,7 +113,7 @@ public class CopyListWithRandomPointer {
             }
             //oldToCopy.get(curr).next = oldToCopy.get(curr.next);
             copy.next = oldToCopy.get(curr.next);
-            // Step2 - end
+
 
             // Step3 - start - for curr.random
             if(!oldToCopy.containsKey(curr.random)){
@@ -97,7 +121,6 @@ public class CopyListWithRandomPointer {
             }
             //oldToCopy.get(curr).random = oldToCopy.get(curr.random);
             copy.random = oldToCopy.get(curr.random);
-            // Step3 - end
 
             curr = curr.next;
         }
